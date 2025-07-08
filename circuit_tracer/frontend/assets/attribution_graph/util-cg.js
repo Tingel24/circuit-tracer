@@ -214,6 +214,11 @@ window.utilCg = (function(){
       d.active_feature_idx = d.feature
       d.nodeIndex = i
 
+      if (d.feature_type.includes('transcoder')){
+        explanation = fetch("https://www.neuronpedia.org/api/feature/gemma-2-2b/"+d.layer+"-gemmascope-transcoder-16k/"+d.feature).explanations[0].description
+        d.clerp = explanation
+      }
+
       if (d.feature_type == 'logit' && !isNaN(maxLayer)) d.layer = maxLayer + 1
       
       // TODO: does this handle error nodes correctly?
