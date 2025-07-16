@@ -1,6 +1,4 @@
-import os
 from pathlib import Path
-import torch
 from circuit_tracer import ReplacementModel, attribute
 
 # Add paths for imports
@@ -17,7 +15,7 @@ out_dir = Path("attribution_output")
 out_dir.mkdir(exist_ok=True)
 
 # Load model
-model = ReplacementModel.from_pretrained(model_name, transcoder_name, dtype=torch.bfloat16)
+model = ReplacementModel.from_pretrained(model_name, transcoder_name)
 
 # Attribution prompt
 prompt = """
@@ -38,11 +36,6 @@ attr = attribute(
     max_feature_nodes=max_feature_nodes,
     verbose=verbose
 )
-
-# Save attribution data
-attr_path = out_dir / "attribution.pt"
-torch.save(attr, attr_path)
-print(f"Saved attribution to {attr_path}")
 
 # Output graph directory
 graph_dir = Path("attribution_output/graph")
