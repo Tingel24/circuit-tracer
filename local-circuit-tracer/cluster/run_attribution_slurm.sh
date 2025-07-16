@@ -10,7 +10,7 @@
 #SBATCH --qos=default                      # SLURM qos
 
 # Set working directory and Conda base path
-export WDIR="/project/home/p200xxx"
+export WDIR="/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster"
 export CONDA_HOME="$WDIR/conda_base_path/miniconda3"
 export PATH="$CONDA_HOME/bin:$PATH"
 
