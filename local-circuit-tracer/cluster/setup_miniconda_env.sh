@@ -3,7 +3,7 @@
 # One-time setup script for Miniconda and project environment
 
 # Define working directory (change to your project path)
-export WDIR="/project/home/p200xxx"
+export WDIR="/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster"
 export CONDA_DIR="$WDIR/conda_base_path"
 export CONDA_HOME="$CONDA_DIR/miniconda3"
 
