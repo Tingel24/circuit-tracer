@@ -1,13 +1,11 @@
-from pathlib import Path
-from circuit_tracer import ReplacementModel, attribute
-
 # Add paths for imports
 import sys
-sys.path.append('../circuit-tracer')
-sys.path.append('../circuit-tracer/demos')
+sys.path.append('/mnt/tier2/users/u103092/circuit-tracer')
+sys.path.append('/mnt/tier2/users/u103092/circuit-tracer/demos')
 
 from circuit_tracer.utils import create_graph_files
-
+from pathlib import Path
+from circuit_tracer import ReplacementModel, attribute
 # Configuration
 model_name = "google/gemma-2-2b"
 transcoder_name = "gemma"
