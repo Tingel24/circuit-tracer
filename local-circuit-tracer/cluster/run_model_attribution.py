@@ -2,7 +2,7 @@
 import sys
 sys.path.append('/mnt/tier2/users/u103092/circuit-tracer')
 sys.path.append('/mnt/tier2/users/u103092/circuit-tracer/demos')
-
+import time
 from circuit_tracer.utils import create_graph_files
 from pathlib import Path
 from circuit_tracer import ReplacementModel, attribute
@@ -39,7 +39,7 @@ attr = attribute(
 graph_dir = Path("attribution_output/graph")
 graph_dir.mkdir(exist_ok=True, parents=True)
 
-slug = "graph"  # this is the name that you assign to the graph
+slug = str(int(time.time()))  # this is the name that you assign to the graph
 node_threshold=0.8  # keep only the minimum # of nodes whose cumulative influence is >= 0.8
 edge_threshold=0.98  # keep only the minimum # of edges whose cumulative influence is >= 0.98
 
