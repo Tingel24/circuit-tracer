@@ -61,7 +61,7 @@ def download_transcoder_explanations(destination_dir: str):
 # ---------------------------------------------------------------------------
 # 📚 Step 2: Build in-memory explanation index from downloaded files
 # ---------------------------------------------------------------------------
-def build_index_from_jsonl(explanation_base_path: str) -> Dict[Tuple[str, str], str]:
+def build_index_from_jsonl(explanation_base_path: str) -> Dict[Tuple[int, int], str]:
     """
     Walks the explanation folder, builds an in-memory index of:
     (layer, feature_id) → explanation text
@@ -97,7 +97,7 @@ def build_index_from_jsonl(explanation_base_path: str) -> Dict[Tuple[str, str], 
 # ---------------------------------------------------------------------------
 # ✍️ Step 3: Populate missing 'clerp' values in graph nodes
 # ---------------------------------------------------------------------------
-def populate_clerps_from_index(nodes: list, index: Dict[Tuple[str,str], str]):
+def populate_clerps_from_index(nodes: list, index: Dict[Tuple[int,int], str]):
     """
     For each node of type 'transcoder' with no 'clerp', look up its explanation
     and populate it using the index.

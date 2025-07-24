@@ -75,7 +75,7 @@ window.initCg = async function (sel, slug, {clickedId, clickedIdCb, isModal, isG
 
     var widthScale = d3.scaleSqrt().domain([0, 1]).range([.00001, 3])
 
-    utilCg.pctInputColorFn = d => d3.interpolatePRGn(_linearTScale(_linearPctScale(d)))
+    utilCg.pctInputColorFn = d => d3.interpolatePuOr(_linearTScale(_linearPctScale(d)))
 
     data.links.forEach(d => {
       // d.color = d3.interpolatePRGn(_linearTScale(_linearAbsScale(d.weight)))
