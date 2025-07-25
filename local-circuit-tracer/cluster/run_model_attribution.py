@@ -9,6 +9,7 @@ import time
 from circuit_tracer.utils import create_graph_files
 from pathlib import Path
 from circuit_tracer import ReplacementModel, attribute
+print("starting circuit tracer")
 # Configuration
 model_name = "google/gemma-2-2b-it"
 transcoder_name = "gemma"
@@ -16,6 +17,7 @@ out_dir = Path("attribution_output")
 out_dir.mkdir(exist_ok=True)
 
 # Load model
+print(f"Loading model : {model_name}")
 model = ReplacementModel.from_pretrained(model_name, transcoder_name)
 print(f"Model loaded: {model_name}")
 
