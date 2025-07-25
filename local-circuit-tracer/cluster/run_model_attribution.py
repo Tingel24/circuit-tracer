@@ -53,8 +53,8 @@ graph_dir = Path("attribution_output/graph")
 graph_dir.mkdir(exist_ok=True, parents=True)
 
 slug = str(int(time.time()))  # this is the name that you assign to the graph
-node_threshold=0.99  # keep only the minimum # of nodes whose cumulative influence is >= 0.8
-edge_threshold=0.99  # keep only the minimum # of edges whose cumulative influence is >= 0.98
+node_threshold=0.9  # keep only the minimum # of nodes whose cumulative influence is >= 0.8
+edge_threshold=0.98  # keep only the minimum # of edges whose cumulative influence is >= 0.98
 
 create_graph_files(
     graph_or_path=attr,  # the graph to create files for
