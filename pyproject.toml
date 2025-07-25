@@ -30,3 +30,6 @@ line-length = 100
 
 [tool.ruff]
 line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["local-circuit-tracer", "circuit-tracer-clerp-downloader"]
