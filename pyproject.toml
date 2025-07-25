@@ -50,3 +50,6 @@ select = [
 [tool.pyright]
 typeCheckingMode = "basic"
 exclude = ["**/node_modules", "**/__pycache__", "**/.*", "demos"]
+
+[tool.pytest.ini_options]
+testpaths = ["local-circuit-tracer", "circuit-tracer-clerp-downloader"]
