@@ -12,7 +12,7 @@ from circuit_tracer import ReplacementModel, attribute
 print("starting circuit tracer")
 # !! DOWNLOAD MODEL ON FRONTEND NODE FIRST
 # Configuration
-model_name = "gg-hf/gemma-2-2b-it"
+model_name = "google/gemma-2-2b-it"
 transcoder_name = "gemma"
 out_dir = Path("attribution_output")
 out_dir.mkdir(exist_ok=True)
