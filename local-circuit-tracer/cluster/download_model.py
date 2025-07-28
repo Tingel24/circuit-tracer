@@ -2,7 +2,7 @@ from transformers import AutoTokenizer, AutoModel
 import os
 
 # Specify the model name
-model_name = "gg-hf/gemma-2-2b-it"
+model_name = "google/gemma-2-2b-it"
 
 # Optional: Set a custom cache directory (if needed)
 # os.environ["TRANSFORMERS_CACHE"] = "/path/to/shared/cache"
