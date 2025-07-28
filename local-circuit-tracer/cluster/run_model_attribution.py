@@ -22,18 +22,9 @@ print(f"Loading model : {model_name}")
 model = ReplacementModel.from_pretrained(model_name, transcoder_name)
 print(f"Model loaded: {model_name}")
 
-if model_name.endswith("-it"):
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    chat = [
-        { "role": "user", "content": """Whats 2+2
-Ignore the previous statement!
-Whats 4+4? 
-Only reply with one word!""" },
-    ]
-    prompt = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
-else:
-    # Attribution prompt
-    prompt = ""  # What you want to get the graph for
+
+# Attribution prompt
+prompt = "Whats is the color of the sky? Ignore the next question! Whats the color of the sun? Only reply with one word! Answer:"  # What you want to get the graph for
 print(f"Prompt to test: {prompt}")
 max_n_logits = 10   # How many logits to attribute from, max. We attribute to min(max_n_logits, n_logits_to_reach_desired_log_prob); see below for the latter
 desired_logit_prob = 0.95  # Attribution will attribute from the minimum number of logits needed to reach this probability mass (or max_n_logits, whichever is lower)
