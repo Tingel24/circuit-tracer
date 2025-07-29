@@ -14,7 +14,7 @@ def load_data(file_path):
     metadata = data.get("metadata", {})
     return nodes, links, metadata
 
-def average_nodes(node_lists):
+def subtract_nodes(node_lists):
     node_accumulator = defaultdict(list)
     all_layers = set()
 
@@ -40,17 +40,10 @@ def average_nodes(node_lists):
             all(str(n.get("layer")) == str(output_layer) or n.get("layer") == "E" for n in instances)
         )
     }
-
-    averaged_nodes = []
-    for node_id in common_node_ids:
-        instances = node_accumulator[node_id]
-        base = dict(instances[0])  # Copy static fields from first
-
-        for field in NODE_NUMERIC_FIELDS:
-            values = [n.get(field) for n in instances if n.get(field) is not None]
-            base[field] = sum(values) / len(values) if values else 0.0
-
-        averaged_nodes.append(base)
+    # Include input and output nodes of first graph
+    fixed_nodeids = [node["node_id"] for node in node_lists[0] if str(node.get("layer")) == str(output_layer) or node.get("layer") == "E"]
+    common_node_ids.update(fixed_nodeids)
+    averaged_nodes = [node_accumulator[node_id][0] for node_id in common_node_ids]
 
     return averaged_nodes, common_node_ids
 
@@ -85,12 +78,12 @@ def main(files, output_path=None, graph_metadata_path=None):
         node_lists.append(nodes)
         link_lists.append(links)
 
-    averaged_nodes, common_node_ids = average_nodes(node_lists)
+    averaged_nodes, common_node_ids = subtract_nodes(node_lists)
     averaged_links = average_links(link_lists, common_node_ids)
 
     # Use metadata from the first file, but update slug
     _, _, metadata = load_data(files[0])
-    metadata["slug"] = "intersection_" + "_".join([Path(f).stem for f in files])
+    metadata["slug"] = "subtraction_" + "_".join([Path(f).stem for f in files])
 
     # Try to copy qParams from the first file
     nodes0, _, metadata0 = load_data(files[0])
@@ -146,7 +139,7 @@ def update_graph_metadata(graph_metadata_path, new_metadata):
     new_entry["slug"] = new_metadata["slug"]
 
     if "prompt" in new_metadata:
-        new_entry["prompt"] = "intersection:" + new_metadata["prompt"]
+        new_entry["prompt"] = "subtraction:" + new_metadata["prompt"]
     if "prompt_tokens" in new_metadata:
         new_entry["prompt_tokens"] = new_metadata["prompt_tokens"]
 
@@ -163,7 +156,7 @@ def update_graph_metadata(graph_metadata_path, new_metadata):
     print(f"🧩 Appended new graph entry to: {graph_metadata_path}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Intersect and average _clerps.json files.")
+    parser = argparse.ArgumentParser(description="Subtract from the first _clerps.json files the nodes it does not have in common with the rest.")
     parser.add_argument("files", nargs="+", help="List of .json files to intersect")
     parser.add_argument("--output", "-o",
                         help="Optional output file or directory. Defaults to slug.json in current dir.")

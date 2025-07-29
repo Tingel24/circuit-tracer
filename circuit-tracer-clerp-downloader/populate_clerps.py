@@ -117,36 +117,45 @@ def populate_clerps_from_index(nodes: list, index: Dict[Tuple[int,int], str]):
 # 🚀 CLI Entry Point
 # ---------------------------------------------------------------------------
 def main():
-    parser = argparse.ArgumentParser(description="Populate missing 'clerp' fields in a graph JSON using Neuronpedia explanations.")
-    parser.add_argument("--input", required=True, help="Path to input graph JSON file.")
-    parser.add_argument("--output", required=True, help="Path to save the updated JSON.")
+    parser = argparse.ArgumentParser(description="Populate missing 'clerp' fields in multiple graph JSON files using Neuronpedia explanations.")
+    parser.add_argument("--inputs", nargs="+", required=True, help="Paths to one or more input graph JSON files.")
     parser.add_argument("--explanations", required=True, help="Directory to store/fetch explanation files.")
-    parser.add_argument('--update', default=True, action=argparse.BooleanOptionalAction, required=False, help="Whether to query for new files. Add this after downloading the explanations to save time")
+    parser.add_argument('--update', default=True, action=argparse.BooleanOptionalAction, help="Download explanation files if missing.")
     args = parser.parse_args()
 
     if args.update:
-        # Step 1: Download missing explanation files
         print("🌐 Checking and downloading explanation files if needed...")
         download_transcoder_explanations(args.explanations)
 
-    # Step 2: Build explanation index
     index = build_index_from_jsonl(args.explanations)
 
-    # Step 3: Load graph JSON
-    with open(args.input, 'r', encoding='utf-8') as f:
-        data = json.load(f)
+    for input_path in args.inputs:
+        try:
+            with open(input_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
 
-    nodes = data.get("nodes", [])
-    print(f"\n📦 Loaded {len(nodes)} nodes from {args.input}")
+            if data.get("metadata", {}).get("clerps_generated") is True:
+                print(f"✅ Skipping {input_path} (clerps already generated)")
+                continue
 
-    # Step 4: Populate clerps
-    populate_clerps_from_index(nodes, index)
+            nodes = data.get("nodes", [])
+            print(f"\n📦 Processing {len(nodes)} nodes in {input_path}")
 
-    # Step 5: Save updated graph
-    with open(args.output, 'w', encoding='utf-8') as f:
-        json.dump(data, f, indent=2)
+            populate_clerps_from_index(nodes, index)
 
-    print(f"\n💾 Updated graph saved to: {args.output}")
+            # Add clerps_generated flag
+            if "metadata" not in data or not isinstance(data["metadata"], dict):
+                data["metadata"] = {}
+            data["metadata"]["clerps_generated"] = True
+
+            with open(input_path, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2)
+
+            print(f"💾 Updated: {input_path}")
+
+        except Exception as e:
+            print(f"❌ Failed to process {input_path}: {e}")
+
 
 
 if __name__ == "__main__":
