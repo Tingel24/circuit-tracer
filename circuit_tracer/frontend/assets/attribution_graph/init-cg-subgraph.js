@@ -168,7 +168,7 @@ window.initCgSubgraph = function ({visState, renderAll, data, cgSel}) {
                 color: d.pctInputColor,
                 ogLink: d,
             }))
-          .filter(d => Math.abs(d.weight) >= 0.05)
+            .filter(d => Math.abs(d.weight) >= 0.05)
 
 
         // then remap source/target to supernodes
@@ -178,34 +178,24 @@ window.initCgSubgraph = function ({visState, renderAll, data, cgSel}) {
         })
 
         // finally combine parallel links and remove self-links
-        sgLinks = d3sgLinks = d3.nestBy(sgLinks, d => d.source + '-' + d.target)
+        sgLinks = d3.nestBy(sgLinks, d => d.source + '-' + d.target)
             .map(links => {
                 var weight = d3.sum(links, link => {
                     var {inputAbsSumExternalSn, sgSnInputWeighting} = link.ogLink.targetNode
                     return link.weight / inputAbsSumExternalSn * sgSnInputWeighting
                 })
 
-                const strongActivation = weight >= 0.3
-                const strongInhibition = weight <= -0.3
-
-                const stroke = strongActivation ? 'green'
-                    : strongInhibition ? 'purple'
-                        : '#ccc' // neutral
-
-                const strokeWidth = strongActivation || strongInhibition ? 3 : 0.5
-
                 return {
                     source: links[0].source,
                     target: links[0].target,
                     weight,
+                    color: utilCg.pctInputColorFn(weight),
                     pctInput: weight,
-                    stroke,
-                    strokeWidth,
                     pctInputColor: utilCg.pctInputColorFn(weight),
                     ogLinks: links,
                 }
             })
-
+            .filter(d => d.source !== d.target)
         sgLinks = d3.sort(sgLinks, d => Math.abs(d.weight))
 
         let xScale = d3.scaleLinear()
@@ -250,27 +240,19 @@ window.initCgSubgraph = function ({visState, renderAll, data, cgSel}) {
         var svgPaths = svg.appendMany('path.link-path', sgLinks).at({
             fill: 'none',
             markerMid: d => d.weight > 0 ? 'url(#mid-positive)' : 'url(#mid-negative)',
-            strokeWidth: d => {
-                  const absWeight = Math.abs(d.weight)
-                  const baseWidth = absWeight * 15
-
-                  if (d.weight <= -0.3) return baseWidth * 1.8  // or 2.0 if you want it even thicker
-                  return baseWidth
-                },
-            stroke: d => d.stroke,
+            strokeWidth: d => Math.min(20.0, Math.max(0.5, Math.abs(d.ogLinks.map((l => l.weight)).reduce((a,b)=>a+b)) * 5)),
+            stroke: d => d.color,
             opacity: 0.8,
             strokeLinecap: 'round',
         })
 
         var edgeLabels = svg.appendMany('text.weight-label', sgLinks)
-         .text(d => d3.format('+.2f')(d.weight))
-              .at({
-                textAnchor: 'middle',
-                alignmentBaseline: 'middle',
+            .text(d => d3.format('+.2f')(d.ogLinks.map((l => l.weight)).reduce((a,b)=>a+b)))
+            .at({
                 fontSize: 10,
                 fill: d => Math.abs(d.weight) > 0.3 ? '#000' : '#666',
                 pointerEvents: 'none', // don’t block mouse events
-              })
+            })
 
 
         simulation.on('tick', renderForce)
@@ -505,11 +487,11 @@ window.initCgSubgraph = function ({visState, renderAll, data, cgSel}) {
             // }})
             renderEdges()
 
-            // edgeLabels.translate(d => {
-            //   var pos = g.edge(d.source.nodeId, d.target.nodeId)
-            //   if (!pos) return [-100, -100]
-            //   return [xs(pos.x), ys(pos.y)]
-            // })
+             edgeLabels.translate(d => {
+               var pos = g.edge(d.source.nodeId, d.target.nodeId)
+               if (!pos) return [-100, -100]
+               return [xs(pos.x), ys(pos.y)]
+             })
             styleNodes()
         }
 
