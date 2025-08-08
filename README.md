@@ -17,7 +17,7 @@ You can also find circuits and visualize them in one of three ways:
 
 Working with Gemma-2 (2B) is possible with relatively limited GPU resources; Colab GPUs have 15GB of RAM. More GPU RAM will allow you to do less offloading, and to use a larger batch size. 
 
-Currently, intervening on models with respect to the transcoder features you discover in your graphs is only possible when using `circuit-tracer` in a script or notebook, not on Neuronpedia.
+Currently, intervening on models with respect to the transcoder features you discover in your graphs is possible both when using `circuit-tracer` in a script or notebook, or on Neuronpedia for Gemma-2 (2B). To perform interventions on Neuronpedia, ensure at least one node is pinned, then click "Steer" in the subgraph.
 
 ## Installation
 To install this library, clone it and run the command  `pip install .` in its directory.
@@ -57,10 +57,9 @@ It will tell you where the server is serving (something like `localhost:[port]`)
 ### Mandatory Arguments
 **Attribution**
 - `--prompt` (`-p`): The input prompt to analyze
-- `--transcoder_set` (`-t`): The set of transcoders to use for attribution. Available presets:
-  - `gemma`: transcoders for `google/gemma-2-2b` from GemmaScope (loads lowest-L0 transcoder per layer). [Link to transcoders](https://huggingface.co/google/gemma-scope-2b-pt-transcoders/tree/main)
-  - `llama`: transcoders for `meta-llama/Llama-3.2-1B` (trained by us). [Link to transcoders](https://huggingface.co/mntss/skip-transcoder-Llama-3.2-1B-131k-nobos/tree/new-training)
-  - Or path to a custom config file (see [`src/circuit_tracer/configs`](https://github.com/safety-research/circuit-tracer/tree/main/circuit_tracer/configs) for examples, but note that full support for new transcoders is coming soon.)
+- `--transcoder_set` (`-t`): The set of transcoders to use for attribution. Options:
+  - HuggingFace repository ID (e.g., `mntss/gemma-scope-transcoders`, `username/repo-name@revision`)
+  - Convenience shortcuts: `gemma` (GemmaScope transcoders) or `llama` (ReLU transcoders)
 
 **Graph File Creation**
 
