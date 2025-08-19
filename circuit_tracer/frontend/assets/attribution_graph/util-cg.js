@@ -603,9 +603,9 @@ window.utilCg = (function(){
       .at({width: 10, height: 10})
 
     let featureIcon = featureIconSel.append('g')
-
     featureIcon.append('g.default-icon').append('text')
-      .text(d => featureTypeToText(d.feature_type))
+      .text(d => featureTypeToText(d.feature_type)
+      )
       .at({
         fontSize: 9,
         textAnchor: 'middle',

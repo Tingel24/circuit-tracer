@@ -53,27 +53,39 @@ window.initCgNodeConnections = function({visState, renderAll, data, cgSel}){
   }
   
   function addHeaderRow(headerSel){
-    if (!clickedNode) return 
-    console.log(clickedNode)
+    if (!clickedNode) return;
+
+    console.log(clickedNode);
+
+    // Feature ID or number
     headerSel.append('text')
       .text(clickedNode.feature_type == 'cross layer transcoder' ? 'F#' + d3.format('08')(clickedNode.feature) : ' ')
-      .st({display: 'inline-block', marginRight: 5, 'font-variant-numeric': 'tabular-nums', width: 82})
+      .st({display: 'inline-block', marginRight: 5, 'font-variant-numeric': 'tabular-nums', width: 82});
+
+    // Influence %
     const formatted = frac => `${(frac * 100).toFixed(5)}%`;
     headerSel.append('text')
       .text(formatted(clickedNode.influence))
-      .st({display: 'inline-block', marginRight: 5, 'font-variant-numeric': 'tabular-nums', width: 82})
-    headerSel.append('span.feature-icon').text(utilCg.featureTypeToText(clickedNode.feature_type))
-    headerSel.append('span.feature-title').text(clickedNode.ppClerp)
-    
-    // add cmd-click toggle to title
-    headerSel.on('click', ev => {
-      utilCg.clickFeature(visState, renderAll, clickedNode, ev.metaKey || ev.ctrlKey)
+      .st({display: 'inline-block', marginRight: 5, 'font-variant-numeric': 'tabular-nums', width: 82});
 
-      if (visState.clickedId) return
-      // double render to toggle on hoveredId, could expose more of utilCg.clickFeature to prevent
-      visState.hoveredId = clickedNode.featureId
-      renderAll.hoveredId()
-    })
+    // Feature icon and title
+    headerSel.append('span.feature-icon').text(utilCg.featureTypeToText(clickedNode.feature_type));
+    headerSel.append('span.feature-title').text(clickedNode.ppClerp);
+
+    // Sum of incoming activations
+    const inputSum = d3.sum(clickedNode.sourceLinks, d => d.weight);
+    headerSel.append('div.input-sum')
+      .text(`Sum of incoming activations: ${d3.format('.4f')(inputSum)}`)
+      .st({marginTop: '5px', fontWeight: 'bold', color: '#333'});
+
+    // Cmd-click toggle
+    headerSel.on('click', ev => {
+      utilCg.clickFeature(visState, renderAll, clickedNode, ev.metaKey || ev.ctrlKey);
+
+      if (visState.clickedId) return;
+      visState.hoveredId = clickedNode.featureId;
+      renderAll.hoveredId();
+    });
   }
 
   function addInputSumTable(sumSel){
