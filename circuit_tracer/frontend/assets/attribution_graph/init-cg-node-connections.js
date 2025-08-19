@@ -54,9 +54,13 @@ window.initCgNodeConnections = function({visState, renderAll, data, cgSel}){
   
   function addHeaderRow(headerSel){
     if (!clickedNode) return 
-    
+    console.log(clickedNode)
     headerSel.append('text')
       .text(clickedNode.feature_type == 'cross layer transcoder' ? 'F#' + d3.format('08')(clickedNode.feature) : ' ')
+      .st({display: 'inline-block', marginRight: 5, 'font-variant-numeric': 'tabular-nums', width: 82})
+    const formatted = frac => `${(frac * 100).toFixed(5)}%`;
+    headerSel.append('text')
+      .text(formatted(clickedNode.influence))
       .st({display: 'inline-block', marginRight: 5, 'font-variant-numeric': 'tabular-nums', width: 82})
     headerSel.append('span.feature-icon').text(utilCg.featureTypeToText(clickedNode.feature_type))
     headerSel.append('span.feature-title').text(clickedNode.ppClerp)
