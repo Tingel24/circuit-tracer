@@ -19,4 +19,4 @@ source activate circuit-tracer-env
 
 echo "starting python script"
 # Run the attribution script
-python run_model_attribution.py
+python model_attribution.py
