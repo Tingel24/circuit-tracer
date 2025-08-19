@@ -89,6 +89,35 @@ def compute_partial_influences(edge_matrix, logit_p, row_to_node_index, max_iter
     return influences
 
 
+import logging
+import time
+from typing import Literal
+import torch
+from tqdm import tqdm
+
+
+def text_to_token_id(model, text: str) -> int:
+    """Convert a raw text string to a single token id.
+
+    Args:
+        model: The model with a `tokenizer` attribute.
+        text: The raw string to tokenize.
+
+    Returns:
+        int: The token id.
+
+    Raises:
+        ValueError: If the string does not map to exactly one token.
+    """
+    token_ids = model.tokenizer.encode(text, add_special_tokens=False)
+    if len(token_ids) != 1:
+        raise ValueError(
+            f"Text '{text}' maps to {len(token_ids)} tokens ({token_ids}), "
+            "but exactly one token was expected."
+        )
+    return token_ids[0]
+
+
 def attribute(
     prompt: str | torch.Tensor | list[int],
     model: ReplacementModel,
@@ -100,6 +129,7 @@ def attribute(
     offload: Literal["cpu", "disk", None] = None,
     verbose: bool = False,
     update_interval: int = 4,
+    fixed_output_tokens: list[int] | None = None,
 ) -> Graph:
     """Compute an attribution graph for *prompt*.
 
@@ -115,6 +145,7 @@ def attribute(
                  or None (no offloading).
         verbose: Whether to show progress information.
         update_interval: Number of batches to process before updating the feature ranking.
+        fixed_output_tokens: List of token IDs that must appear in the output graph.
 
     Returns:
         Graph: Fully dense adjacency (unpruned).
@@ -146,6 +177,7 @@ def attribute(
             offload_handles=offload_handles,
             update_interval=update_interval,
             logger=logger,
+            fixed_output_tokens=fixed_output_tokens,
         )
     finally:
         for reload_handle in offload_handles:
@@ -167,6 +199,7 @@ def _run_attribution(
     offload_handles,
     logger,
     update_interval=4,
+    fixed_output_tokens: list[int] | None = None,
 ):
     start_time = time.time()
     # Phase 0: precompute
@@ -207,6 +240,27 @@ def _run_attribution(
         max_n_logits=max_n_logits,
         desired_logit_prob=desired_logit_prob,
     )
+
+    # Add fixed tokens if provided
+    if fixed_output_tokens:
+        fixed_output_tokens = torch.tensor(fixed_output_tokens, device=ctx.logits.device)
+        all_probs = ctx.logits[0, -1].softmax(-1)
+
+        fixed_probs = all_probs[fixed_output_tokens]
+        fixed_vecs = model.unembed.W_U[:, fixed_output_tokens].T  # [n_fixed, d_model]
+
+        # Merge
+        logit_idx = torch.cat([logit_idx, fixed_output_tokens])
+        logit_p = torch.cat([logit_p, fixed_probs])
+        logit_vecs = torch.cat([logit_vecs, fixed_vecs])
+
+        # Deduplicate while keeping first occurrence
+        uniq, uniq_idx = torch.unique(logit_idx, return_index=True)
+        order = uniq_idx.sort()[1]
+        logit_idx = uniq[order]
+        logit_p = logit_p[uniq_idx][order]
+        logit_vecs = logit_vecs[uniq_idx][order]
+
     logger.info(
         f"Selected {len(logit_idx)} logits with cumulative probability {logit_p.sum().item():.4f}"
     )

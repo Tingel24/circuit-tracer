@@ -3,6 +3,8 @@ import sys
 
 from transformers import AutoTokenizer
 
+from circuit_tracer.attribution.attribute import text_to_token_id
+
 sys.path.append('/mnt/tier2/users/u103092/circuit-tracer')
 sys.path.append('/mnt/tier2/users/u103092/circuit-tracer/demos')
 import time
@@ -43,6 +45,12 @@ batch_size=128  # Batch size when attributing
 verbose = False  # Whether to display a tqdm progress bar and timing report
 print("running attribution")
 # Run attribution
+# Convert text to token ID (ensures it’s a single token)
+token_id_A = text_to_token_id(model, "A")
+token_id_B = text_to_token_id(model, "B")
+
+# Attribute including that token
+
 attr = attribute(
     prompt=prompt,
     model=model,
@@ -50,7 +58,8 @@ attr = attribute(
     desired_logit_prob=desired_logit_prob,
     batch_size=batch_size,
     max_feature_nodes=max_feature_nodes,
-    verbose=verbose
+    verbose=verbose,
+    fixed_output_tokens=[token_id_A, token_id_B]
 )
 
 # Output graph directory
