@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=1                  # number of cores per task
 #SBATCH --time=00:15:00                    # time (HH:MM:SS)
 #SBATCH --partition=gpu                    # partition
-#SBATCH --account=u103092                  # project account
+#SBATCH --account=p200918                  # project account
 #SBATCH --qos=default                      # SLURM qos
 
 # Set working directory and Conda base path
@@ -14,18 +14,9 @@ export WDIR="/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster"
 export CONDA_HOME="$WDIR/conda_base_path/miniconda3"
 export PATH="$CONDA_HOME/bin:$PATH"
 
-#Load Python module
-module load Python
-
-#Check Python version
-python -c  'import sys; print(sys.version)'
-
 # Activate Conda environment
-source $CONDA_HOME/etc/profile.d/conda.sh
-conda activate circuit-tracer-env
+source activate circuit-tracer-env
 
-# Create logs directory if it doesn't exist
-mkdir -p logs
-
+echo "starting python script"
 # Run the attribution script
-srun python run_model_attribution.py
+python run_model_attribution.py
