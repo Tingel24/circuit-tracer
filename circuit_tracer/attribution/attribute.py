@@ -20,12 +20,7 @@ https://transformer-circuits.pub/2025/attribution-graphs/methods.html
    needed for interpretation.
 """
 
-import logging
-import time
-from typing import Literal
-
 import torch
-from tqdm import tqdm
 
 from circuit_tracer.graph import Graph
 from circuit_tracer.replacement_model import ReplacementModel
@@ -254,12 +249,19 @@ def _run_attribution(
         logit_p = torch.cat([logit_p, fixed_probs])
         logit_vecs = torch.cat([logit_vecs, fixed_vecs])
 
-        # Deduplicate while keeping first occurrence
-        uniq, uniq_idx = torch.unique(logit_idx, return_index=True)
-        order = uniq_idx.sort()[1]
-        logit_idx = uniq[order]
-        logit_p = logit_p[uniq_idx][order]
-        logit_vecs = logit_vecs[uniq_idx][order]
+        # Deduplicate while keeping the first occurrence
+        seen = set()
+        new_idx, new_p, new_vecs = [], [], []
+        for idx, p, vec in zip(logit_idx.tolist(), logit_p.tolist(), logit_vecs):
+            if idx not in seen:
+                seen.add(idx)
+                new_idx.append(idx)
+                new_p.append(p)
+                new_vecs.append(vec)
+
+        logit_idx = torch.tensor(new_idx, device=logit_idx.device, dtype=logit_idx.dtype)
+        logit_p = torch.tensor(new_p, device=logit_p.device, dtype=logit_p.dtype)
+        logit_vecs = torch.stack(new_vecs, dim=0)
 
     logger.info(
         f"Selected {len(logit_idx)} logits with cumulative probability {logit_p.sum().item():.4f}"
