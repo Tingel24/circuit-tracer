@@ -1,0 +1,4 @@
+If it rains, the ground gets wet. The ground is not wet.
+What follows?
+A) It definitely rained
+B) It did not rain

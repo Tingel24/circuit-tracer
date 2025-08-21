@@ -1,0 +1,4 @@
+Alice is taller than Bob. Bob is taller than Carol.
+Who is the shortest?
+A) Alice
+B) Carol

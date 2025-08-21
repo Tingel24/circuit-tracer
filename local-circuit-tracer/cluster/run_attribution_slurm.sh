@@ -8,6 +8,7 @@
 #SBATCH --partition=gpu                    # partition
 #SBATCH --account=p200918                  # project account
 #SBATCH --qos=default                      # SLURM qos
+#SBATCH --array=0-14   # 15 prompts
 
 # Set working directory and Conda base path
 export WDIR="/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster"
@@ -19,4 +20,4 @@ source activate circuit-tracer-env
 
 echo "starting python script"
 # Run the attribution script
-python model_attribution.py
+python model_attribution.py "$SLURM_ARRAY_TASK_ID"

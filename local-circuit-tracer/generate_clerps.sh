@@ -34,6 +34,6 @@ fi
 python3 "$PYTHON_SCRIPT" \
   --inputs "${INPUT_FILES[@]}" \
   --explanations /Users/luca/circuit-tracer/circuit-tracer-clerp-downloader/data \
-  --no-update
+  --update
 
 echo "✅ Done."

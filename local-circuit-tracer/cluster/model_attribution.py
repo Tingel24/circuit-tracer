@@ -24,14 +24,26 @@ print(f"Loading model : {model_name}")
 model = ReplacementModel.from_pretrained(model_name, transcoder_name)
 print(f"Model loaded: {model_name}")
 
+if len(sys.argv) > 1:
+    import sys
+    from pathlib import Path
 
-# Attribution prompt
-prompt = """Alice is taller than Bob. Bob is taller than Carol.
-Who is the shortest?
-A) Alice
-B) Carol
-Answer only with A or B!
-"""  # What you want to get the graph for
+    task_id = int(sys.argv[1])   # SLURM_ARRAY_TASK_ID
+    prompt_path = Path("prompts") / f"{task_id}.txt"
+    raw_prompt = prompt_path.read_text()
+    # Attribution prompt
+    prompt = f"""{raw_prompt}
+       Answer only with A or B!
+       """
+    print(f"Running attribution for prompt {task_id}:\n{prompt}")
+else:
+    # Attribution prompt
+    prompt = """Alice is taller than Bob. Bob is taller than Carol.
+    Who is the shortest?
+    A) Alice
+    B) Carol
+    Answer only with A or B!
+    """  # What you want to get the graph for
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 chat = [
     { "role": "user", "content": prompt },

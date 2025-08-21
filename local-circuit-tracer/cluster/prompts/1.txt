@@ -1,0 +1,4 @@
+All squares are rectangles. No circles are rectangles.
+Can a circle be a square?
+A) Yes
+B) No

@@ -1,0 +1,4 @@
+Jar A has 10 marbles. Jar B has 10 marbles. Move one marble from A to B.
+Which jar now has fewer marbles?
+A) Jar B
+B) Jar A

@@ -1,0 +1,3 @@
+Turn left three times starting from facing North. You end facing…
+A) North
+B) West

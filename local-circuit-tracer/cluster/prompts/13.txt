@@ -1,0 +1,3 @@
+A triangle with sides 3, 4, 5 is not a right triangle.
+A) True
+B) False

@@ -1,0 +1,4 @@
+No dogs are reptiles. Some pets are dogs.
+Can we conclude some pets are reptiles?
+A) Yes
+B) No

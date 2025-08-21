@@ -1,0 +1,3 @@
+Odd + odd = ?
+A) Odd
+B) Even

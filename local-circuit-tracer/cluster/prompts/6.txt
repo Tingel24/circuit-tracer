@@ -1,0 +1,3 @@
+If all A are B, and some B are C, then all A are…
+A) Definitely C
+B) Not necessarily C

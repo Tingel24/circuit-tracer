@@ -1,0 +1,3 @@
+A fair coin is flipped twice. Which event is less likely?
+A) At least one heads
+B) Two heads

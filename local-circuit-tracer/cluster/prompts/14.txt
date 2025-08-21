@@ -1,0 +1,3 @@
+A box has 2 blue and 1 red ball. You draw one without looking; it’s blue. Without replacement, which color is less likely on the next draw?
+A) Blue
+B) Red
