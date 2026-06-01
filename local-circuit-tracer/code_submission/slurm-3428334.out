@@ -1,0 +1,44 @@
+starting python script
+[07/29/2025 09:44:42 PM - 0:00:00][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Namespace(model_name='microsoft/deberta-v3-base', models_folder='./models/', reload_id='3428334', new_id='3428334', reload_best=False, dataset='halfhalf.train,halfhalf.dev', preprocessed=False, spm_model='tokenizer.model', data_lim=0, cache_dir=None, max_seq_len=64, num_workers=10, debug=False, batch_size=128, grad_acc=1, lr=0.0002, warmup_steps=4000, mask_prob=0.15, epochs=50, eval_steps=1000, save_steps=1000, logging_steps=100, log_to_file=False, eval_only=False, bf16=False, resume=False, push_to_hub='', push_only=False, register='', save_for_eval='', lora=False, load_encdec=False, tiny=False, small=False, reload_path='./models/3428334', checkpoint_path=None)
+[07/29/2025 09:44:44 PM - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----- Model Parameters -----
+[07/29/2025 09:44:44 PM - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Total: 116802880
+[07/29/2025 09:44:44 PM - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----------------------------
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:00<00:07, 238.88 examples/s]Map (num_proc=10):  30%|███       | 600/2000 [00:00<00:01, 745.52 examples/s]Map (num_proc=10):  40%|████      | 800/2000 [00:01<00:01, 846.86 examples/s]Map (num_proc=10):  50%|█████     | 1000/2000 [00:01<00:01, 895.79 examples/s]Map (num_proc=10):  60%|██████    | 1200/2000 [00:01<00:00, 965.55 examples/s]Map (num_proc=10):  70%|███████   | 1400/2000 [00:01<00:00, 998.41 examples/s]Map (num_proc=10):  80%|████████  | 1600/2000 [00:01<00:00, 1033.59 examples/s]Map (num_proc=10):  90%|█████████ | 1800/2000 [00:02<00:00, 1046.17 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:02<00:00, 1066.34 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:02<00:00, 845.91 examples/s] 
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:00<00:02, 866.98 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:00<00:00, 5194.17 examples/s]
+/mnt/tier2/users/u103092/circuit-tracer/test/train.py:320: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+***** Running training *****
+  Num examples = 114,661
+  Num Epochs = 50
+  Instantaneous batch size per device = 128
+  Training with DataParallel so batch size has been adjusted to: 512
+  Total train batch size (w. parallel, distributed & accumulation) = 512
+  Gradient Accumulation steps = 1
+  Total optimization steps = 11,200
+  Number of trainable parameters = 116,802,880
+Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Currently logged in as: lucafrancis (lucafrancis-georg-august-univerit-t-g-ttingen) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /mnt/tier2/users/u103092/circuit-tracer/test/wandb/run-20250729_214459-4fvo7tnf
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ./models/3428334
+wandb: ⭐️ View project at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: 🚀 View run at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/4fvo7tnf
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+[07/29/2025 09:46:13 PM - 0:01:32][[GPU] (0): 29705/40960 MB, (1): 22167/40960 MB, (2): 22167/40960 MB] {'loss': 10.0539, 'grad_norm': 2.3709983825683594, 'learning_rate': 4.950000000000001e-06, 'epoch': 0.44642857142857145}
+DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 114661
+    })
+    validation: Dataset({
+        features: ['input_ids'],
+        num_rows: 640
+    })
+})
+[07/29/2025 09:47:18 PM - 0:02:36][[GPU] (0): 29705/40960 MB, (1): 22167/40960 MB, (2): 22167/40960 MB] {'loss': 8.9086, 'grad_norm': 1.9014450311660767, 'learning_rate': 9.950000000000001e-06, 'epoch': 0.8928571428571429}
+[07/29/2025 09:48:23 PM - 0:03:42][[GPU] (0): 29705/40960 MB, (1): 22167/40960 MB, (2): 22167/40960 MB] {'loss': 7.7883, 'grad_norm': 1.4037951231002808, 'learning_rate': 1.4950000000000001e-05, 'epoch': 1.3392857142857144}
+[07/29/2025 09:49:27 PM - 0:04:46][[GPU] (0): 29705/40960 MB, (1): 22167/40960 MB, (2): 22167/40960 MB] {'loss': 6.8118, 'grad_norm': 1.3200539350509644, 'learning_rate': 1.995e-05, 'epoch': 1.7857142857142856}

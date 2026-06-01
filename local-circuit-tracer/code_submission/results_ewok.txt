@@ -1,0 +1,18 @@
+|                 Tasks                  |Version|Filter|n-shot|Metric|Value |   |Stderr|
+|----------------------------------------|-------|------|-----:|------|-----:|---|-----:|
+|ewok_filtered                           |N/A    |none  |     0|acc   |0.6812|±  |0.0049|
+| - ewok_agent-properties_filtered       |      1|none  |     0|acc   |0.7394|±  |0.0093|
+| - ewok_material-dynamics_filtered      |      1|none  |     0|acc   |0.8831|±  |0.0116|
+| - ewok_material-properties_filtered    |      1|none  |     0|acc   |0.5824|±  |0.0379|
+| - ewok_physical-dynamics_filtered      |      1|none  |     0|acc   |0.5333|±  |0.0457|
+| - ewok_physical-interactions_filtered  |      1|none  |     0|acc   |0.6385|±  |0.0204|
+| - ewok_physical-relations_filtered     |      1|none  |     0|acc   |0.8509|±  |0.0125|
+| - ewok_quantitative-properties_filtered|      1|none  |     0|acc   |0.6306|±  |0.0273|
+| - ewok_social-interactions_filtered    |      1|none  |     0|acc   |0.5816|±  |0.0288|
+| - ewok_social-properties_filtered      |      1|none  |     0|acc   |0.5366|±  |0.0276|
+| - ewok_social-relations_filtered       |      1|none  |     0|acc   |0.8191|±  |0.0098|
+| - ewok_spatial-relations_filtered      |      1|none  |     0|acc   |0.6980|±  |0.0208|
+
+|   Groups    |Version|Filter|n-shot|Metric|Value |   |Stderr|
+|-------------|-------|------|-----:|------|-----:|---|-----:|
+|ewok_filtered|N/A    |none  |     0|acc   |0.6812|±  |0.0049|

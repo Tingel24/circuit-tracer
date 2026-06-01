@@ -1,0 +1,625 @@
+starting python script
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+09/25/2025 14:28:36 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 4distributed training: True, 16-bits training: False
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/convert_slow_tokenizer.py:551: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+[WARNING|modeling_utils.py:4509] 2025-09-25 14:28:50,029 >> Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at ../models/3597858/checkpoint-89600 and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Running tokenizer on dataset:   0%|          | 0/3668 [00:00<?, ? examples/s]Running tokenizer on dataset:  27%|██▋       | 1000/3668 [00:01<00:03, 760.43 examples/s]Running tokenizer on dataset:  55%|█████▍    | 2000/3668 [00:01<00:01, 1145.14 examples/s]Running tokenizer on dataset: 100%|██████████| 3668/3668 [00:02<00:00, 2419.18 examples/s]Running tokenizer on dataset: 100%|██████████| 3668/3668 [00:02<00:00, 1726.75 examples/s]
+Running tokenizer on dataset:   0%|          | 0/204 [00:00<?, ? examples/s]Running tokenizer on dataset: 100%|██████████| 204/204 [00:00<00:00, 4870.77 examples/s]
+Running tokenizer on dataset:   0%|          | 0/204 [00:00<?, ? examples/s]Running tokenizer on dataset: 100%|██████████| 204/204 [00:00<00:00, 8286.73 examples/s]
+09/25/2025 14:28:54 - WARNING - accelerate.utils.other - Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Currently logged in as: lucafrancis (lucafrancis-georg-august-univerit-t-g-ttingen). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.8
+wandb: Run data is saved locally in /mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/wandb/run-20250925_142939-r0hmi0q0
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run results/finetune/checkpoint-89600/mrpc/
+wandb: ⭐️ View project at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: 🚀 View run at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/r0hmi0q0
+  0%|          | 0/150 [00:00<?, ?it/s]/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+  1%|          | 1/150 [00:32<1:20:45, 32.52s/it]  1%|▏         | 2/150 [00:37<40:20, 16.36s/it]    2%|▏         | 3/150 [00:38<22:25,  9.15s/it]  3%|▎         | 4/150 [00:41<16:43,  6.87s/it]  3%|▎         | 5/150 [00:42<11:08,  4.61s/it]  4%|▍         | 6/150 [00:42<07:43,  3.22s/it]  5%|▍         | 7/150 [00:43<05:32,  2.32s/it]  5%|▌         | 8/150 [00:43<04:07,  1.74s/it]  6%|▌         | 9/150 [00:44<03:35,  1.52s/it]  7%|▋         | 10/150 [00:47<04:44,  2.03s/it]  7%|▋         | 11/150 [00:48<03:36,  1.56s/it]  8%|▊         | 12/150 [00:48<02:49,  1.23s/it]  9%|▊         | 13/150 [00:49<02:17,  1.00s/it]  9%|▉         | 14/150 [00:53<04:42,  2.08s/it] 10%|█         | 15/150 [00:54<03:49,  1.70s/it]
+  0%|          | 0/7 [00:00<?, ?it/s][A
+ 29%|██▊       | 2/7 [00:06<00:14,  2.94s/it][A
+ 43%|████▎     | 3/7 [00:07<00:09,  2.33s/it][A
+ 71%|███████▏  | 5/7 [00:07<00:02,  1.11s/it][A
+100%|██████████| 7/7 [00:08<00:00,  1.28it/s][A                                                
+                                             [A 10%|█         | 15/150 [01:05<03:49,  1.70s/it]
+100%|██████████| 7/7 [00:08<00:00,  1.28it/s][A
+                                             [A/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 11%|█         | 16/150 [01:17<17:47,  7.97s/it] 11%|█▏        | 17/150 [01:18<13:00,  5.87s/it] 12%|█▏        | 18/150 [01:18<09:20,  4.25s/it] 13%|█▎        | 19/150 [01:19<06:48,  3.12s/it] 13%|█▎        | 20/150 [01:19<05:02,  2.33s/it] 14%|█▍        | 21/150 [01:20<03:48,  1.77s/it] 15%|█▍        | 22/150 [01:21<03:51,  1.81s/it] 15%|█▌        | 23/150 [01:22<03:19,  1.57s/it] 16%|█▌        | 24/150 [01:25<04:03,  1.93s/it] 17%|█▋        | 25/150 [01:26<03:08,  1.51s/it] 17%|█▋        | 26/150 [01:26<02:28,  1.20s/it] 18%|█▊        | 27/150 [01:27<02:00,  1.02it/s] 19%|█▊        | 28/150 [01:27<01:41,  1.20it/s] 19%|█▉        | 29/150 [01:28<01:46,  1.13it/s] 20%|██        | 30/150 [01:28<01:21,  1.47it/s]{'eval_loss': 0.5681811571121216, 'eval_accuracy': 0.7156862616539001, 'eval_f1': 0.8273809523809523, 'eval_mcc': 0.27565547879739144, 'eval_runtime': 10.278, 'eval_samples_per_second': 19.848, 'eval_steps_per_second': 0.681, 'epoch': 1.0}
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+ 29%|██▊       | 2/7 [00:00<00:00, 17.40it/s][A
+ 57%|█████▋    | 4/7 [00:00<00:00, 13.56it/s][A
+ 86%|████████▌ | 6/7 [00:00<00:00, 13.53it/s][A                                                
+                                             [A 20%|██        | 30/150 [01:30<01:21,  1.47it/s]
+100%|██████████| 7/7 [00:00<00:00, 13.53it/s][A
+                                             [A/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 21%|██        | 31/150 [01:36<05:36,  2.83s/it] 21%|██▏       | 32/150 [01:39<05:14,  2.66s/it] 22%|██▏       | 33/150 [01:39<03:54,  2.01s/it] 23%|██▎       | 34/150 [01:40<03:02,  1.58s/it] 23%|██▎       | 35/150 [01:43<04:02,  2.11s/it] 24%|██▍       | 36/150 [01:51<07:25,  3.91s/it] 25%|██▍       | 37/150 [01:52<05:32,  2.94s/it] 25%|██▌       | 38/150 [01:52<04:06,  2.21s/it] 26%|██▌       | 39/150 [01:55<04:15,  2.30s/it] 27%|██▋       | 40/150 [01:55<03:15,  1.78s/it] 27%|██▋       | 41/150 [01:56<02:31,  1.39s/it] 28%|██▊       | 42/150 [01:56<02:00,  1.11s/it] 29%|██▊       | 43/150 [01:57<01:38,  1.08it/s] 29%|██▉       | 44/150 [01:57<01:27,  1.21it/s] 30%|███       | 45/150 [01:58<01:09,  1.52it/s]{'eval_loss': 0.44925713539123535, 'eval_accuracy': 0.813725471496582, 'eval_f1': 0.8707482993197279, 'eval_mcc': 0.5513191070347744, 'eval_runtime': 1.2728, 'eval_samples_per_second': 160.278, 'eval_steps_per_second': 5.5, 'epoch': 2.0}
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+ 29%|██▊       | 2/7 [00:00<00:00, 11.52it/s][A
+ 57%|█████▋    | 4/7 [00:00<00:00, 10.22it/s][A
+ 86%|████████▌ | 6/7 [00:00<00:00, 11.26it/s][A                                                
+                                             [A 30%|███       | 45/150 [02:01<01:09,  1.52it/s]
+100%|██████████| 7/7 [00:01<00:00, 11.26it/s][A
+                                             [A/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 31%|███       | 46/150 [02:18<11:27,  6.61s/it] 31%|███▏      | 47/150 [02:21<09:13,  5.37s/it] 32%|███▏      | 48/150 [02:21<06:38,  3.91s/it] 33%|███▎      | 49/150 [02:22<04:51,  2.89s/it] 33%|███▎      | 50/150 [02:22<03:37,  2.17s/it] 34%|███▍      | 51/150 [02:23<02:44,  1.67s/it] 35%|███▍      | 52/150 [02:23<02:08,  1.31s/it] 35%|███▌      | 53/150 [02:24<01:43,  1.06s/it] 36%|███▌      | 54/150 [02:24<01:25,  1.13it/s] 37%|███▋      | 55/150 [02:27<02:26,  1.54s/it] 37%|███▋      | 56/150 [02:28<02:18,  1.47s/it] 38%|███▊      | 57/150 [02:29<01:49,  1.17s/it] 39%|███▊      | 58/150 [02:29<01:29,  1.03it/s] 39%|███▉      | 59/150 [02:30<01:13,  1.24it/s] 40%|████      | 60/150 [02:30<00:56,  1.59it/s]{'eval_loss': 0.3951273262500763, 'eval_accuracy': 0.8382353186607361, 'eval_f1': 0.888135593220339, 'eval_mcc': 0.6127503106934044, 'eval_runtime': 2.0233, 'eval_samples_per_second': 100.825, 'eval_steps_per_second': 3.46, 'epoch': 3.0}
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+ 29%|██▊       | 2/7 [00:00<00:00, 14.26it/s][A
+ 57%|█████▋    | 4/7 [00:00<00:00, 13.44it/s][A
+ 86%|████████▌ | 6/7 [00:00<00:00, 13.39it/s][A                                                
+                                             [A 40%|████      | 60/150 [02:33<00:56,  1.59it/s]
+100%|██████████| 7/7 [00:01<00:00, 13.39it/s][A
+                                             [A/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 41%|████      | 61/150 [02:36<03:20,  2.25s/it] 41%|████▏     | 62/150 [02:37<02:33,  1.74s/it] 42%|████▏     | 63/150 [02:37<02:01,  1.40s/it] 43%|████▎     | 64/150 [02:38<01:36,  1.12s/it] 43%|████▎     | 65/150 [02:38<01:18,  1.08it/s] 44%|████▍     | 66/150 [02:39<01:12,  1.17it/s] 45%|████▍     | 67/150 [02:39<01:01,  1.34it/s] 45%|████▌     | 68/150 [02:40<00:54,  1.51it/s] 46%|████▌     | 69/150 [02:42<01:27,  1.08s/it] 47%|████▋     | 70/150 [02:43<01:35,  1.20s/it] 47%|████▋     | 71/150 [02:59<07:13,  5.49s/it] 48%|████▊     | 72/150 [03:02<06:03,  4.66s/it] 49%|████▊     | 73/150 [03:02<04:22,  3.41s/it] 49%|████▉     | 74/150 [03:03<03:12,  2.53s/it] 50%|█████     | 75/150 [03:03<02:17,  1.84s/it]{'eval_loss': 0.4126904010772705, 'eval_accuracy': 0.8529411554336548, 'eval_f1': 0.8979591836734694, 'eval_mcc': 0.6498249952196606, 'eval_runtime': 1.7007, 'eval_samples_per_second': 119.95, 'eval_steps_per_second': 4.116, 'epoch': 4.0}
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+ 43%|████▎     | 3/7 [00:00<00:00, 17.40it/s][A
+ 71%|███████▏  | 5/7 [00:00<00:00, 15.08it/s][A
+100%|██████████| 7/7 [00:00<00:00, 12.71it/s][A                                                
+                                             [A 50%|█████     | 75/150 [03:04<02:17,  1.84s/it]
+100%|██████████| 7/7 [00:00<00:00, 12.71it/s][A
+                                             [A/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 51%|█████     | 76/150 [03:11<04:34,  3.70s/it] 51%|█████▏    | 77/150 [03:12<03:26,  2.83s/it] 52%|█████▏    | 78/150 [03:12<02:32,  2.12s/it] 53%|█████▎    | 79/150 [03:13<01:55,  1.63s/it] 53%|█████▎    | 80/150 [03:13<01:29,  1.28s/it] 54%|█████▍    | 81/150 [03:14<01:12,  1.05s/it] 55%|█████▍    | 82/150 [03:14<00:59,  1.14it/s] 55%|█████▌    | 83/150 [03:14<00:50,  1.32it/s] 56%|█████▌    | 84/150 [03:18<01:36,  1.46s/it] 57%|█████▋    | 85/150 [03:18<01:20,  1.23s/it] 57%|█████▋    | 86/150 [03:19<01:06,  1.04s/it] 58%|█████▊    | 87/150 [03:19<00:54,  1.15it/s] 59%|█████▊    | 88/150 [03:20<00:46,  1.32it/s] 59%|█████▉    | 89/150 [03:20<00:40,  1.52it/s] 60%|██████    | 90/150 [03:20<00:31,  1.93it/s]{'eval_loss': 0.4653354585170746, 'eval_accuracy': 0.843137264251709, 'eval_f1': 0.8918918918918919, 'eval_mcc': 0.6252200729879492, 'eval_runtime': 1.3275, 'eval_samples_per_second': 153.675, 'eval_steps_per_second': 5.273, 'epoch': 5.0}
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+ 43%|████▎     | 3/7 [00:00<00:00, 15.96it/s][A
+ 71%|███████▏  | 5/7 [00:00<00:00, 14.00it/s][A
+100%|██████████| 7/7 [00:00<00:00, 13.36it/s][A                                                
+                                             [A 60%|██████    | 90/150 [03:25<00:31,  1.93it/s]
+100%|██████████| 7/7 [00:00<00:00, 13.36it/s][A
+                                             [A/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 61%|██████    | 91/150 [03:44<07:22,  7.50s/it] 61%|██████▏   | 92/150 [03:52<07:14,  7.50s/it] 62%|██████▏   | 93/150 [03:53<05:12,  5.48s/it] 63%|██████▎   | 94/150 [03:53<03:43,  4.00s/it] 63%|██████▎   | 95/150 [03:54<02:41,  2.94s/it] 64%|██████▍   | 96/150 [03:54<01:59,  2.20s/it] 65%|██████▍   | 97/150 [03:55<01:29,  1.69s/it] 65%|██████▌   | 98/150 [03:55<01:08,  1.33s/it] 66%|██████▌   | 99/150 [03:56<00:55,  1.09s/it] 67%|██████▋   | 100/150 [03:56<00:45,  1.10it/s] 67%|██████▋   | 101/150 [04:00<01:32,  1.88s/it] 68%|██████▊   | 102/150 [04:01<01:10,  1.46s/it] 69%|██████▊   | 103/150 [04:01<00:54,  1.17s/it] 69%|██████▉   | 104/150 [04:02<00:46,  1.01s/it] 70%|███████   | 105/150 [04:02<00:34,  1.30it/s]{'eval_loss': 0.6574323773384094, 'eval_accuracy': 0.8088235259056091, 'eval_f1': 0.8729641693811075, 'eval_mcc': 0.5389510967730644, 'eval_runtime': 4.6864, 'eval_samples_per_second': 43.53, 'eval_steps_per_second': 1.494, 'epoch': 6.0}
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+ 29%|██▊       | 2/7 [00:00<00:00, 18.29it/s][A
+ 57%|█████▋    | 4/7 [00:00<00:00, 12.42it/s][A
+ 86%|████████▌ | 6/7 [00:00<00:00, 12.37it/s][A                                                 
+                                             [A 70%|███████   | 105/150 [04:09<00:34,  1.30it/s]
+100%|██████████| 7/7 [00:02<00:00, 12.37it/s][A
+                                             [A                                                  70%|███████   | 105/150 [04:17<00:34,  1.30it/s] 70%|███████   | 105/150 [04:17<01:50,  2.45s/it]
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+{'eval_loss': 0.619172215461731, 'eval_accuracy': 0.8284313678741455, 'eval_f1': 0.8821548821548821, 'eval_mcc': 0.5876487995373989, 'eval_runtime': 6.8887, 'eval_samples_per_second': 29.614, 'eval_steps_per_second': 1.016, 'epoch': 7.0}
+{'train_runtime': 295.0344, 'train_samples_per_second': 124.324, 'train_steps_per_second': 0.508, 'train_loss': 0.3111432393391927, 'epoch': 7.0}
+***** train metrics *****
+  epoch                    =        7.0
+  total_flos               =  1572948GF
+  train_loss               =     0.3111
+  train_runtime            = 0:04:55.03
+  train_samples            =       3668
+  train_samples_per_second =    124.324
+  train_steps_per_second   =      0.508
+  0%|          | 0/7 [00:00<?, ?it/s] 29%|██▊       | 2/7 [00:02<00:05,  1.07s/it] 43%|████▎     | 3/7 [00:03<00:04,  1.24s/it] 71%|███████▏  | 5/7 [00:03<00:01,  1.63it/s]100%|██████████| 7/7 [00:03<00:00,  2.60it/s]100%|██████████| 7/7 [00:04<00:00,  1.58it/s]
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+***** eval metrics *****
+  epoch                   =        7.0
+  eval_accuracy           =     0.8529
+  eval_f1                 =      0.898
+  eval_loss               =     0.4127
+  eval_mcc                =     0.6498
+  eval_runtime            = 0:00:13.08
+  eval_samples            =        204
+  eval_samples_per_second =     15.591
+  eval_steps_per_second   =      0.535
+  0%|          | 0/7 [00:00<?, ?it/s] 43%|████▎     | 3/7 [00:00<00:00, 16.92it/s] 71%|███████▏  | 5/7 [00:00<00:00, 13.87it/s]100%|██████████| 7/7 [00:00<00:00, 14.77it/s]100%|██████████| 7/7 [00:00<00:00, 14.82it/s]
+wandb: - 0.015 MB of 0.015 MB uploadedwandb: \ 0.015 MB of 0.015 MB uploadedwandb: | 0.015 MB of 0.036 MB uploadedwandb: / 0.036 MB of 0.036 MB uploadedwandb: 
+wandb: Run history:
+wandb:                    eval/accuracy ▁▆▇██▆▇█
+wandb:                          eval/f1 ▁▅▇█▇▆▆█
+wandb:                        eval/loss ▆▂▁▁▃█▇▁
+wandb:                         eval/mcc ▁▆▇██▆▇█
+wandb:                     eval/runtime ▆▁▁▁▁▃▄█
+wandb:          eval/samples_per_second ▁█▅▆█▂▂▁
+wandb:            eval/steps_per_second ▁█▅▆█▂▂▁
+wandb:                      train/epoch ▁▂▃▅▆▇███
+wandb:                train/global_step ▁▂▃▅▆▇████
+wandb:            train/predict_runtime ▁
+wandb: train/predict_samples_per_second ▁
+wandb:   train/predict_steps_per_second ▁
+wandb: 
+wandb: Run summary:
+wandb:                    eval/accuracy 0.85294
+wandb:                          eval/f1 0.89796
+wandb:                        eval/loss 0.41269
+wandb:                         eval/mcc 0.64982
+wandb:                     eval/runtime 13.0846
+wandb:          eval/samples_per_second 15.591
+wandb:            eval/steps_per_second 0.535
+wandb:                       total_flos 1688940152997888.0
+wandb:                      train/epoch 7.0
+wandb:                train/global_step 105
+wandb:            train/predict_runtime 0.8385
+wandb: train/predict_samples_per_second 243.278
+wandb:   train/predict_steps_per_second 8.348
+wandb:                       train_loss 0.31114
+wandb:                    train_runtime 295.0344
+wandb:         train_samples_per_second 124.324
+wandb:           train_steps_per_second 0.508
+wandb: 
+wandb: 🚀 View run results/finetune/checkpoint-89600/mrpc/ at: https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/r0hmi0q0
+wandb: ⭐️ View project at: https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250925_142939-r0hmi0q0/logs
+wandb: WARNING The new W&B backend becomes opt-out in version 0.18.0; try it out with `wandb.require("core")`! See https://wandb.me/wandb-core for more information.
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+09/25/2025 14:37:09 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 4distributed training: True, 16-bits training: False
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/convert_slow_tokenizer.py:551: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+[WARNING|modeling_utils.py:4509] 2025-09-25 14:37:23,276 >> Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at ../models/3597858/checkpoint-89600 and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Running tokenizer on dataset:   0%|          | 0/27243 [00:00<?, ? examples/s]Running tokenizer on dataset:   4%|▎         | 1000/27243 [00:02<01:15, 347.23 examples/s]Running tokenizer on dataset:   7%|▋         | 2000/27243 [00:03<00:34, 735.06 examples/s]Running tokenizer on dataset:  11%|█         | 3000/27243 [00:03<00:21, 1119.99 examples/s]Running tokenizer on dataset:  15%|█▍        | 4000/27243 [00:03<00:14, 1569.76 examples/s]Running tokenizer on dataset:  18%|█▊        | 5000/27243 [00:03<00:10, 2144.00 examples/s]Running tokenizer on dataset:  22%|██▏       | 6000/27243 [00:04<00:07, 2751.86 examples/s]Running tokenizer on dataset:  26%|██▌       | 7000/27243 [00:04<00:06, 3318.24 examples/s]Running tokenizer on dataset:  29%|██▉       | 8000/27243 [00:04<00:04, 3897.90 examples/s]Running tokenizer on dataset:  33%|███▎      | 9000/27243 [00:04<00:04, 4397.92 examples/s]Running tokenizer on dataset:  37%|███▋      | 10000/27243 [00:04<00:03, 4359.65 examples/s]Running tokenizer on dataset:  40%|████      | 11000/27243 [00:05<00:04, 3613.63 examples/s]Running tokenizer on dataset:  44%|████▍     | 12000/27243 [00:07<00:13, 1151.19 examples/s]Running tokenizer on dataset:  48%|████▊     | 13000/27243 [00:07<00:09, 1519.68 examples/s]Running tokenizer on dataset:  51%|█████▏    | 14000/27243 [00:07<00:06, 1949.82 examples/s]Running tokenizer on dataset:  55%|█████▌    | 15000/27243 [00:07<00:05, 2447.46 examples/s]Running tokenizer on dataset:  59%|█████▊    | 16000/27243 [00:08<00:03, 2974.95 examples/s]Running tokenizer on dataset:  62%|██████▏   | 17000/27243 [00:08<00:02, 3496.04 examples/s]Running tokenizer on dataset:  66%|██████▌   | 18000/27243 [00:08<00:02, 3966.28 examples/s]Running tokenizer on dataset:  70%|██████▉   | 19000/27243 [00:08<00:01, 4441.46 examples/s]Running tokenizer on dataset:  73%|███████▎  | 20000/27243 [00:08<00:01, 4108.68 examples/s]Running tokenizer on dataset:  77%|███████▋  | 21000/27243 [00:09<00:01, 3608.01 examples/s]Running tokenizer on dataset:  81%|████████  | 22000/27243 [00:09<00:01, 3668.61 examples/s]Running tokenizer on dataset:  84%|████████▍ | 23000/27243 [00:09<00:01, 3855.71 examples/s]Running tokenizer on dataset:  88%|████████▊ | 24000/27243 [00:09<00:00, 4158.38 examples/s]Running tokenizer on dataset:  92%|█████████▏| 25000/27243 [00:10<00:00, 3043.30 examples/s]Running tokenizer on dataset:  95%|█████████▌| 26000/27243 [00:10<00:00, 3535.88 examples/s]Running tokenizer on dataset:  99%|█████████▉| 27000/27243 [00:10<00:00, 4023.78 examples/s]Running tokenizer on dataset: 100%|██████████| 27243/27243 [00:11<00:00, 2377.81 examples/s]
+Running tokenizer on dataset:   0%|          | 0/2424 [00:00<?, ? examples/s]Running tokenizer on dataset:  41%|████▏     | 1000/2424 [00:00<00:01, 1219.29 examples/s]Running tokenizer on dataset:  83%|████████▎ | 2000/2424 [00:00<00:00, 2294.68 examples/s]Running tokenizer on dataset: 100%|██████████| 2424/2424 [00:01<00:00, 2271.27 examples/s]
+Running tokenizer on dataset:   0%|          | 0/2424 [00:00<?, ? examples/s]Running tokenizer on dataset:  41%|████▏     | 1000/2424 [00:00<00:00, 3665.78 examples/s]Running tokenizer on dataset:  83%|████████▎ | 2000/2424 [00:00<00:00, 4791.55 examples/s]Running tokenizer on dataset: 100%|██████████| 2424/2424 [00:00<00:00, 4678.51 examples/s]
+09/25/2025 14:37:38 - WARNING - accelerate.utils.other - Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Currently logged in as: lucafrancis (lucafrancis-georg-august-univerit-t-g-ttingen). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.8
+wandb: Run data is saved locally in /mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/wandb/run-20250925_143825-n0jfeahq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run results/finetune/checkpoint-89600/multirc/
+wandb: ⭐️ View project at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: 🚀 View run at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/n0jfeahq
+  0%|          | 0/1070 [00:00<?, ?it/s]/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+  0%|          | 1/1070 [00:40<11:52:40, 40.00s/it]  0%|          | 2/1070 [00:55<7:36:34, 25.65s/it]   0%|          | 3/1070 [01:03<5:12:34, 17.58s/it]  0%|          | 4/1070 [01:08<3:44:33, 12.64s/it]  0%|          | 5/1070 [01:14<3:02:49, 10.30s/it]  1%|          | 6/1070 [01:16<2:11:45,  7.43s/it]  1%|          | 7/1070 [01:18<1:39:05,  5.59s/it]  1%|          | 8/1070 [01:19<1:14:23,  4.20s/it]  1%|          | 9/1070 [01:20<56:15,  3.18s/it]    1%|          | 10/1070 [01:24<57:51,  3.27s/it]  1%|          | 11/1070 [01:25<48:34,  2.75s/it]  1%|          | 12/1070 [01:26<38:03,  2.16s/it]  1%|          | 13/1070 [01:27<30:39,  1.74s/it]  1%|▏         | 14/1070 [01:27<25:09,  1.43s/it]  1%|▏         | 15/1070 [01:29<23:33,  1.34s/it]  1%|▏         | 16/1070 [01:30<22:01,  1.25s/it]  2%|▏         | 17/1070 [01:30<19:19,  1.10s/it]  2%|▏         | 18/1070 [01:31<16:55,  1.04it/s]  2%|▏         | 19/1070 [01:33<19:52,  1.13s/it]  2%|▏         | 20/1070 [01:34<23:40,  1.35s/it]  2%|▏         | 21/1070 [01:44<1:06:34,  3.81s/it]  2%|▏         | 22/1070 [01:51<1:25:08,  4.87s/it]  2%|▏         | 23/1070 [01:55<1:16:15,  4.37s/it]  2%|▏         | 24/1070 [01:56<1:02:53,  3.61s/it]  2%|▏         | 25/1070 [01:58<50:58,  2.93s/it]    2%|▏         | 26/1070 [01:59<39:59,  2.30s/it]  3%|▎         | 27/1070 [01:59<31:31,  1.81s/it]  3%|▎         | 28/1070 [02:00<28:07,  1.62s/it]  3%|▎         | 29/1070 [02:03<31:56,  1.84s/it]  3%|▎         | 30/1070 [02:20<1:49:28,  6.32s/it]  3%|▎         | 31/1070 [02:37<2:45:03,  9.53s/it]  3%|▎         | 32/1070 [02:47<2:48:52,  9.76s/it]  3%|▎         | 33/1070 [02:51<2:21:46,  8.20s/it]  3%|▎         | 34/1070 [03:06<2:56:25, 10.22s/it]  3%|▎         | 35/1070 [03:20<3:14:36, 11.28s/it]  3%|▎         | 36/1070 [03:27<2:50:23,  9.89s/it]  3%|▎         | 37/1070 [03:42<3:19:08, 11.57s/it]  4%|▎         | 38/1070 [03:52<3:11:41, 11.14s/it]  4%|▎         | 39/1070 [03:55<2:29:48,  8.72s/it]  4%|▎         | 40/1070 [03:57<1:55:05,  6.70s/it]  4%|▍         | 41/1070 [03:59<1:28:21,  5.15s/it]  4%|▍         | 42/1070 [04:00<1:06:47,  3.90s/it]  4%|▍         | 43/1070 [04:01<50:31,  2.95s/it]    4%|▍         | 44/1070 [04:01<38:49,  2.27s/it]  4%|▍         | 45/1070 [04:02<32:17,  1.89s/it]  4%|▍         | 46/1070 [04:12<1:12:05,  4.22s/it]  4%|▍         | 47/1070 [04:17<1:13:38,  4.32s/it]  4%|▍         | 48/1070 [04:19<1:05:22,  3.84s/it]  5%|▍         | 49/1070 [04:20<51:38,  3.04s/it]    5%|▍         | 50/1070 [04:26<1:04:26,  3.79s/it]  5%|▍         | 51/1070 [04:36<1:35:03,  5.60s/it]  5%|▍         | 52/1070 [04:41<1:32:03,  5.43s/it]  5%|▍         | 53/1070 [04:44<1:20:11,  4.73s/it]  5%|▌         | 54/1070 [04:50<1:28:23,  5.22s/it]  5%|▌         | 55/1070 [05:10<2:41:34,  9.55s/it]  5%|▌         | 56/1070 [05:22<2:54:33, 10.33s/it]  5%|▌         | 57/1070 [05:27<2:24:33,  8.56s/it]  5%|▌         | 58/1070 [05:32<2:06:48,  7.52s/it]  6%|▌         | 59/1070 [05:44<2:33:03,  9.08s/it]  6%|▌         | 60/1070 [05:53<2:31:32,  9.00s/it]  6%|▌         | 61/1070 [05:57<2:02:44,  7.30s/it]  6%|▌         | 62/1070 [05:58<1:35:56,  5.71s/it]  6%|▌         | 63/1070 [06:00<1:12:09,  4.30s/it]  6%|▌         | 64/1070 [06:01<56:21,  3.36s/it]    6%|▌         | 65/1070 [06:01<42:54,  2.56s/it]  6%|▌         | 66/1070 [06:06<54:59,  3.29s/it]  6%|▋         | 67/1070 [06:11<1:00:44,  3.63s/it]  6%|▋         | 68/1070 [06:14<56:45,  3.40s/it]    6%|▋         | 69/1070 [06:19<1:07:15,  4.03s/it]  7%|▋         | 70/1070 [06:38<2:21:17,  8.48s/it]  7%|▋         | 71/1070 [06:55<3:05:52, 11.16s/it]  7%|▋         | 72/1070 [07:20<4:11:45, 15.14s/it]  7%|▋         | 73/1070 [07:29<3:41:06, 13.31s/it]  7%|▋         | 74/1070 [07:32<2:52:03, 10.36s/it]  7%|▋         | 75/1070 [07:35<2:12:08,  7.97s/it]  7%|▋         | 76/1070 [07:36<1:38:13,  5.93s/it]  7%|▋         | 77/1070 [07:37<1:16:07,  4.60s/it]  7%|▋         | 78/1070 [07:38<57:51,  3.50s/it]    7%|▋         | 79/1070 [07:51<1:41:00,  6.12s/it]  7%|▋         | 80/1070 [07:59<1:54:29,  6.94s/it]  8%|▊         | 81/1070 [08:02<1:34:24,  5.73s/it]  8%|▊         | 82/1070 [08:05<1:18:19,  4.76s/it]  8%|▊         | 83/1070 [08:06<1:02:00,  3.77s/it]  8%|▊         | 84/1070 [08:08<51:42,  3.15s/it]    8%|▊         | 85/1070 [08:09<40:53,  2.49s/it]  8%|▊         | 86/1070 [08:10<32:44,  2.00s/it]  8%|▊         | 87/1070 [08:28<1:52:53,  6.89s/it]  8%|▊         | 88/1070 [08:38<2:05:34,  7.67s/it]  8%|▊         | 89/1070 [08:41<1:45:48,  6.47s/it]  8%|▊         | 90/1070 [08:44<1:29:38,  5.49s/it]  9%|▊         | 91/1070 [08:53<1:42:40,  6.29s/it]  9%|▊         | 92/1070 [08:59<1:43:28,  6.35s/it]  9%|▊         | 93/1070 [09:02<1:25:01,  5.22s/it]  9%|▉         | 94/1070 [09:04<1:12:15,  4.44s/it]  9%|▉         | 95/1070 [09:07<1:02:39,  3.86s/it]  9%|▉         | 96/1070 [09:08<49:03,  3.02s/it]    9%|▉         | 97/1070 [09:09<38:00,  2.34s/it]  9%|▉         | 98/1070 [09:15<56:29,  3.49s/it]  9%|▉         | 99/1070 [09:18<54:30,  3.37s/it]  9%|▉         | 100/1070 [09:20<47:46,  2.95s/it]  9%|▉         | 101/1070 [09:24<55:28,  3.43s/it] 10%|▉         | 102/1070 [09:34<1:24:14,  5.22s/it] 10%|▉         | 103/1070 [09:41<1:35:36,  5.93s/it] 10%|▉         | 104/1070 [09:45<1:21:44,  5.08s/it] 10%|▉         | 105/1070 [09:46<1:05:36,  4.08s/it] 10%|▉         | 106/1070 [09:49<57:00,  3.55s/it]   10%|█         | 107/1070 [09:49<43:43,  2.72s/it]
+  0%|          | 0/76 [00:00<?, ?it/s][A
+  3%|▎         | 2/76 [00:00<00:05, 13.65it/s][A
+  5%|▌         | 4/76 [00:00<00:05, 13.29it/s][A
+  8%|▊         | 6/76 [00:00<00:04, 14.41it/s][A
+ 11%|█         | 8/76 [00:00<00:05, 13.10it/s][A
+ 13%|█▎        | 10/76 [00:00<00:04, 13.55it/s][A
+ 16%|█▌        | 12/76 [00:00<00:04, 13.89it/s][A
+ 18%|█▊        | 14/76 [00:01<00:04, 13.42it/s][A
+ 21%|██        | 16/76 [00:01<00:04, 13.25it/s][A
+ 24%|██▎       | 18/76 [00:01<00:04, 13.99it/s][A
+ 26%|██▋       | 20/76 [00:01<00:03, 14.12it/s][A
+ 29%|██▉       | 22/76 [00:01<00:03, 14.65it/s][A
+ 32%|███▏      | 24/76 [00:01<00:03, 14.20it/s][A
+ 34%|███▍      | 26/76 [00:01<00:03, 13.03it/s][A
+ 37%|███▋      | 28/76 [00:02<00:03, 13.44it/s][A
+ 39%|███▉      | 30/76 [00:02<00:03, 14.13it/s][A
+ 42%|████▏     | 32/76 [00:03<00:14,  3.09it/s][A
+ 45%|████▍     | 34/76 [00:04<00:10,  4.08it/s][A
+ 47%|████▋     | 36/76 [00:04<00:07,  5.21it/s][A
+ 50%|█████     | 38/76 [00:04<00:05,  6.45it/s][A
+ 53%|█████▎    | 40/76 [00:04<00:04,  7.87it/s][A
+ 55%|█████▌    | 42/76 [00:04<00:03,  8.57it/s][A
+ 58%|█████▊    | 44/76 [00:05<00:05,  5.91it/s][A
+ 61%|██████    | 46/76 [00:05<00:06,  4.79it/s][A
+ 63%|██████▎   | 48/76 [00:06<00:04,  6.00it/s][A
+ 66%|██████▌   | 50/76 [00:06<00:03,  7.18it/s][A
+ 68%|██████▊   | 52/76 [00:06<00:02,  8.47it/s][A
+ 71%|███████   | 54/76 [00:06<00:02,  9.60it/s][A
+ 74%|███████▎  | 56/76 [00:06<00:01, 10.71it/s][A
+ 76%|███████▋  | 58/76 [00:06<00:01, 11.50it/s][A
+ 79%|███████▉  | 60/76 [00:06<00:01, 12.11it/s][A
+ 82%|████████▏ | 62/76 [00:07<00:01, 11.73it/s][A
+ 84%|████████▍ | 64/76 [00:07<00:01, 10.49it/s][A
+ 87%|████████▋ | 66/76 [00:07<00:00, 11.45it/s][A
+ 89%|████████▉ | 68/76 [00:07<00:00, 12.22it/s][A
+ 92%|█████████▏| 70/76 [00:07<00:00, 12.81it/s][A
+ 95%|█████████▍| 72/76 [00:08<00:00,  8.12it/s][A
+ 97%|█████████▋| 74/76 [00:08<00:00,  9.33it/s][A
+100%|██████████| 76/76 [00:08<00:00, 10.56it/s][A                                                  
+                                               [A 10%|█         | 107/1070 [10:04<43:43,  2.72s/it]
+100%|██████████| 76/76 [00:09<00:00, 10.56it/s][A
+                                               [A/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 10%|█         | 108/1070 [10:22<3:06:44, 11.65s/it] 10%|█         | 109/1070 [10:35<3:13:12, 12.06s/it] 10%|█         | 110/1070 [10:40<2:38:29,  9.91s/it] 10%|█         | 111/1070 [10:42<2:00:04,  7.51s/it] 10%|█         | 112/1070 [10:43<1:30:09,  5.65s/it] 11%|█         | 113/1070 [10:44<1:07:38,  4.24s/it] 11%|█         | 114/1070 [10:45<51:33,  3.24s/it]   11%|█         | 115/1070 [10:46<41:39,  2.62s/it] 11%|█         | 116/1070 [10:48<36:50,  2.32s/it] 11%|█         | 117/1070 [10:48<29:10,  1.84s/it] 11%|█         | 118/1070 [10:49<24:00,  1.51s/it] 11%|█         | 119/1070 [10:51<24:46,  1.56s/it] 11%|█         | 120/1070 [10:51<20:19,  1.28s/it] 11%|█▏        | 121/1070 [10:52<17:09,  1.08s/it] 11%|█▏        | 122/1070 [11:00<49:36,  3.14s/it] 11%|█▏        | 123/1070 [11:11<1:26:44,  5.50s/it] 12%|█▏        | 124/1070 [11:15<1:19:20,  5.03s/it] 12%|█▏        | 125/1070 [11:16<1:02:48,  3.99s/it] 12%|█▏        | 126/1070 [11:18<51:10,  3.25s/it]   12%|█▏        | 127/1070 [11:19<40:41,  2.59s/it] 12%|█▏        | 128/1070 [11:20<32:10,  2.05s/it] 12%|█▏        | 129/1070 [11:21<27:45,  1.77s/it] 12%|█▏        | 130/1070 [11:22<23:52,  1.52s/it] 12%|█▏        | 131/1070 [11:23<20:09,  1.29s/it] 12%|█▏        | 132/1070 [11:23<17:37,  1.13s/it] 12%|█▏        | 133/1070 [11:24<16:09,  1.03s/it] 13%|█▎        | 134/1070 [11:25<14:28,  1.08it/s] 13%|█▎        | 135/1070 [11:25<12:48,  1.22it/s] 13%|█▎        | 136/1070 [11:26<11:32,  1.35it/s] 13%|█▎        | 137/1070 [11:27<10:42,  1.45it/s] 13%|█▎        | 138/1070 [11:27<10:12,  1.52it/s] 13%|█▎        | 139/1070 [11:28<09:52,  1.57it/s] 13%|█▎        | 140/1070 [11:31<23:27,  1.51s/it] 13%|█▎        | 141/1070 [11:35<34:13,  2.21s/it] 13%|█▎        | 142/1070 [11:37<32:12,  2.08s/it] 13%|█▎        | 143/1070 [11:38<28:24,  1.84s/it] 13%|█▎        | 144/1070 [11:39<24:29,  1.59s/it] 14%|█▎        | 145/1070 [11:40<20:39,  1.34s/it] 14%|█▎        | 146/1070 [11:44<31:13,  2.03s/it] 14%|█▎        | 147/1070 [11:45<26:15,  1.71s/it] 14%|█▍        | 148/1070 [11:46<23:58,  1.56s/it] 14%|█▍        | 149/1070 [11:47<21:59,  1.43s/it] 14%|█▍        | 150/1070 [11:48<20:33,  1.34s/it] 14%|█▍        | 151/1070 [11:49<17:43,  1.16s/it] 14%|█▍        | 152/1070 [11:49<15:17,  1.00it/s] 14%|█▍        | 153/1070 [11:50<13:37,  1.12it/s] 14%|█▍        | 154/1070 [11:51<12:16,  1.24it/s] 14%|█▍        | 155/1070 [11:52<13:28,  1.13it/s] 15%|█▍        | 156/1070 [11:52<13:01,  1.17it/s] 15%|█▍        | 157/1070 [11:54<15:16,  1.00s/it] 15%|█▍        | 158/1070 [12:02<46:52,  3.08s/it] 15%|█▍        | 159/1070 [12:09<1:07:43,  4.46s/it] 15%|█▍        | 160/1070 [12:12<58:47,  3.88s/it]   15%|█▌        | 161/1070 [12:13<47:03,  3.11s/it] 15%|█▌        | 162/1070 [12:15<39:12,  2.59s/it] 15%|█▌        | 163/1070 [12:17<38:04,  2.52s/it] 15%|█▌        | 164/1070 [12:18<30:37,  2.03s/it] 15%|█▌        | 165/1070 [12:19<24:40,  1.64s/it] 16%|█▌        | 166/1070 [12:19<20:18,  1.35s/it] 16%|█▌        | 167/1070 [12:20<17:07,  1.14s/it] 16%|█▌        | 168/1070 [12:21<16:51,  1.12s/it] 16%|█▌        | 169/1070 [12:22<15:54,  1.06s/it] 16%|█▌        | 170/1070 [12:23<14:19,  1.05it/s] 16%|█▌        | 171/1070 [12:23<13:12,  1.13it/s] 16%|█▌        | 172/1070 [12:24<12:13,  1.22it/s] 16%|█▌        | 173/1070 [12:25<11:23,  1.31it/s] 16%|█▋        | 174/1070 [12:25<10:35,  1.41it/s] 16%|█▋        | 175/1070 [12:37<58:52,  3.95s/it] 16%|█▋        | 176/1070 [12:41<1:02:19,  4.18s/it] 17%|█▋        | 177/1070 [12:43<51:17,  3.45s/it]   17%|█▋        | 178/1070 [12:44<40:11,  2.70s/it] 17%|█▋        | 179/1070 [12:45<32:45,  2.21s/it] 17%|█▋        | 180/1070 [12:46<28:28,  1.92s/it] 17%|█▋        | 181/1070 [12:49<31:29,  2.12s/it] 17%|█▋        | 182/1070 [12:51<29:18,  1.98s/it] 17%|█▋        | 183/1070 [12:52<25:20,  1.71s/it] 17%|█▋        | 184/1070 [12:54<28:55,  1.96s/it] 17%|█▋        | 185/1070 [12:56<25:43,  1.74s/it] 17%|█▋        | 186/1070 [12:57<23:29,  1.59s/it] 17%|█▋        | 187/1070 [12:58<20:00,  1.36s/it] 18%|█▊        | 188/1070 [12:59<21:48,  1.48s/it] 18%|█▊        | 189/1070 [13:00<19:37,  1.34s/it] 18%|█▊        | 190/1070 [13:01<17:12,  1.17s/it] 18%|█▊        | 191/1070 [13:02<16:07,  1.10s/it] 18%|█▊        | 192/1070 [13:03<14:19,  1.02it/s] 18%|█▊        | 193/1070 [13:04<13:44,  1.06it/s] 18%|█▊        | 194/1070 [13:04<13:08,  1.11it/s] 18%|█▊        | 195/1070 [13:05<13:23,  1.09it/s] 18%|█▊        | 196/1070 [13:06<12:24,  1.17it/s] 18%|█▊        | 197/1070 [13:07<11:33,  1.26it/s] 19%|█▊        | 198/1070 [13:15<43:59,  3.03s/it] 19%|█▊        | 199/1070 [13:19<48:02,  3.31s/it] 19%|█▊        | 200/1070 [13:20<39:51,  2.75s/it] 19%|█▉        | 201/1070 [13:21<32:10,  2.22s/it] 19%|█▉        | 202/1070 [13:23<27:22,  1.89s/it] 19%|█▉        | 203/1070 [13:25<28:45,  1.99s/it] 19%|█▉        | 204/1070 [13:26<23:30,  1.63s/it] 19%|█▉        | 205/1070 [13:26<19:31,  1.35s/it] 19%|█▉        | 206/1070 [13:27<18:47,  1.31s/it] 19%|█▉        | 207/1070 [13:28<16:02,  1.12s/it] 19%|█▉        | 208/1070 [13:29<13:43,  1.05it/s] 20%|█▉        | 209/1070 [13:29<12:06,  1.19it/s] 20%|█▉        | 210/1070 [13:30<10:51,  1.32it/s] 20%|█▉        | 211/1070 [13:30<09:58,  1.44it/s] 20%|█▉        | 212/1070 [13:31<09:19,  1.53it/s] 20%|█▉        | 213/1070 [13:32<09:38,  1.48it/s] 20%|██        | 214/1070 [13:32<07:36,  1.88it/s]{'eval_loss': 0.6279597878456116, 'eval_accuracy': 0.6592409014701843, 'eval_f1': 0.4215686274509804, 'eval_mcc': 0.29625731315185677, 'eval_runtime': 14.7421, 'eval_samples_per_second': 164.428, 'eval_steps_per_second': 5.155, 'epoch': 1.0}
+
+  0%|          | 0/76 [00:00<?, ?it/s][A
+  4%|▍         | 3/76 [00:00<00:04, 17.70it/s][A
+  7%|▋         | 5/76 [00:00<00:04, 15.15it/s][A
+  9%|▉         | 7/76 [00:00<00:04, 14.88it/s][A
+ 12%|█▏        | 9/76 [00:00<00:04, 13.59it/s][A
+ 14%|█▍        | 11/76 [00:00<00:04, 13.44it/s][A
+ 17%|█▋        | 13/76 [00:00<00:04, 14.21it/s][A
+ 20%|█▉        | 15/76 [00:01<00:04, 14.49it/s][A
+ 22%|██▏       | 17/76 [00:01<00:03, 14.95it/s][A
+ 25%|██▌       | 19/76 [00:01<00:09,  5.89it/s][A
+ 28%|██▊       | 21/76 [00:02<00:08,  6.59it/s][A
+ 30%|███       | 23/76 [00:06<00:37,  1.43it/s][A
+ 32%|███▏      | 24/76 [00:06<00:30,  1.69it/s][A
+ 34%|███▍      | 26/76 [00:06<00:20,  2.42it/s][A
+ 37%|███▋      | 28/76 [00:06<00:14,  3.29it/s][A
+ 39%|███▉      | 30/76 [00:06<00:10,  4.36it/s][A
+ 42%|████▏     | 32/76 [00:06<00:08,  5.42it/s][A
+ 45%|████▍     | 34/76 [00:06<00:06,  6.80it/s][A
+ 47%|████▋     | 36/76 [00:07<00:05,  7.94it/s][A
+ 50%|█████     | 38/76 [00:07<00:04,  9.34it/s][A
+ 53%|█████▎    | 40/76 [00:07<00:03, 10.24it/s][A
+ 55%|█████▌    | 42/76 [00:07<00:03, 11.26it/s][A
+ 58%|█████▊    | 44/76 [00:07<00:02, 11.76it/s][A
+ 61%|██████    | 46/76 [00:07<00:02, 12.78it/s][A
+ 63%|██████▎   | 48/76 [00:07<00:02, 12.81it/s][A
+ 66%|██████▌   | 50/76 [00:08<00:02, 12.90it/s][A
+ 68%|██████▊   | 52/76 [00:08<00:01, 13.32it/s][A
+ 71%|███████   | 54/76 [00:08<00:01, 13.60it/s][A
+ 74%|███████▎  | 56/76 [00:08<00:01, 14.21it/s][A
+ 76%|███████▋  | 58/76 [00:08<00:01, 13.86it/s][A
+ 79%|███████▉  | 60/76 [00:08<00:01, 14.43it/s][A
+ 82%|████████▏ | 62/76 [00:08<00:00, 14.83it/s][A
+ 84%|████████▍ | 64/76 [00:08<00:00, 15.11it/s][A
+ 87%|████████▋ | 66/76 [00:09<00:00, 15.34it/s][A
+ 89%|████████▉ | 68/76 [00:10<00:01,  4.40it/s][A
+ 92%|█████████▏| 70/76 [00:10<00:01,  4.43it/s][A
+ 93%|█████████▎| 71/76 [00:10<00:01,  4.85it/s][A
+ 96%|█████████▌| 73/76 [00:11<00:00,  6.32it/s][A
+ 99%|█████████▊| 75/76 [00:11<00:00,  7.75it/s][A                                                  
+                                               [A 20%|██        | 214/1070 [13:44<07:36,  1.88it/s]
+100%|██████████| 76/76 [00:11<00:00,  7.75it/s][A
+                                               [A/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 20%|██        | 215/1070 [14:03<2:19:34,  9.79s/it] 20%|██        | 216/1070 [14:11<2:12:06,  9.28s/it] 20%|██        | 217/1070 [14:14<1:42:08,  7.18s/it] 20%|██        | 218/1070 [14:15<1:18:14,  5.51s/it] 20%|██        | 219/1070 [14:17<1:00:35,  4.27s/it] 21%|██        | 220/1070 [14:18<47:46,  3.37s/it]   21%|██        | 221/1070 [14:19<39:05,  2.76s/it] 21%|██        | 222/1070 [14:20<31:09,  2.20s/it] 21%|██        | 223/1070 [14:21<24:48,  1.76s/it] 21%|██        | 224/1070 [14:22<20:21,  1.44s/it] 21%|██        | 225/1070 [14:27<37:52,  2.69s/it] 21%|██        | 226/1070 [14:30<38:30,  2.74s/it] 21%|██        | 227/1070 [14:31<32:40,  2.33s/it] 21%|██▏       | 228/1070 [14:32<26:55,  1.92s/it] 21%|██▏       | 229/1070 [14:33<22:08,  1.58s/it] 21%|██▏       | 230/1070 [14:34<18:30,  1.32s/it] 22%|██▏       | 231/1070 [14:37<24:25,  1.75s/it] 22%|██▏       | 232/1070 [14:39<25:56,  1.86s/it] 22%|██▏       | 233/1070 [14:41<27:48,  1.99s/it] 22%|██▏       | 234/1070 [14:42<23:59,  1.72s/it] 22%|██▏       | 235/1070 [14:43<19:53,  1.43s/it] 22%|██▏       | 236/1070 [14:44<17:14,  1.24s/it] 22%|██▏       | 237/1070 [14:44<14:46,  1.06s/it] 22%|██▏       | 238/1070 [14:45<12:50,  1.08it/s] 22%|██▏       | 239/1070 [14:46<12:53,  1.07it/s] 22%|██▏       | 240/1070 [14:47<14:28,  1.05s/it] 23%|██▎       | 241/1070 [14:48<12:26,  1.11it/s] 23%|██▎       | 242/1070 [14:48<10:56,  1.26it/s] 23%|██▎       | 243/1070 [14:57<42:10,  3.06s/it] 23%|██▎       | 244/1070 [15:04<58:03,  4.22s/it] 23%|██▎       | 245/1070 [15:08<57:00,  4.15s/it] 23%|██▎       | 246/1070 [15:09<47:27,  3.46s/it] 23%|██▎       | 247/1070 [15:10<37:45,  2.75s/it] 23%|██▎       | 248/1070 [15:12<31:34,  2.30s/it] 23%|██▎       | 249/1070 [15:13<25:17,  1.85s/it] 23%|██▎       | 250/1070 [15:20<47:03,  3.44s/it] 23%|██▎       | 251/1070 [15:23<47:28,  3.48s/it] 24%|██▎       | 252/1070 [15:24<37:45,  2.77s/it] 24%|██▎       | 253/1070 [15:25<30:16,  2.22s/it] 24%|██▎       | 254/1070 [15:26<24:27,  1.80s/it] 24%|██▍       | 255/1070 [15:27<20:12,  1.49s/it] 24%|██▍       | 256/1070 [15:29<24:07,  1.78s/it] 24%|██▍       | 257/1070 [15:31<24:47,  1.83s/it] 24%|██▍       | 258/1070 [15:32<20:55,  1.55s/it] 24%|██▍       | 259/1070 [15:33<18:39,  1.38s/it] 24%|██▍       | 260/1070 [15:34<15:52,  1.18s/it] 24%|██▍       | 261/1070 [15:35<14:06,  1.05s/it] 24%|██▍       | 262/1070 [15:35<12:28,  1.08it/s] 25%|██▍       | 263/1070 [15:36<11:17,  1.19it/s] 25%|██▍       | 264/1070 [15:37<10:24,  1.29it/s] 25%|██▍       | 265/1070 [15:37<09:44,  1.38it/s] 25%|██▍       | 266/1070 [15:38<09:08,  1.47it/s] 25%|██▍       | 267/1070 [15:43<28:37,  2.14s/it] 25%|██▌       | 268/1070 [15:45<25:51,  1.93s/it] 25%|██▌       | 269/1070 [15:46<22:17,  1.67s/it] 25%|██▌       | 270/1070 [15:47<18:55,  1.42s/it] 25%|██▌       | 271/1070 [15:47<16:32,  1.24s/it] 25%|██▌       | 272/1070 [15:48<15:12,  1.14s/it] 26%|██▌       | 273/1070 [15:59<53:35,  4.03s/it] 26%|██▌       | 274/1070 [16:06<1:03:50,  4.81s/it] 26%|██▌       | 275/1070 [16:09<58:04,  4.38s/it]   26%|██▌       | 276/1070 [16:11<48:51,  3.69s/it] 26%|██▌       | 277/1070 [16:13<41:34,  3.15s/it] 26%|██▌       | 278/1070 [16:18<48:38,  3.68s/it] 26%|██▌       | 279/1070 [16:21<44:31,  3.38s/it] 26%|██▌       | 280/1070 [16:22<37:16,  2.83s/it] 26%|██▋       | 281/1070 [16:24<32:56,  2.51s/it] 26%|██▋       | 282/1070 [16:25<26:32,  2.02s/it] 26%|██▋       | 283/1070 [16:26<24:13,  1.85s/it] 27%|██▋       | 284/1070 [16:28<21:47,  1.66s/it] 27%|██▋       | 285/1070 [16:28<18:10,  1.39s/it] 27%|██▋       | 286/1070 [16:29<15:43,  1.20s/it] 27%|██▋       | 287/1070 [16:30<13:47,  1.06s/it] 27%|██▋       | 288/1070 [16:41<52:17,  4.01s/it] 27%|██▋       | 289/1070 [16:50<1:13:25,  5.64s/it] 27%|██▋       | 290/1070 [16:55<1:09:15,  5.33s/it] 27%|██▋       | 291/1070 [16:57<56:05,  4.32s/it]   27%|██▋       | 292/1070 [16:58<44:12,  3.41s/it] 27%|██▋       | 293/1070 [16:59<34:45,  2.68s/it] 27%|██▋       | 294/1070 [17:04<42:37,  3.30s/it] 28%|██▊       | 295/1070 [17:07<41:13,  3.19s/it] 28%|██▊       | 296/1070 [17:09<38:04,  2.95s/it] 28%|██▊       | 297/1070 [17:11<35:49,  2.78s/it] 28%|██▊       | 298/1070 [17:13<31:16,  2.43s/it] 28%|██▊       | 299/1070 [17:14<25:38,  2.00s/it] 28%|██▊       | 300/1070 [17:18<34:19,  2.67s/it] 28%|██▊       | 301/1070 [17:22<40:14,  3.14s/it] 28%|██▊       | 302/1070 [17:25<37:20,  2.92s/it] 28%|██▊       | 303/1070 [17:26<30:47,  2.41s/it] 28%|██▊       | 304/1070 [17:27<25:04,  1.96s/it] 29%|██▊       | 305/1070 [17:28<20:21,  1.60s/it] 29%|██▊       | 306/1070 [17:29<17:28,  1.37s/it] 29%|██▊       | 307/1070 [17:31<21:24,  1.68s/it] 29%|██▉       | 308/1070 [17:32<17:54,  1.41s/it] 29%|██▉       | 309/1070 [17:33<17:25,  1.37s/it] 29%|██▉       | 310/1070 [17:34<17:12,  1.36s/it] 29%|██▉       | 311/1070 [17:35<14:51,  1.18s/it] 29%|██▉       | 312/1070 [17:36<13:32,  1.07s/it] 29%|██▉       | 313/1070 [17:37<12:06,  1.04it/s] 29%|██▉       | 314/1070 [17:37<10:49,  1.16it/s] 29%|██▉       | 315/1070 [17:38<09:50,  1.28it/s] 30%|██▉       | 316/1070 [17:39<09:16,  1.35it/s] 30%|██▉       | 317/1070 [17:39<08:50,  1.42it/s] 30%|██▉       | 318/1070 [17:40<08:24,  1.49it/s] 30%|██▉       | 319/1070 [17:41<12:17,  1.02it/s] 30%|██▉       | 320/1070 [17:44<19:08,  1.53s/it] 30%|███       | 321/1070 [17:45<14:18,  1.15s/it]{'eval_loss': 0.6213384866714478, 'eval_accuracy': 0.6621286869049072, 'eval_f1': 0.5370265686828717, 'eval_mcc': 0.29155204548856967, 'eval_runtime': 12.124, 'eval_samples_per_second': 199.933, 'eval_steps_per_second': 6.269, 'epoch': 2.0}
+
+  0%|          | 0/76 [00:00<?, ?it/s][A
+  3%|▎         | 2/76 [00:03<01:53,  1.53s/it][A
+  5%|▌         | 4/76 [00:03<00:48,  1.49it/s][A
+  8%|▊         | 6/76 [00:03<00:27,  2.52it/s][A
+ 11%|█         | 8/76 [00:05<00:44,  1.52it/s][A
+ 12%|█▏        | 9/76 [00:05<00:35,  1.87it/s][A
+ 14%|█▍        | 11/76 [00:05<00:23,  2.79it/s][A
+ 17%|█▋        | 13/76 [00:05<00:16,  3.87it/s][A
+ 20%|█▉        | 15/76 [00:05<00:11,  5.19it/s][A
+ 22%|██▏       | 17/76 [00:06<00:08,  6.64it/s][A
+ 25%|██▌       | 19/76 [00:06<00:07,  8.00it/s][A
+ 28%|██▊       | 21/76 [00:06<00:05,  9.46it/s][A
+ 30%|███       | 23/76 [00:06<00:05, 10.35it/s][A
+ 33%|███▎      | 25/76 [00:06<00:04, 10.73it/s][A
+ 36%|███▌      | 27/76 [00:06<00:04, 11.64it/s][A
+ 38%|███▊      | 29/76 [00:06<00:03, 12.66it/s][A
+ 41%|████      | 31/76 [00:07<00:04, 10.90it/s][A
+ 43%|████▎     | 33/76 [00:07<00:03, 11.60it/s][A
+ 46%|████▌     | 35/76 [00:07<00:03, 12.63it/s][A
+ 49%|████▊     | 37/76 [00:07<00:03, 12.56it/s][A
+ 51%|█████▏    | 39/76 [00:07<00:02, 12.51it/s][A
+ 54%|█████▍    | 41/76 [00:07<00:02, 13.16it/s][A
+ 57%|█████▋    | 43/76 [00:08<00:02, 13.87it/s][A
+ 59%|█████▉    | 45/76 [00:08<00:02, 13.99it/s][A
+ 62%|██████▏   | 47/76 [00:08<00:02, 13.65it/s][A
+ 64%|██████▍   | 49/76 [00:08<00:02, 13.44it/s][A
+ 67%|██████▋   | 51/76 [00:08<00:01, 13.67it/s][A
+ 70%|██████▉   | 53/76 [00:08<00:01, 14.23it/s][A
+ 72%|███████▏  | 55/76 [00:08<00:01, 13.87it/s][A
+ 75%|███████▌  | 57/76 [00:09<00:02,  7.15it/s][A
+ 78%|███████▊  | 59/76 [00:09<00:01,  8.56it/s][A
+ 80%|████████  | 61/76 [00:09<00:01,  9.94it/s][A
+ 83%|████████▎ | 63/76 [00:10<00:02,  5.85it/s][A
+ 86%|████████▌ | 65/76 [00:10<00:01,  7.22it/s][A
+ 88%|████████▊ | 67/76 [00:10<00:01,  8.63it/s][A
+ 91%|█████████ | 69/76 [00:10<00:00, 10.00it/s][A
+ 93%|█████████▎| 71/76 [00:10<00:00, 11.01it/s][A
+ 96%|█████████▌| 73/76 [00:11<00:00, 12.13it/s][A
+ 99%|█████████▊| 75/76 [00:11<00:00, 12.89it/s][A                                                  
+                                               [A 30%|███       | 321/1070 [17:57<14:18,  1.15s/it]
+100%|██████████| 76/76 [00:11<00:00, 12.89it/s][A
+                                               [A/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 30%|███       | 322/1070 [18:11<1:50:43,  8.88s/it] 30%|███       | 323/1070 [18:15<1:29:03,  7.15s/it] 30%|███       | 324/1070 [18:16<1:07:33,  5.43s/it] 30%|███       | 325/1070 [18:18<53:28,  4.31s/it]   30%|███       | 326/1070 [18:19<41:51,  3.38s/it] 31%|███       | 327/1070 [18:20<31:57,  2.58s/it] 31%|███       | 328/1070 [18:20<25:16,  2.04s/it] 31%|███       | 329/1070 [18:21<21:11,  1.72s/it] 31%|███       | 330/1070 [18:24<24:46,  2.01s/it] 31%|███       | 331/1070 [18:29<34:49,  2.83s/it] 31%|███       | 332/1070 [18:32<34:52,  2.83s/it] 31%|███       | 333/1070 [18:35<36:01,  2.93s/it] 31%|███       | 334/1070 [18:36<30:56,  2.52s/it] 31%|███▏      | 335/1070 [18:38<25:55,  2.12s/it] 31%|███▏      | 336/1070 [18:41<29:03,  2.38s/it] 31%|███▏      | 337/1070 [18:42<27:27,  2.25s/it] 32%|███▏      | 338/1070 [18:43<22:39,  1.86s/it] 32%|███▏      | 339/1070 [18:44<18:33,  1.52s/it] 32%|███▏      | 340/1070 [18:45<17:29,  1.44s/it] 32%|███▏      | 341/1070 [18:48<21:23,  1.76s/it] 32%|███▏      | 342/1070 [18:51<24:44,  2.04s/it] 32%|███▏      | 343/1070 [18:54<28:01,  2.31s/it] 32%|███▏      | 344/1070 [18:55<23:12,  1.92s/it] 32%|███▏      | 345/1070 [18:55<18:55,  1.57s/it] 32%|███▏      | 346/1070 [18:56<16:00,  1.33s/it] 32%|███▏      | 347/1070 [18:57<13:27,  1.12s/it] 33%|███▎      | 348/1070 [18:57<11:50,  1.02it/s] 33%|███▎      | 349/1070 [19:00<18:18,  1.52s/it] 33%|███▎      | 350/1070 [19:01<16:29,  1.37s/it] 33%|███▎      | 351/1070 [19:02<13:53,  1.16s/it] 33%|███▎      | 352/1070 [19:03<12:06,  1.01s/it] 33%|███▎      | 353/1070 [19:03<11:09,  1.07it/s] 33%|███▎      | 354/1070 [19:05<12:43,  1.07s/it] 33%|███▎      | 355/1070 [19:06<12:09,  1.02s/it] 33%|███▎      | 356/1070 [19:06<10:51,  1.10it/s] 33%|███▎      | 357/1070 [19:07<09:58,  1.19it/s] 33%|███▎      | 358/1070 [19:08<10:36,  1.12it/s] 34%|███▎      | 359/1070 [19:15<33:59,  2.87s/it] 34%|███▎      | 360/1070 [19:27<1:03:29,  5.37s/it] 34%|███▎      | 361/1070 [19:29<54:02,  4.57s/it]   34%|███▍      | 362/1070 [19:31<42:54,  3.64s/it] 34%|███▍      | 363/1070 [19:32<32:47,  2.78s/it] 34%|███▍      | 364/1070 [19:32<25:37,  2.18s/it] 34%|███▍      | 365/1070 [19:33<20:33,  1.75s/it] 34%|███▍      | 366/1070 [19:34<16:44,  1.43s/it] 34%|███▍      | 367/1070 [19:34<14:11,  1.21s/it] 34%|███▍      | 368/1070 [19:35<12:17,  1.05s/it] 34%|███▍      | 369/1070 [19:36<10:32,  1.11it/s] 35%|███▍      | 370/1070 [19:36<10:06,  1.15it/s] 35%|███▍      | 371/1070 [19:45<36:48,  3.16s/it] 35%|███▍      | 372/1070 [19:52<49:56,  4.29s/it] 35%|███▍      | 373/1070 [19:57<51:08,  4.40s/it] 35%|███▍      | 374/1070 [19:58<40:41,  3.51s/it] 35%|███▌      | 375/1070 [19:59<32:42,  2.82s/it] 35%|███▌      | 376/1070 [20:00<25:48,  2.23s/it] 35%|███▌      | 377/1070 [20:01<22:36,  1.96s/it] 35%|███▌      | 378/1070 [20:02<19:16,  1.67s/it] 35%|███▌      | 379/1070 [20:03<17:16,  1.50s/it] 36%|███▌      | 380/1070 [20:08<27:55,  2.43s/it] 36%|███▌      | 381/1070 [20:10<27:11,  2.37s/it] 36%|███▌      | 382/1070 [20:12<24:13,  2.11s/it] 36%|███▌      | 383/1070 [20:13<22:21,  1.95s/it] 36%|███▌      | 384/1070 [20:16<25:15,  2.21s/it] 36%|███▌      | 385/1070 [20:18<23:19,  2.04s/it] 36%|███▌      | 386/1070 [20:19<18:55,  1.66s/it] 36%|███▌      | 387/1070 [20:19<15:36,  1.37s/it] 36%|███▋      | 388/1070 [20:21<15:08,  1.33s/it] 36%|███▋      | 389/1070 [20:21<12:59,  1.15s/it] 36%|███▋      | 390/1070 [20:22<12:11,  1.08s/it] 37%|███▋      | 391/1070 [20:23<11:51,  1.05s/it] 37%|███▋      | 392/1070 [20:24<10:40,  1.06it/s] 37%|███▋      | 393/1070 [20:25<09:50,  1.15it/s] 37%|███▋      | 394/1070 [20:25<09:02,  1.25it/s] 37%|███▋      | 395/1070 [20:26<08:23,  1.34it/s] 37%|███▋      | 396/1070 [20:27<11:22,  1.01s/it] 37%|███▋      | 397/1070 [20:29<13:09,  1.17s/it] 37%|███▋      | 398/1070 [20:30<13:57,  1.25s/it] 37%|███▋      | 399/1070 [20:33<19:33,  1.75s/it] 37%|███▋      | 400/1070 [20:35<18:48,  1.68s/it] 37%|███▋      | 401/1070 [20:36<16:15,  1.46s/it] 38%|███▊      | 402/1070 [20:38<17:35,  1.58s/it] 38%|███▊      | 403/1070 [20:40<19:17,  1.74s/it] 38%|███▊      | 404/1070 [20:41<17:39,  1.59s/it] 38%|███▊      | 405/1070 [20:42<16:23,  1.48s/it] 38%|███▊      | 406/1070 [20:44<18:54,  1.71s/it] 38%|███▊      | 407/1070 [20:46<16:42,  1.51s/it] 38%|███▊      | 408/1070 [20:46<14:00,  1.27s/it] 38%|███▊      | 409/1070 [20:47<11:55,  1.08s/it] 38%|███▊      | 410/1070 [20:48<10:27,  1.05it/s] 38%|███▊      | 411/1070 [20:48<09:25,  1.17it/s] 39%|███▊      | 412/1070 [20:49<08:28,  1.30it/s] 39%|███▊      | 413/1070 [20:49<07:50,  1.40it/s] 39%|███▊      | 414/1070 [20:50<07:15,  1.51it/s] 39%|███▉      | 415/1070 [20:50<06:50,  1.60it/s] 39%|███▉      | 416/1070 [20:52<09:28,  1.15it/s] 39%|███▉      | 417/1070 [20:57<22:38,  2.08s/it] 39%|███▉      | 418/1070 [21:00<27:33,  2.54s/it] 39%|███▉      | 419/1070 [21:02<23:07,  2.13s/it] 39%|███▉      | 420/1070 [21:02<19:02,  1.76s/it] 39%|███▉      | 421/1070 [21:03<15:46,  1.46s/it] 39%|███▉      | 422/1070 [21:12<38:01,  3.52s/it] 40%|███▉      | 423/1070 [21:15<36:46,  3.41s/it] 40%|███▉      | 424/1070 [21:16<30:39,  2.85s/it] 40%|███▉      | 425/1070 [21:17<24:26,  2.27s/it] 40%|███▉      | 426/1070 [21:18<21:15,  1.98s/it] 40%|███▉      | 427/1070 [21:25<34:59,  3.26s/it] 40%|████      | 428/1070 [21:25<25:11,  2.35s/it]{'eval_loss': 0.658896267414093, 'eval_accuracy': 0.6485148668289185, 'eval_f1': 0.5506329113924051, 'eval_mcc': 0.2680868630491327, 'eval_runtime': 12.3173, 'eval_samples_per_second': 196.797, 'eval_steps_per_second': 6.17, 'epoch': 3.0}
+
+  0%|          | 0/76 [00:00<?, ?it/s][A
+  4%|▍         | 3/76 [00:00<00:03, 18.61it/s][A
+  7%|▋         | 5/76 [00:00<00:04, 16.12it/s][A
+  9%|▉         | 7/76 [00:00<00:04, 14.40it/s][A
+ 12%|█▏        | 9/76 [00:00<00:04, 14.97it/s][A
+ 14%|█▍        | 11/76 [00:00<00:04, 14.12it/s][A
+ 17%|█▋        | 13/76 [00:00<00:04, 14.35it/s][A
+ 20%|█▉        | 15/76 [00:01<00:04, 14.38it/s][A
+ 22%|██▏       | 17/76 [00:01<00:04, 14.36it/s][A
+ 25%|██▌       | 19/76 [00:01<00:03, 14.78it/s][A
+ 28%|██▊       | 21/76 [00:01<00:03, 14.60it/s][A
+ 30%|███       | 23/76 [00:01<00:03, 14.52it/s][A
+ 33%|███▎      | 25/76 [00:01<00:03, 14.46it/s][A
+ 36%|███▌      | 27/76 [00:01<00:03, 14.87it/s][A
+ 38%|███▊      | 29/76 [00:01<00:03, 14.14it/s][A
+ 41%|████      | 31/76 [00:02<00:03, 12.20it/s][A
+ 43%|████▎     | 33/76 [00:02<00:04,  9.46it/s][A
+ 46%|████▌     | 35/76 [00:02<00:03, 10.53it/s][A
+ 49%|████▊     | 37/76 [00:02<00:03, 11.71it/s][A
+ 51%|█████▏    | 39/76 [00:02<00:02, 12.42it/s][A
+ 54%|█████▍    | 41/76 [00:03<00:02, 13.32it/s][A
+ 57%|█████▋    | 43/76 [00:03<00:02, 14.03it/s][A
+ 59%|█████▉    | 45/76 [00:03<00:02, 14.55it/s][A
+ 62%|██████▏   | 47/76 [00:03<00:01, 14.59it/s][A
+ 64%|██████▍   | 49/76 [00:03<00:01, 14.07it/s][A
+ 67%|██████▋   | 51/76 [00:03<00:01, 13.65it/s][A
+ 70%|██████▉   | 53/76 [00:03<00:01, 13.56it/s][A
+ 72%|███████▏  | 55/76 [00:04<00:01, 13.26it/s][A
+ 75%|███████▌  | 57/76 [00:04<00:01, 13.57it/s][A
+ 78%|███████▊  | 59/76 [00:04<00:01, 13.24it/s][A
+ 80%|████████  | 61/76 [00:04<00:01, 13.12it/s][A
+ 83%|████████▎ | 63/76 [00:04<00:00, 13.55it/s][A
+ 86%|████████▌ | 65/76 [00:04<00:01,  9.95it/s][A
+ 88%|████████▊ | 67/76 [00:05<00:00, 11.19it/s][A
+ 91%|█████████ | 69/76 [00:05<00:00, 11.56it/s][A
+ 93%|█████████▎| 71/76 [00:05<00:00, 12.61it/s][A
+ 96%|█████████▌| 73/76 [00:05<00:00, 13.04it/s][A
+ 99%|█████████▊| 75/76 [00:05<00:00, 12.34it/s][A                                                  
+                                               [A 40%|████      | 428/1070 [21:33<25:11,  2.35s/it]
+100%|██████████| 76/76 [00:07<00:00, 12.34it/s][A
+                                               [A/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 40%|████      | 429/1070 [21:46<1:23:36,  7.83s/it] 40%|████      | 430/1070 [21:48<1:07:55,  6.37s/it] 40%|████      | 431/1070 [21:50<53:18,  5.01s/it]   40%|████      | 432/1070 [21:51<40:43,  3.83s/it] 40%|████      | 433/1070 [21:53<32:50,  3.09s/it] 41%|████      | 434/1070 [21:54<26:18,  2.48s/it] 41%|████      | 435/1070 [21:55<20:35,  1.94s/it] 41%|████      | 436/1070 [21:55<17:27,  1.65s/it] 41%|████      | 437/1070 [21:56<14:37,  1.39s/it] 41%|████      | 438/1070 [21:57<12:08,  1.15s/it] 41%|████      | 439/1070 [21:59<16:16,  1.55s/it] 41%|████      | 440/1070 [22:00<14:15,  1.36s/it] 41%|████      | 441/1070 [22:01<11:48,  1.13s/it] 41%|████▏     | 442/1070 [22:01<10:09,  1.03it/s] 41%|████▏     | 443/1070 [22:02<08:46,  1.19it/s] 41%|████▏     | 444/1070 [22:03<08:00,  1.30it/s] 42%|████▏     | 445/1070 [22:04<09:15,  1.12it/s] 42%|████▏     | 446/1070 [22:05<09:11,  1.13it/s] 42%|████▏     | 447/1070 [22:05<08:59,  1.15it/s] 42%|████▏     | 448/1070 [22:06<08:13,  1.26it/s] 42%|████▏     | 449/1070 [22:07<07:52,  1.31it/s] 42%|████▏     | 450/1070 [22:07<07:19,  1.41it/s] 42%|████▏     | 451/1070 [22:08<06:53,  1.50it/s] 42%|████▏     | 452/1070 [22:15<26:48,  2.60s/it] 42%|████▏     | 453/1070 [22:25<47:59,  4.67s/it] 42%|████▏     | 454/1070 [22:28<44:40,  4.35s/it] 43%|████▎     | 455/1070 [22:30<36:22,  3.55s/it] 43%|████▎     | 456/1070 [22:31<28:15,  2.76s/it] 43%|████▎     | 457/1070 [22:32<22:21,  2.19s/it] 43%|████▎     | 458/1070 [22:32<17:50,  1.75s/it] 43%|████▎     | 459/1070 [22:36<23:18,  2.29s/it] 43%|████▎     | 460/1070 [22:43<39:18,  3.87s/it] 43%|████▎     | 461/1070 [22:47<38:57,  3.84s/it] 43%|████▎     | 462/1070 [22:49<31:53,  3.15s/it] 43%|████▎     | 463/1070 [22:52<31:39,  3.13s/it] 43%|████▎     | 464/1070 [22:53<26:54,  2.66s/it] 43%|████▎     | 465/1070 [22:54<21:22,  2.12s/it] 44%|████▎     | 466/1070 [22:55<17:30,  1.74s/it] 44%|████▎     | 467/1070 [22:56<14:18,  1.42s/it] 44%|████▎     | 468/1070 [22:57<12:19,  1.23s/it] 44%|████▍     | 469/1070 [22:57<10:50,  1.08s/it] 44%|████▍     | 470/1070 [22:58<09:20,  1.07it/s] 44%|████▍     | 471/1070 [22:59<08:56,  1.12it/s] 44%|████▍     | 472/1070 [23:00<09:40,  1.03it/s] 44%|████▍     | 473/1070 [23:01<09:29,  1.05it/s] 44%|████▍     | 474/1070 [23:02<08:59,  1.10it/s] 44%|████▍     | 475/1070 [23:04<14:03,  1.42s/it] 44%|████▍     | 476/1070 [23:07<18:21,  1.85s/it] 45%|████▍     | 477/1070 [23:08<15:27,  1.56s/it] 45%|████▍     | 478/1070 [23:09<12:52,  1.30s/it] 45%|████▍     | 479/1070 [23:11<17:18,  1.76s/it] 45%|████▍     | 480/1070 [23:13<15:59,  1.63s/it] 45%|████▍     | 481/1070 [23:14<13:55,  1.42s/it] 45%|████▌     | 482/1070 [23:14<11:55,  1.22s/it] 45%|████▌     | 483/1070 [23:15<10:14,  1.05s/it] 45%|████▌     | 484/1070 [23:16<08:55,  1.09it/s] 45%|████▌     | 485/1070 [23:16<08:01,  1.21it/s] 45%|████▌     | 486/1070 [23:17<07:16,  1.34it/s] 46%|████▌     | 487/1070 [23:17<06:48,  1.43it/s] 46%|████▌     | 488/1070 [23:18<06:20,  1.53it/s] 46%|████▌     | 489/1070 [23:19<06:03,  1.60it/s] 46%|████▌     | 490/1070 [23:19<05:47,  1.67it/s] 46%|████▌     | 491/1070 [23:20<07:19,  1.32it/s] 46%|████▌     | 492/1070 [23:26<20:53,  2.17s/it] 46%|████▌     | 493/1070 [23:28<21:57,  2.28s/it] 46%|████▌     | 494/1070 [23:29<18:02,  1.88s/it] 46%|████▋     | 495/1070 [23:30<14:36,  1.53s/it] 46%|████▋     | 496/1070 [23:36<27:14,  2.85s/it] 46%|████▋     | 497/1070 [23:40<31:43,  3.32s/it] 47%|████▋     | 498/1070 [23:42<26:16,  2.76s/it] 47%|████▋     | 499/1070 [23:43<21:33,  2.27s/it] 47%|████▋     | 500/1070 [23:45<20:32,  2.16s/it]                                                   47%|████▋     | 500/1070 [23:45<20:32,  2.16s/it] 47%|████▋     | 501/1070 [23:48<24:38,  2.60s/it] 47%|████▋     | 502/1070 [23:50<21:12,  2.24s/it] 47%|████▋     | 503/1070 [23:51<17:54,  1.89s/it] 47%|████▋     | 504/1070 [23:52<14:43,  1.56s/it] 47%|████▋     | 505/1070 [23:53<13:26,  1.43s/it] 47%|████▋     | 506/1070 [23:53<11:28,  1.22s/it] 47%|████▋     | 507/1070 [23:54<10:49,  1.15s/it] 47%|████▋     | 508/1070 [23:57<13:47,  1.47s/it] 48%|████▊     | 509/1070 [23:58<12:28,  1.33s/it] 48%|████▊     | 510/1070 [23:58<10:54,  1.17s/it] 48%|████▊     | 511/1070 [23:59<09:38,  1.03s/it] 48%|████▊     | 512/1070 [24:00<08:38,  1.08it/s] 48%|████▊     | 513/1070 [24:00<07:47,  1.19it/s] 48%|████▊     | 514/1070 [24:04<15:29,  1.67s/it] 48%|████▊     | 515/1070 [24:08<22:22,  2.42s/it] 48%|████▊     | 516/1070 [24:10<20:37,  2.23s/it] 48%|████▊     | 517/1070 [24:16<31:44,  3.44s/it] 48%|████▊     | 518/1070 [24:19<29:43,  3.23s/it] 49%|████▊     | 519/1070 [24:20<24:40,  2.69s/it] 49%|████▊     | 520/1070 [24:25<29:46,  3.25s/it] 49%|████▊     | 521/1070 [24:33<43:25,  4.75s/it] 49%|████▉     | 522/1070 [24:37<41:34,  4.55s/it] 49%|████▉     | 523/1070 [24:39<33:41,  3.70s/it] 49%|████▉     | 524/1070 [24:40<26:18,  2.89s/it] 49%|████▉     | 525/1070 [24:42<22:55,  2.52s/it] 49%|████▉     | 526/1070 [24:43<18:47,  2.07s/it] 49%|████▉     | 527/1070 [24:44<15:05,  1.67s/it] 49%|████▉     | 528/1070 [24:45<13:47,  1.53s/it] 49%|████▉     | 529/1070 [24:46<12:01,  1.33s/it] 50%|████▉     | 530/1070 [24:46<10:22,  1.15s/it] 50%|████▉     | 531/1070 [24:49<14:48,  1.65s/it] 50%|████▉     | 532/1070 [24:50<12:38,  1.41s/it] 50%|████▉     | 533/1070 [24:51<10:34,  1.18s/it] 50%|████▉     | 534/1070 [24:51<08:49,  1.01it/s] 50%|█████     | 535/1070 [24:51<06:47,  1.31it/s]{'eval_loss': 0.7650039792060852, 'eval_accuracy': 0.6328383088111877, 'eval_f1': 0.5757864632983795, 'eval_mcc': 0.25250002389425313, 'eval_runtime': 7.8379, 'eval_samples_per_second': 309.268, 'eval_steps_per_second': 9.697, 'epoch': 4.0}
+{'loss': 0.5157, 'grad_norm': 1.7922590970993042, 'learning_rate': 2.663551401869159e-05, 'epoch': 4.67}
+
+  0%|          | 0/76 [00:00<?, ?it/s][A
+  3%|▎         | 2/76 [00:02<01:12,  1.02it/s][A
+  4%|▍         | 3/76 [00:02<00:45,  1.61it/s][A
+  7%|▋         | 5/76 [00:02<00:22,  3.11it/s][A
+  9%|▉         | 7/76 [00:02<00:14,  4.69it/s][A
+ 12%|█▏        | 9/76 [00:02<00:10,  6.23it/s][A
+ 14%|█▍        | 11/76 [00:02<00:08,  7.77it/s][A
+ 17%|█▋        | 13/76 [00:02<00:07,  8.78it/s][A
+ 20%|█▉        | 15/76 [00:02<00:06, 10.05it/s][A
+ 22%|██▏       | 17/76 [00:03<00:05, 11.38it/s][A
+ 25%|██▌       | 19/76 [00:03<00:04, 12.19it/s][A
+ 28%|██▊       | 21/76 [00:03<00:04, 13.13it/s][A
+ 30%|███       | 23/76 [00:03<00:03, 13.49it/s][A
+ 33%|███▎      | 25/76 [00:03<00:03, 13.77it/s][A
+ 36%|███▌      | 27/76 [00:03<00:03, 13.92it/s][A
+ 38%|███▊      | 29/76 [00:03<00:03, 14.09it/s][A
+ 41%|████      | 31/76 [00:04<00:03, 12.89it/s][A
+ 43%|████▎     | 33/76 [00:04<00:03, 12.54it/s][A
+ 46%|████▌     | 35/76 [00:04<00:03, 13.36it/s][A
+ 49%|████▊     | 37/76 [00:04<00:03, 10.41it/s][A
+ 51%|█████▏    | 39/76 [00:04<00:03, 11.26it/s][A
+ 54%|█████▍    | 41/76 [00:04<00:02, 11.92it/s][A
+ 57%|█████▋    | 43/76 [00:05<00:02, 12.56it/s][A
+ 59%|█████▉    | 45/76 [00:05<00:02, 13.42it/s][A
+ 62%|██████▏   | 47/76 [00:05<00:02, 14.01it/s][A
+ 64%|██████▍   | 49/76 [00:05<00:01, 14.51it/s][A
+ 67%|██████▋   | 51/76 [00:05<00:01, 14.05it/s][A
+ 70%|██████▉   | 53/76 [00:05<00:01, 13.82it/s][A
+ 72%|███████▏  | 55/76 [00:05<00:01, 13.57it/s][A
+ 75%|███████▌  | 57/76 [00:06<00:01, 14.21it/s][A
+ 78%|███████▊  | 59/76 [00:06<00:01, 14.27it/s][A
+ 80%|████████  | 61/76 [00:06<00:01, 14.06it/s][A
+ 83%|████████▎ | 63/76 [00:06<00:00, 13.53it/s][A
+ 86%|████████▌ | 65/76 [00:06<00:00, 14.17it/s][A
+ 88%|████████▊ | 67/76 [00:09<00:03,  2.41it/s][A
+ 91%|█████████ | 69/76 [00:09<00:02,  2.72it/s][A
+ 93%|█████████▎| 71/76 [00:09<00:01,  3.57it/s][A
+ 96%|█████████▌| 73/76 [00:09<00:00,  4.66it/s][A
+ 99%|█████████▊| 75/76 [00:10<00:00,  5.85it/s][A                                                  
+                                               [A 50%|█████     | 535/1070 [25:04<06:47,  1.31it/s]
+100%|██████████| 76/76 [00:10<00:00,  5.85it/s][A
+                                               [A/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 50%|█████     | 536/1070 [25:23<1:28:59, 10.00s/it] 50%|█████     | 537/1070 [25:27<1:12:43,  8.19s/it] 50%|█████     | 538/1070 [25:30<59:10,  6.67s/it]   50%|█████     | 539/1070 [25:32<45:50,  5.18s/it] 50%|█████     | 540/1070 [25:33<34:35,  3.92s/it] 51%|█████     | 541/1070 [25:34<27:42,  3.14s/it] 51%|█████     | 542/1070 [25:35<21:30,  2.44s/it] 51%|█████     | 543/1070 [25:36<16:58,  1.93s/it] 51%|█████     | 544/1070 [25:36<13:37,  1.55s/it] 51%|█████     | 545/1070 [25:37<11:09,  1.28s/it] 51%|█████     | 546/1070 [25:38<10:50,  1.24s/it] 51%|█████     | 547/1070 [25:41<16:11,  1.86s/it] 51%|█████     | 548/1070 [25:44<18:22,  2.11s/it] 51%|█████▏    | 549/1070 [25:45<16:01,  1.85s/it] 51%|█████▏    | 550/1070 [25:46<13:15,  1.53s/it] 51%|█████▏    | 551/1070 [25:47<11:34,  1.34s/it] 52%|█████▏    | 552/1070 [25:48<09:48,  1.14s/it] 52%|█████▏    | 553/1070 [25:48<08:35,  1.00it/s] 52%|█████▏    | 554/1070 [25:49<07:31,  1.14it/s] 52%|█████▏    | 555/1070 [25:50<07:47,  1.10it/s] 52%|█████▏    | 556/1070 [25:51<08:07,  1.06it/s] 52%|█████▏    | 557/1070 [25:52<07:28,  1.14it/s] 52%|█████▏    | 558/1070 [25:52<06:50,  1.25it/s] 52%|█████▏    | 559/1070 [25:56<15:20,  1.80s/it] 52%|█████▏    | 560/1070 [25:59<16:35,  1.95s/it] 52%|█████▏    | 561/1070 [26:00<14:30,  1.71s/it] 53%|█████▎    | 562/1070 [26:02<15:12,  1.80s/it] 53%|█████▎    | 563/1070 [26:03<14:05,  1.67s/it] 53%|█████▎    | 564/1070 [26:04<11:47,  1.40s/it] 53%|█████▎    | 565/1070 [26:05<10:25,  1.24s/it] 53%|█████▎    | 566/1070 [26:05<08:57,  1.07s/it] 53%|█████▎    | 567/1070 [26:07<08:56,  1.07s/it] 53%|█████▎    | 568/1070 [26:07<07:48,  1.07it/s] 53%|█████▎    | 569/1070 [26:10<11:20,  1.36s/it] 53%|█████▎    | 570/1070 [26:11<10:58,  1.32s/it] 53%|█████▎    | 571/1070 [26:11<09:14,  1.11s/it] 53%|█████▎    | 572/1070 [26:12<08:06,  1.02it/s] 54%|█████▎    | 573/1070 [26:13<08:30,  1.03s/it] 54%|█████▎    | 574/1070 [26:14<08:41,  1.05s/it] 54%|█████▎    | 575/1070 [26:15<08:37,  1.05s/it] 54%|█████▍    | 576/1070 [26:16<07:35,  1.08it/s] 54%|█████▍    | 577/1070 [26:17<06:48,  1.21it/s] 54%|█████▍    | 578/1070 [26:17<06:22,  1.29it/s] 54%|█████▍    | 579/1070 [26:18<05:51,  1.40it/s] 54%|█████▍    | 580/1070 [26:18<05:29,  1.49it/s] 54%|█████▍    | 581/1070 [26:19<05:51,  1.39it/s] 54%|█████▍    | 582/1070 [26:24<16:54,  2.08s/it] 54%|█████▍    | 583/1070 [26:26<16:28,  2.03s/it] 55%|█████▍    | 584/1070 [26:28<15:06,  1.87s/it] 55%|█████▍    | 585/1070 [26:29<12:22,  1.53s/it] 55%|█████▍    | 586/1070 [26:29<10:17,  1.28s/it] 55%|█████▍    | 587/1070 [26:30<08:52,  1.10s/it] 55%|█████▍    | 588/1070 [26:32<11:08,  1.39s/it] 55%|█████▌    | 589/1070 [26:33<09:15,  1.16s/it] 55%|█████▌    | 590/1070 [26:33<07:49,  1.02it/s] 55%|█████▌    | 591/1070 [26:34<06:52,  1.16it/s] 55%|█████▌    | 592/1070 [26:34<06:06,  1.31it/s] 55%|█████▌    | 593/1070 [26:35<05:32,  1.44it/s] 56%|█████▌    | 594/1070 [26:36<06:11,  1.28it/s] 56%|█████▌    | 595/1070 [26:37<06:15,  1.27it/s] 56%|█████▌    | 596/1070 [26:37<05:51,  1.35it/s] 56%|█████▌    | 597/1070 [26:38<06:02,  1.31it/s] 56%|█████▌    | 598/1070 [26:44<17:05,  2.17s/it] 56%|█████▌    | 599/1070 [26:45<16:15,  2.07s/it] 56%|█████▌    | 600/1070 [26:46<13:20,  1.70s/it] 56%|█████▌    | 601/1070 [26:47<12:09,  1.56s/it] 56%|█████▋    | 602/1070 [26:48<10:22,  1.33s/it] 56%|█████▋    | 603/1070 [26:49<08:49,  1.13s/it] 56%|█████▋    | 604/1070 [26:51<10:18,  1.33s/it] 57%|█████▋    | 605/1070 [26:52<09:16,  1.20s/it] 57%|█████▋    | 606/1070 [26:54<11:15,  1.46s/it] 57%|█████▋    | 607/1070 [26:54<09:15,  1.20s/it] 57%|█████▋    | 608/1070 [26:55<07:55,  1.03s/it] 57%|█████▋    | 609/1070 [26:56<07:06,  1.08it/s] 57%|█████▋    | 610/1070 [26:56<06:14,  1.23it/s] 57%|█████▋    | 611/1070 [26:57<05:46,  1.32it/s] 57%|█████▋    | 612/1070 [26:58<06:04,  1.26it/s] 57%|█████▋    | 613/1070 [26:58<05:52,  1.30it/s] 57%|█████▋    | 614/1070 [26:59<05:35,  1.36it/s] 57%|█████▋    | 615/1070 [27:00<05:22,  1.41it/s] 58%|█████▊    | 616/1070 [27:00<05:05,  1.49it/s] 58%|█████▊    | 617/1070 [27:01<04:49,  1.56it/s] 58%|█████▊    | 618/1070 [27:01<04:38,  1.62it/s] 58%|█████▊    | 619/1070 [27:02<04:34,  1.64it/s] 58%|█████▊    | 620/1070 [27:05<10:03,  1.34s/it] 58%|█████▊    | 621/1070 [27:08<13:21,  1.78s/it] 58%|█████▊    | 622/1070 [27:10<13:26,  1.80s/it] 58%|█████▊    | 623/1070 [27:10<11:08,  1.49s/it] 58%|█████▊    | 624/1070 [27:11<09:22,  1.26s/it] 58%|█████▊    | 625/1070 [27:12<07:59,  1.08s/it] 59%|█████▊    | 626/1070 [27:12<06:57,  1.06it/s] 59%|█████▊    | 627/1070 [27:13<06:10,  1.20it/s] 59%|█████▊    | 628/1070 [27:16<10:52,  1.48s/it] 59%|█████▉    | 629/1070 [27:17<09:33,  1.30s/it] 59%|█████▉    | 630/1070 [27:18<08:13,  1.12s/it] 59%|█████▉    | 631/1070 [27:19<07:46,  1.06s/it] 59%|█████▉    | 632/1070 [27:20<08:19,  1.14s/it] 59%|█████▉    | 633/1070 [27:21<07:51,  1.08s/it] 59%|█████▉    | 634/1070 [27:22<07:12,  1.01it/s] 59%|█████▉    | 635/1070 [27:22<06:25,  1.13it/s] 59%|█████▉    | 636/1070 [27:23<05:48,  1.24it/s] 60%|█████▉    | 637/1070 [27:23<05:25,  1.33it/s] 60%|█████▉    | 638/1070 [27:24<05:19,  1.35it/s] 60%|█████▉    | 639/1070 [27:25<05:43,  1.25it/s] 60%|█████▉    | 640/1070 [27:33<20:31,  2.86s/it] 60%|█████▉    | 641/1070 [27:35<18:04,  2.53s/it] 60%|██████    | 642/1070 [27:35<13:06,  1.84s/it]{'eval_loss': 0.9015237092971802, 'eval_accuracy': 0.6406765580177307, 'eval_f1': 0.5664509706321553, 'eval_mcc': 0.2601899168313242, 'eval_runtime': 12.4751, 'eval_samples_per_second': 194.308, 'eval_steps_per_second': 6.092, 'epoch': 5.0}
+
+  0%|          | 0/76 [00:00<?, ?it/s][A
+  4%|▍         | 3/76 [00:00<00:03, 22.03it/s][A
+  8%|▊         | 6/76 [00:02<00:27,  2.53it/s][A
+ 11%|█         | 8/76 [00:02<00:18,  3.59it/s][A
+ 13%|█▎        | 10/76 [00:02<00:13,  4.85it/s][A
+ 16%|█▌        | 12/76 [00:02<00:10,  6.27it/s][A
+ 18%|█▊        | 14/76 [00:02<00:08,  7.65it/s][A
+ 21%|██        | 16/76 [00:02<00:06,  8.99it/s][A
+ 24%|██▎       | 18/76 [00:02<00:05, 10.42it/s][A
+ 26%|██▋       | 20/76 [00:03<00:05, 11.09it/s][A
+ 29%|██▉       | 22/76 [00:03<00:04, 11.93it/s][A
+ 32%|███▏      | 24/76 [00:03<00:04, 12.16it/s][A
+ 34%|███▍      | 26/76 [00:03<00:04, 12.38it/s][A
+ 37%|███▋      | 28/76 [00:03<00:03, 12.42it/s][A
+ 39%|███▉      | 30/76 [00:03<00:03, 12.64it/s][A
+ 42%|████▏     | 32/76 [00:03<00:03, 12.14it/s][A
+ 45%|████▍     | 34/76 [00:04<00:03, 13.13it/s][A
+ 47%|████▋     | 36/76 [00:04<00:03, 13.08it/s][A
+ 50%|█████     | 38/76 [00:04<00:02, 13.49it/s][A
+ 53%|█████▎    | 40/76 [00:04<00:03, 10.48it/s][A
+ 55%|█████▌    | 42/76 [00:04<00:02, 11.44it/s][A
+ 58%|█████▊    | 44/76 [00:04<00:02, 12.23it/s][A
+ 61%|██████    | 46/76 [00:05<00:02, 12.50it/s][A
+ 63%|██████▎   | 48/76 [00:05<00:02, 13.05it/s][A
+ 66%|██████▌   | 50/76 [00:05<00:01, 13.40it/s][A
+ 68%|██████▊   | 52/76 [00:06<00:06,  3.46it/s][A
+ 71%|███████   | 54/76 [00:07<00:06,  3.36it/s][A
+ 74%|███████▎  | 56/76 [00:07<00:04,  4.31it/s][A
+ 76%|███████▋  | 58/76 [00:07<00:03,  5.41it/s][A
+ 79%|███████▉  | 60/76 [00:08<00:02,  6.66it/s][A
+ 82%|████████▏ | 62/76 [00:08<00:01,  7.74it/s][A
+ 84%|████████▍ | 64/76 [00:08<00:01,  9.01it/s][A
+ 87%|████████▋ | 66/76 [00:08<00:00, 10.15it/s][A
+ 89%|████████▉ | 68/76 [00:08<00:00, 11.40it/s][A
+ 92%|█████████▏| 70/76 [00:08<00:00, 11.88it/s][A
+ 95%|█████████▍| 72/76 [00:09<00:00,  9.11it/s][A
+ 97%|█████████▋| 74/76 [00:09<00:00,  9.96it/s][A
+100%|██████████| 76/76 [00:09<00:00, 11.43it/s][A                                                  
+                                               [A 60%|██████    | 642/1070 [27:46<13:06,  1.84s/it]
+100%|██████████| 76/76 [00:10<00:00, 11.43it/s][A
+                                               [A/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 60%|██████    | 643/1070 [28:00<1:03:23,  8.91s/it] 60%|██████    | 644/1070 [28:02<48:54,  6.89s/it]   60%|██████    | 645/1070 [28:04<36:49,  5.20s/it] 60%|██████    | 646/1070 [28:05<27:47,  3.93s/it] 60%|██████    | 647/1070 [28:05<21:04,  2.99s/it] 61%|██████    | 648/1070 [28:06<16:41,  2.37s/it] 61%|██████    | 649/1070 [28:07<13:03,  1.86s/it] 61%|██████    | 650/1070 [28:08<10:28,  1.50s/it] 61%|██████    | 651/1070 [28:09<10:52,  1.56s/it] 61%|██████    | 652/1070 [28:11<10:07,  1.45s/it] 61%|██████    | 653/1070 [28:11<08:42,  1.25s/it] 61%|██████    | 654/1070 [28:12<07:29,  1.08s/it] 61%|██████    | 655/1070 [28:13<08:09,  1.18s/it] 61%|██████▏   | 656/1070 [28:16<10:42,  1.55s/it] 61%|██████▏   | 657/1070 [28:17<09:51,  1.43s/it] 61%|██████▏   | 658/1070 [28:18<08:30,  1.24s/it] 62%|██████▏   | 659/1070 [28:18<07:18,  1.07s/it] 62%|██████▏   | 660/1070 [28:20<07:22,  1.08s/it] 62%|██████▏   | 661/1070 [28:21<07:00,  1.03s/it] 62%|██████▏   | 662/1070 [28:21<06:18,  1.08it/s] 62%|██████▏   | 663/1070 [28:22<05:38,  1.20it/s] 62%|██████▏   | 664/1070 [28:22<05:10,  1.31it/s] 62%|██████▏   | 665/1070 [28:24<06:40,  1.01it/s] 62%|██████▏   | 666/1070 [28:25<06:45,  1.00s/it] 62%|██████▏   | 667/1070 [28:26<07:48,  1.16s/it] 62%|██████▏   | 668/1070 [28:27<07:13,  1.08s/it] 63%|██████▎   | 669/1070 [28:28<06:28,  1.03it/s] 63%|██████▎   | 670/1070 [28:29<05:48,  1.15it/s] 63%|██████▎   | 671/1070 [28:29<05:22,  1.24it/s] 63%|██████▎   | 672/1070 [28:33<11:09,  1.68s/it] 63%|██████▎   | 673/1070 [28:39<20:10,  3.05s/it] 63%|██████▎   | 674/1070 [28:43<21:59,  3.33s/it] 63%|██████▎   | 675/1070 [28:45<19:05,  2.90s/it] 63%|██████▎   | 676/1070 [28:47<16:47,  2.56s/it] 63%|██████▎   | 677/1070 [28:50<18:09,  2.77s/it] 63%|██████▎   | 678/1070 [28:51<14:31,  2.22s/it] 63%|██████▎   | 679/1070 [28:52<11:39,  1.79s/it] 64%|██████▎   | 680/1070 [28:53<09:34,  1.47s/it] 64%|██████▎   | 681/1070 [28:53<08:11,  1.26s/it] 64%|██████▎   | 682/1070 [28:54<06:55,  1.07s/it] 64%|██████▍   | 683/1070 [28:55<06:01,  1.07it/s] 64%|██████▍   | 684/1070 [28:55<05:27,  1.18it/s] 64%|██████▍   | 685/1070 [28:56<04:51,  1.32it/s] 64%|██████▍   | 686/1070 [28:56<04:29,  1.43it/s] 64%|██████▍   | 687/1070 [28:57<04:21,  1.46it/s] 64%|██████▍   | 688/1070 [28:58<04:11,  1.52it/s] 64%|██████▍   | 689/1070 [28:59<05:06,  1.24it/s] 64%|██████▍   | 690/1070 [29:11<26:07,  4.13s/it] 65%|██████▍   | 691/1070 [29:18<31:41,  5.02s/it] 65%|██████▍   | 692/1070 [29:21<27:50,  4.42s/it] 65%|██████▍   | 693/1070 [29:23<23:47,  3.79s/it] 65%|██████▍   | 694/1070 [29:25<19:40,  3.14s/it] 65%|██████▍   | 695/1070 [29:27<17:14,  2.76s/it] 65%|██████▌   | 696/1070 [29:32<21:41,  3.48s/it] 65%|██████▌   | 697/1070 [29:35<21:43,  3.49s/it] 65%|██████▌   | 698/1070 [29:38<20:45,  3.35s/it] 65%|██████▌   | 699/1070 [29:39<16:34,  2.68s/it] 65%|██████▌   | 700/1070 [29:56<41:37,  6.75s/it] 66%|██████▌   | 701/1070 [30:08<51:07,  8.31s/it] 66%|██████▌   | 702/1070 [30:14<47:28,  7.74s/it] 66%|██████▌   | 703/1070 [30:29<1:00:26,  9.88s/it] 66%|██████▌   | 704/1070 [31:02<1:43:00, 16.89s/it] 66%|██████▌   | 705/1070 [31:38<2:17:11, 22.55s/it] 66%|██████▌   | 706/1070 [32:03<2:21:42, 23.36s/it] 66%|██████▌   | 707/1070 [32:38<2:41:47, 26.74s/it] 66%|██████▌   | 708/1070 [32:59<2:31:48, 25.16s/it] 66%|██████▋   | 709/1070 [33:22<2:26:36, 24.37s/it] 66%|██████▋   | 710/1070 [33:31<1:59:04, 19.85s/it] 66%|██████▋   | 711/1070 [33:36<1:32:04, 15.39s/it] 67%|██████▋   | 712/1070 [33:41<1:13:27, 12.31s/it] 67%|██████▋   | 713/1070 [33:44<56:07,  9.43s/it]   67%|██████▋   | 714/1070 [33:50<50:28,  8.51s/it] 67%|██████▋   | 715/1070 [34:25<1:36:03, 16.24s/it] 67%|██████▋   | 716/1070 [34:45<1:43:50, 17.60s/it] 67%|██████▋   | 717/1070 [35:00<1:37:54, 16.64s/it] 67%|██████▋   | 718/1070 [35:04<1:15:36, 12.89s/it] 67%|██████▋   | 719/1070 [35:06<57:06,  9.76s/it]   67%|██████▋   | 720/1070 [35:08<42:17,  7.25s/it] 67%|██████▋   | 721/1070 [35:11<34:44,  5.97s/it] 67%|██████▋   | 722/1070 [35:18<36:42,  6.33s/it] 68%|██████▊   | 723/1070 [35:23<33:54,  5.86s/it] 68%|██████▊   | 724/1070 [35:28<33:13,  5.76s/it] 68%|██████▊   | 725/1070 [35:31<27:38,  4.81s/it] 68%|██████▊   | 726/1070 [36:02<1:13:22, 12.80s/it] 68%|██████▊   | 727/1070 [36:29<1:37:13, 17.01s/it] 68%|██████▊   | 728/1070 [37:09<2:15:19, 23.74s/it] 68%|██████▊   | 729/1070 [37:29<2:09:40, 22.82s/it] 68%|██████▊   | 730/1070 [37:39<1:46:42, 18.83s/it] 68%|██████▊   | 731/1070 [37:43<1:21:06, 14.36s/it] 68%|██████▊   | 732/1070 [37:45<1:01:02, 10.84s/it] 69%|██████▊   | 733/1070 [37:47<45:31,  8.11s/it]   69%|██████▊   | 734/1070 [37:54<43:11,  7.71s/it] 69%|██████▊   | 735/1070 [38:12<59:52, 10.72s/it] 69%|██████▉   | 736/1070 [39:00<2:02:53, 22.08s/it] 69%|██████▉   | 737/1070 [39:21<2:01:07, 21.82s/it] 69%|██████▉   | 738/1070 [39:37<1:50:47, 20.02s/it] 69%|██████▉   | 739/1070 [39:52<1:42:15, 18.54s/it] 69%|██████▉   | 740/1070 [39:59<1:22:00, 14.91s/it] 69%|██████▉   | 741/1070 [40:17<1:27:43, 16.00s/it] 69%|██████▉   | 742/1070 [40:30<1:21:35, 14.93s/it] 69%|██████▉   | 743/1070 [40:45<1:22:04, 15.06s/it] 70%|██████▉   | 744/1070 [41:01<1:23:25, 15.36s/it] 70%|██████▉   | 745/1070 [41:16<1:21:47, 15.10s/it] 70%|██████▉   | 746/1070 [41:30<1:21:10, 15.03s/it] 70%|██████▉   | 747/1070 [41:41<1:13:41, 13.69s/it] 70%|██████▉   | 748/1070 [41:47<1:00:48, 11.33s/it] 70%|███████   | 749/1070 [41:47<42:46,  8.00s/it]  {'eval_loss': 1.0894227027893066, 'eval_accuracy': 0.6365511417388916, 'eval_f1': 0.5601597603594608, 'eval_mcc': 0.2511661446412876, 'eval_runtime': 10.6363, 'eval_samples_per_second': 227.899, 'eval_steps_per_second': 7.145, 'epoch': 6.0}
+
+  0%|          | 0/76 [00:00<?, ?it/s][A
+  3%|▎         | 2/76 [00:00<00:17,  4.21it/s][A
+  4%|▍         | 3/76 [00:00<00:14,  5.15it/s][A
+  7%|▋         | 5/76 [00:00<00:08,  8.14it/s][A
+  9%|▉         | 7/76 [00:02<00:29,  2.33it/s][A
+ 12%|█▏        | 9/76 [00:02<00:19,  3.45it/s][A
+ 14%|█▍        | 11/76 [00:02<00:13,  4.67it/s][A
+ 17%|█▋        | 13/76 [00:02<00:10,  6.14it/s][A
+ 20%|█▉        | 15/76 [00:02<00:08,  7.56it/s][A
+ 22%|██▏       | 17/76 [00:03<00:06,  8.81it/s][A
+ 25%|██▌       | 19/76 [00:03<00:05,  9.83it/s][A
+ 28%|██▊       | 21/76 [00:03<00:05, 10.53it/s][A
+ 30%|███       | 23/76 [00:03<00:04, 11.47it/s][A
+ 33%|███▎      | 25/76 [00:03<00:04, 12.54it/s][A
+ 36%|███▌      | 27/76 [00:03<00:03, 13.45it/s][A
+ 38%|███▊      | 29/76 [00:03<00:03, 13.72it/s][A
+ 41%|████      | 31/76 [00:04<00:03, 12.31it/s][A
+ 43%|████▎     | 33/76 [00:04<00:03, 12.50it/s][A
+ 46%|████▌     | 35/76 [00:04<00:03, 13.24it/s][A
+ 49%|████▊     | 37/76 [00:04<00:02, 13.97it/s][A
+ 51%|█████▏    | 39/76 [00:04<00:03, 10.43it/s][A
+ 54%|█████▍    | 41/76 [00:04<00:03, 11.36it/s][A
+ 57%|█████▋    | 43/76 [00:05<00:02, 12.44it/s][A
+ 59%|█████▉    | 45/76 [00:05<00:02, 12.55it/s][A
+ 62%|██████▏   | 47/76 [00:05<00:02, 13.40it/s][A
+ 64%|██████▍   | 49/76 [00:05<00:01, 13.71it/s][A
+ 67%|██████▋   | 51/76 [00:05<00:01, 14.34it/s][A
+ 70%|██████▉   | 53/76 [00:05<00:01, 13.50it/s][A
+ 72%|███████▏  | 55/76 [00:05<00:01, 14.15it/s][A
+ 75%|███████▌  | 57/76 [00:06<00:01, 14.24it/s][A
+ 78%|███████▊  | 59/76 [00:06<00:01, 12.95it/s][A
+ 80%|████████  | 61/76 [00:06<00:01, 13.35it/s][A
+ 83%|████████▎ | 63/76 [00:06<00:00, 13.10it/s][A
+ 86%|████████▌ | 65/76 [00:06<00:00, 13.44it/s][A
+ 88%|████████▊ | 67/76 [00:06<00:00, 13.74it/s][A
+ 91%|█████████ | 69/76 [00:06<00:00, 14.33it/s][A
+ 93%|█████████▎| 71/76 [00:07<00:00,  7.89it/s][A
+ 96%|█████████▌| 73/76 [00:07<00:00,  9.12it/s][A
+ 99%|█████████▊| 75/76 [00:07<00:00, 10.30it/s][A                                                  
+                                               [A 70%|███████   | 749/1070 [42:01<42:46,  8.00s/it]
+100%|██████████| 76/76 [00:09<00:00, 10.30it/s][A
+                                               [A                                                   70%|███████   | 749/1070 [42:10<42:46,  8.00s/it] 70%|███████   | 749/1070 [42:10<18:04,  3.38s/it]
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+{'eval_loss': 1.1662542819976807, 'eval_accuracy': 0.6183993220329285, 'eval_f1': 0.5593139590281087, 'eval_mcc': 0.2231866924175778, 'eval_runtime': 12.2936, 'eval_samples_per_second': 197.175, 'eval_steps_per_second': 6.182, 'epoch': 7.0}
+{'train_runtime': 2568.0922, 'train_samples_per_second': 106.083, 'train_steps_per_second': 0.417, 'train_loss': 0.42506841091670405, 'epoch': 7.0}
+***** train metrics *****
+  epoch                    =        7.0
+  total_flos               = 11682613GF
+  train_loss               =     0.4251
+  train_runtime            = 0:42:48.09
+  train_samples            =      27243
+  train_samples_per_second =    106.083
+  train_steps_per_second   =      0.417
+  0%|          | 0/76 [00:00<?, ?it/s]  3%|▎         | 2/76 [00:03<02:15,  1.84s/it]  4%|▍         | 3/76 [00:03<01:25,  1.18s/it]  7%|▋         | 5/76 [00:04<00:41,  1.73it/s]  9%|▉         | 7/76 [00:04<00:24,  2.81it/s] 12%|█▏        | 9/76 [00:04<00:20,  3.31it/s] 14%|█▍        | 11/76 [00:04<00:14,  4.58it/s] 17%|█▋        | 13/76 [00:04<00:10,  5.87it/s] 20%|█▉        | 15/76 [00:05<00:08,  7.39it/s] 22%|██▏       | 17/76 [00:05<00:06,  8.92it/s] 25%|██▌       | 19/76 [00:05<00:05, 10.34it/s] 28%|██▊       | 21/76 [00:05<00:04, 11.34it/s] 30%|███       | 23/76 [00:05<00:04, 12.41it/s] 33%|███▎      | 25/76 [00:05<00:03, 13.34it/s] 36%|███▌      | 27/76 [00:05<00:03, 13.47it/s] 38%|███▊      | 29/76 [00:05<00:03, 13.36it/s] 41%|████      | 31/76 [00:06<00:03, 11.54it/s] 43%|████▎     | 33/76 [00:06<00:03, 12.61it/s] 46%|████▌     | 35/76 [00:06<00:03, 13.38it/s] 49%|████▊     | 37/76 [00:06<00:03, 12.92it/s] 51%|█████▏    | 39/76 [00:15<00:51,  1.40s/it] 53%|█████▎    | 40/76 [00:16<00:47,  1.33s/it] 55%|█████▌    | 42/76 [00:16<00:30,  1.10it/s] 58%|█████▊    | 44/76 [00:16<00:20,  1.57it/s] 61%|██████    | 46/76 [00:17<00:13,  2.19it/s] 63%|██████▎   | 48/76 [00:17<00:09,  2.96it/s] 66%|██████▌   | 50/76 [00:17<00:06,  3.89it/s] 68%|██████▊   | 52/76 [00:17<00:04,  4.98it/s] 71%|███████   | 54/76 [00:17<00:03,  6.30it/s] 74%|███████▎  | 56/76 [00:17<00:02,  7.38it/s] 76%|███████▋  | 58/76 [00:17<00:02,  8.66it/s] 79%|███████▉  | 60/76 [00:18<00:01,  9.85it/s] 82%|████████▏ | 62/76 [00:18<00:01,  8.40it/s] 84%|████████▍ | 64/76 [00:19<00:02,  4.62it/s] 87%|████████▋ | 66/76 [00:19<00:01,  5.86it/s] 89%|████████▉ | 68/76 [00:20<00:02,  3.61it/s] 92%|█████████▏| 70/76 [00:20<00:01,  4.63it/s] 95%|█████████▍| 72/76 [00:20<00:00,  5.90it/s] 97%|█████████▋| 74/76 [00:20<00:00,  7.28it/s]100%|██████████| 76/76 [00:20<00:00,  8.81it/s]100%|██████████| 76/76 [00:21<00:00,  3.55it/s]
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+***** eval metrics *****
+  epoch                   =        7.0
+  eval_accuracy           =     0.6328
+  eval_f1                 =     0.5758
+  eval_loss               =      0.765
+  eval_mcc                =     0.2525
+  eval_runtime            = 0:00:54.00
+  eval_samples            =       2424
+  eval_samples_per_second =     44.886
+  eval_steps_per_second   =      1.407
+  0%|          | 0/76 [00:00<?, ?it/s]  3%|▎         | 2/76 [00:02<01:47,  1.46s/it]  4%|▍         | 3/76 [00:03<01:28,  1.21s/it]  5%|▌         | 4/76 [00:03<00:57,  1.25it/s]  8%|▊         | 6/76 [00:04<00:30,  2.32it/s]  9%|▉         | 7/76 [00:04<00:23,  2.89it/s] 12%|█▏        | 9/76 [00:04<00:15,  4.37it/s] 14%|█▍        | 11/76 [00:04<00:11,  5.88it/s] 17%|█▋        | 13/76 [00:06<00:33,  1.88it/s] 20%|█▉        | 15/76 [00:06<00:22,  2.66it/s] 22%|██▏       | 17/76 [00:07<00:16,  3.60it/s] 25%|██▌       | 19/76 [00:07<00:12,  4.70it/s] 28%|██▊       | 21/76 [00:07<00:09,  5.60it/s] 30%|███       | 23/76 [00:07<00:07,  6.80it/s] 33%|███▎      | 25/76 [00:07<00:06,  8.27it/s] 36%|███▌      | 27/76 [00:07<00:05,  9.26it/s] 38%|███▊      | 29/76 [00:08<00:04, 10.25it/s] 41%|████      | 31/76 [00:08<00:04,  9.57it/s] 43%|████▎     | 33/76 [00:08<00:04, 10.31it/s] 46%|████▌     | 35/76 [00:08<00:03, 11.32it/s] 49%|████▊     | 37/76 [00:08<00:03, 11.89it/s] 51%|█████▏    | 39/76 [00:08<00:02, 12.35it/s] 54%|█████▍    | 41/76 [00:09<00:02, 12.99it/s] 57%|█████▋    | 43/76 [00:09<00:02, 13.82it/s] 59%|█████▉    | 45/76 [00:09<00:02, 13.26it/s] 62%|██████▏   | 47/76 [00:09<00:02, 13.66it/s] 64%|██████▍   | 49/76 [00:09<00:01, 13.66it/s] 67%|██████▋   | 51/76 [00:09<00:01, 13.95it/s] 70%|██████▉   | 53/76 [00:09<00:01, 14.17it/s] 72%|███████▏  | 55/76 [00:10<00:01, 14.37it/s] 75%|███████▌  | 57/76 [00:10<00:01, 14.46it/s] 78%|███████▊  | 59/76 [00:10<00:01, 14.56it/s] 80%|████████  | 61/76 [00:10<00:01,  7.64it/s] 83%|████████▎ | 63/76 [00:10<00:01,  8.87it/s] 86%|████████▌ | 65/76 [00:11<00:01, 10.08it/s] 88%|████████▊ | 67/76 [00:12<00:01,  4.92it/s] 91%|█████████ | 69/76 [00:12<00:01,  6.19it/s] 93%|█████████▎| 71/76 [00:12<00:00,  7.62it/s] 96%|█████████▌| 73/76 [00:12<00:00,  9.09it/s] 99%|█████████▊| 75/76 [00:12<00:00, 10.29it/s]100%|██████████| 76/76 [00:12<00:00,  6.03it/s]
+wandb: - 0.015 MB of 0.015 MB uploadedwandb: \ 0.015 MB of 0.015 MB uploadedwandb: | 0.015 MB of 0.015 MB uploadedwandb: / 0.015 MB of 0.015 MB uploadedwandb: - 0.015 MB of 0.015 MB uploadedwandb: \ 0.015 MB of 0.015 MB uploadedwandb: | 0.015 MB of 0.015 MB uploadedwandb: / 0.043 MB of 0.065 MB uploaded (0.002 MB deduped)wandb: - 0.065 MB of 0.065 MB uploaded (0.002 MB deduped)wandb: 
+wandb: Run history:
+wandb:                    eval/accuracy ██▆▃▅▄▁▃
+wandb:                          eval/f1 ▁▆▇██▇▇█
+wandb:                        eval/loss ▁▁▁▃▅▇█▃
+wandb:                         eval/mcc ██▅▄▅▄▁▄
+wandb:                     eval/runtime ▂▂▂▁▂▁▂█
+wandb:          eval/samples_per_second ▄▅▅█▅▆▅▁
+wandb:            eval/steps_per_second ▄▅▅█▅▆▅▁
+wandb:                      train/epoch ▁▂▃▅▅▆▇███
+wandb:                train/global_step ▁▂▃▅▅▆▇████
+wandb:                  train/grad_norm ▁
+wandb:              train/learning_rate ▁
+wandb:                       train/loss ▁
+wandb:            train/predict_runtime ▁
+wandb: train/predict_samples_per_second ▁
+wandb:   train/predict_steps_per_second ▁
+wandb: 
+wandb: Run summary:
+wandb:                    eval/accuracy 0.63284
+wandb:                          eval/f1 0.57579
+wandb:                        eval/loss 0.765
+wandb:                         eval/mcc 0.2525
+wandb:                     eval/runtime 54.0031
+wandb:          eval/samples_per_second 44.886
+wandb:            eval/steps_per_second 1.407
+wandb:                       total_flos 1.2544110302105088e+16
+wandb:                      train/epoch 7.0
+wandb:                train/global_step 749
+wandb:                  train/grad_norm 1.79226
+wandb:              train/learning_rate 3e-05
+wandb:                       train/loss 0.5157
+wandb:            train/predict_runtime 30.779
+wandb: train/predict_samples_per_second 78.755
+wandb:   train/predict_steps_per_second 2.469
+wandb:                       train_loss 0.42507
+wandb:                    train_runtime 2568.0922
+wandb:         train_samples_per_second 106.083
+wandb:           train_steps_per_second 0.417
+wandb: 
+wandb: 🚀 View run results/finetune/checkpoint-89600/multirc/ at: https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/n0jfeahq
+wandb: ⭐️ View project at: https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: Synced 5 W&B file(s), 0 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250925_143825-n0jfeahq/logs
+wandb: WARNING The new W&B backend becomes opt-out in version 0.18.0; try it out with `wandb.require("core")`! See https://wandb.me/wandb-core for more information.
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+09/25/2025 15:27:07 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 4distributed training: True, 16-bits training: False
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/convert_slow_tokenizer.py:551: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+[WARNING|modeling_utils.py:4509] 2025-09-25 15:27:36,227 >> Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at ../models/3597858/checkpoint-89600 and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Running tokenizer on dataset:   0%|          | 0/104743 [00:00<?, ? examples/s]Running tokenizer on dataset:   1%|          | 1000/104743 [00:04<07:41, 225.02 examples/s]Running tokenizer on dataset:   2%|▏         | 2000/104743 [00:04<03:22, 507.94 examples/s]Running tokenizer on dataset:   3%|▎         | 3000/104743 [00:04<01:58, 858.05 examples/s]Running tokenizer on dataset:   4%|▍         | 4000/104743 [00:05<01:16, 1311.29 examples/s]Running tokenizer on dataset:   5%|▍         | 5000/104743 [00:05<00:53, 1849.07 examples/s]Running tokenizer on dataset:   7%|▋         | 7000/104743 [00:05<00:29, 3300.43 examples/s]Running tokenizer on dataset:   9%|▊         | 9000/104743 [00:05<00:19, 4811.20 examples/s]Running tokenizer on dataset:  11%|█         | 11000/104743 [00:05<00:14, 6366.71 examples/s]Running tokenizer on dataset:  12%|█▏        | 13000/104743 [00:08<00:55, 1649.05 examples/s]Running tokenizer on dataset:  14%|█▍        | 15000/104743 [00:08<00:38, 2332.26 examples/s]Running tokenizer on dataset:  16%|█▌        | 17000/104743 [00:08<00:27, 3187.83 examples/s]Running tokenizer on dataset:  18%|█▊        | 19000/104743 [00:08<00:20, 4206.65 examples/s]Running tokenizer on dataset:  20%|██        | 21000/104743 [00:09<00:15, 5360.90 examples/s]Running tokenizer on dataset:  22%|██▏       | 23000/104743 [00:09<00:12, 6603.97 examples/s]Running tokenizer on dataset:  24%|██▍       | 25000/104743 [00:09<00:10, 7830.05 examples/s]Running tokenizer on dataset:  26%|██▌       | 27000/104743 [00:09<00:08, 9008.15 examples/s]Running tokenizer on dataset:  28%|██▊       | 29000/104743 [00:09<00:07, 10074.97 examples/s]Running tokenizer on dataset:  30%|██▉       | 31000/104743 [00:09<00:06, 11020.33 examples/s]Running tokenizer on dataset:  32%|███▏      | 33000/104743 [00:10<00:07, 9297.13 examples/s] Running tokenizer on dataset:  33%|███▎      | 35000/104743 [00:10<00:06, 10249.06 examples/s]Running tokenizer on dataset:  35%|███▌      | 37000/104743 [00:10<00:06, 11049.24 examples/s]Running tokenizer on dataset:  37%|███▋      | 39000/104743 [00:10<00:05, 11741.82 examples/s]Running tokenizer on dataset:  39%|███▉      | 41000/104743 [00:10<00:05, 12271.35 examples/s]Running tokenizer on dataset:  41%|████      | 43000/104743 [00:10<00:04, 12792.71 examples/s]Running tokenizer on dataset:  43%|████▎     | 45000/104743 [00:10<00:04, 13039.93 examples/s]Running tokenizer on dataset:  45%|████▍     | 47000/104743 [00:11<00:04, 13263.90 examples/s]Running tokenizer on dataset:  47%|████▋     | 49000/104743 [00:11<00:04, 13368.52 examples/s]Running tokenizer on dataset:  49%|████▊     | 51000/104743 [00:11<00:05, 10387.08 examples/s]Running tokenizer on dataset:  51%|█████     | 53000/104743 [00:11<00:04, 11235.41 examples/s]Running tokenizer on dataset:  53%|█████▎    | 55000/104743 [00:11<00:04, 11971.53 examples/s]Running tokenizer on dataset:  54%|█████▍    | 57000/104743 [00:11<00:03, 12524.19 examples/s]Running tokenizer on dataset:  56%|█████▋    | 59000/104743 [00:12<00:03, 12952.38 examples/s]Running tokenizer on dataset:  58%|█████▊    | 61000/104743 [00:12<00:03, 13206.03 examples/s]Running tokenizer on dataset:  60%|██████    | 63000/104743 [00:12<00:03, 13488.89 examples/s]Running tokenizer on dataset:  62%|██████▏   | 65000/104743 [00:12<00:02, 13598.57 examples/s]Running tokenizer on dataset:  64%|██████▍   | 67000/104743 [00:12<00:04, 8770.70 examples/s] Running tokenizer on dataset:  66%|██████▌   | 69000/104743 [00:13<00:03, 9004.89 examples/s]Running tokenizer on dataset:  68%|██████▊   | 71000/104743 [00:13<00:03, 10089.52 examples/s]Running tokenizer on dataset:  70%|██████▉   | 73000/104743 [00:13<00:03, 8041.88 examples/s] Running tokenizer on dataset:  72%|███████▏  | 75000/104743 [00:13<00:03, 9260.22 examples/s]Running tokenizer on dataset:  74%|███████▎  | 77000/104743 [00:13<00:02, 10295.65 examples/s]Running tokenizer on dataset:  75%|███████▌  | 79000/104743 [00:14<00:02, 11201.14 examples/s]Running tokenizer on dataset:  77%|███████▋  | 81000/104743 [00:14<00:01, 11888.94 examples/s]Running tokenizer on dataset:  79%|███████▉  | 83000/104743 [00:14<00:01, 12452.07 examples/s]Running tokenizer on dataset:  81%|████████  | 85000/104743 [00:14<00:01, 12805.18 examples/s]Running tokenizer on dataset:  83%|████████▎ | 87000/104743 [00:14<00:01, 13233.32 examples/s]Running tokenizer on dataset:  85%|████████▍ | 89000/104743 [00:14<00:01, 13430.87 examples/s]Running tokenizer on dataset:  87%|████████▋ | 91000/104743 [00:14<00:01, 13673.73 examples/s]Running tokenizer on dataset:  89%|████████▉ | 93000/104743 [00:15<00:01, 10554.00 examples/s]Running tokenizer on dataset:  91%|█████████ | 95000/104743 [00:15<00:00, 11399.06 examples/s]Running tokenizer on dataset:  93%|█████████▎| 97000/104743 [00:15<00:00, 12038.81 examples/s]Running tokenizer on dataset:  95%|█████████▍| 99000/104743 [00:15<00:00, 12607.45 examples/s]Running tokenizer on dataset:  96%|█████████▋| 101000/104743 [00:15<00:00, 12997.06 examples/s]Running tokenizer on dataset:  98%|█████████▊| 103000/104743 [00:15<00:00, 13306.24 examples/s]Running tokenizer on dataset: 100%|██████████| 104743/104743 [00:19<00:00, 1657.11 examples/s] Running tokenizer on dataset: 100%|██████████| 104743/104743 [00:22<00:00, 4650.51 examples/s]
+Running tokenizer on dataset:   0%|          | 0/2732 [00:00<?, ? examples/s]Running tokenizer on dataset:  37%|███▋      | 1000/2732 [00:00<00:00, 2587.40 examples/s]Running tokenizer on dataset: 100%|██████████| 2732/2732 [00:00<00:00, 4885.25 examples/s]Running tokenizer on dataset: 100%|██████████| 2732/2732 [00:00<00:00, 4198.04 examples/s]
+Running tokenizer on dataset:   0%|          | 0/2732 [00:00<?, ? examples/s]Running tokenizer on dataset:  37%|███▋      | 1000/2732 [00:00<00:00, 3086.47 examples/s]Running tokenizer on dataset:  73%|███████▎  | 2000/2732 [00:00<00:00, 4691.99 examples/s]Running tokenizer on dataset: 100%|██████████| 2732/2732 [00:00<00:00, 5291.75 examples/s]Running tokenizer on dataset: 100%|██████████| 2732/2732 [00:00<00:00, 4747.60 examples/s]
+09/25/2025 15:28:05 - WARNING - accelerate.utils.other - Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Currently logged in as: lucafrancis (lucafrancis-georg-august-univerit-t-g-ttingen). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.8
+wandb: Run data is saved locally in /mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/wandb/run-20250925_152923-6vi2u1qv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run results/finetune/checkpoint-89600/qnli/
+wandb: ⭐️ View project at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: 🚀 View run at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/6vi2u1qv
+  0%|          | 0/4100 [00:00<?, ?it/s]/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+  0%|          | 1/4100 [01:57<133:23:29, 117.15s/it]  0%|          | 2/4100 [02:48<89:32:37, 78.66s/it]    0%|          | 3/4100 [03:40<75:40:00, 66.49s/it]  0%|          | 4/4100 [04:20<63:33:43, 55.87s/it]  0%|          | 5/4100 [04:48<52:01:36, 45.74s/it]  0%|          | 6/4100 [05:04<40:33:24, 35.66s/it]  0%|          | 7/4100 [05:11<29:55:32, 26.32s/it]  0%|          | 8/4100 [05:16<22:16:33, 19.60s/it]  0%|          | 9/4100 [05:19<16:16:17, 14.32s/it]  0%|          | 10/4100 [05:39<18:28:10, 16.26s/it]  0%|          | 11/4100 [06:08<22:50:03, 20.10s/it]  0%|          | 12/4100 [06:41<27:19:08, 24.06s/it]  0%|          | 13/4100 [07:02<26:02:16, 22.94s/it]  0%|          | 14/4100 [07:27<26:48:14, 23.62s/it]  0%|          | 15/4100 [07:52<27:20:00, 24.09s/it]  0%|          | 16/4100 [08:17<27:32:39, 24.28s/it]  0%|          | 17/4100 [08:34<24:58:47, 22.02s/it]  0%|          | 18/4100 [09:02<27:10:09, 23.96s/it]  0%|          | 19/4100 [09:32<29:03:45, 25.64s/it]  0%|          | 20/4100 [09:56<28:42:41, 25.33s/it]  1%|          | 21/4100 [10:21<28:27:40, 25.12s/it]  1%|          | 22/4100 [10:43<27:19:28, 24.12s/it]  1%|          | 23/4100 [11:09<28:13:32, 24.92s/it]  1%|          | 24/4100 [11:52<34:03:28, 30.08s/it]  1%|          | 25/4100 [12:21<33:52:20, 29.92s/it]  1%|          | 26/4100 [12:42<30:45:37, 27.18s/it]  1%|          | 27/4100 [13:03<28:38:15, 25.31s/it]  1%|          | 28/4100 [13:30<29:12:43, 25.83s/it]  1%|          | 29/4100 [14:06<32:37:32, 28.85s/it]  1%|          | 30/4100 [14:39<34:15:05, 30.30s/it]  1%|          | 31/4100 [15:02<31:29:14, 27.86s/it]  1%|          | 32/4100 [15:21<28:28:31, 25.20s/it]  1%|          | 33/4100 [15:38<25:55:13, 22.94s/it]  1%|          | 34/4100 [16:02<26:10:36, 23.18s/it]  1%|          | 35/4100 [16:38<30:40:10, 27.16s/it]  1%|          | 36/4100 [17:07<31:13:25, 27.66s/it]  1%|          | 37/4100 [17:30<29:36:43, 26.24s/it]  1%|          | 38/4100 [18:02<31:19:01, 27.76s/it]  1%|          | 39/4100 [18:34<33:03:56, 29.31s/it]  1%|          | 40/4100 [19:13<36:13:48, 32.13s/it]  1%|          | 41/4100 [19:44<35:51:09, 31.80s/it]  1%|          | 42/4100 [20:00<30:30:19, 27.06s/it]  1%|          | 43/4100 [20:33<32:28:07, 28.81s/it]  1%|          | 44/4100 [21:07<34:15:01, 30.40s/it]  1%|          | 45/4100 [21:32<32:18:37, 28.68s/it]  1%|          | 46/4100 [22:06<33:59:04, 30.18s/it]  1%|          | 47/4100 [22:32<32:34:22, 28.93s/it]  1%|          | 48/4100 [23:07<34:43:56, 30.86s/it]  1%|          | 49/4100 [23:32<32:47:07, 29.14s/it]  1%|          | 50/4100 [24:15<37:23:41, 33.24s/it]  1%|          | 51/4100 [24:29<31:03:12, 27.61s/it]  1%|▏         | 52/4100 [24:36<23:55:42, 21.28s/it]  1%|▏         | 53/4100 [24:57<23:49:32, 21.19s/it]  1%|▏         | 54/4100 [25:14<22:22:39, 19.91s/it]  1%|▏         | 55/4100 [25:27<20:04:01, 17.86s/it]  1%|▏         | 56/4100 [25:44<19:52:12, 17.69s/it]  1%|▏         | 57/4100 [25:54<17:06:17, 15.23s/it]  1%|▏         | 58/4100 [26:00<13:58:11, 12.44s/it]  1%|▏         | 59/4100 [26:04<11:24:42, 10.17s/it]  1%|▏         | 60/4100 [26:07<8:52:35,  7.91s/it]   1%|▏         | 61/4100 [26:15<9:00:24,  8.03s/it]  2%|▏         | 62/4100 [26:21<8:21:03,  7.45s/it]  2%|▏         | 63/4100 [26:41<12:29:25, 11.14s/it]  2%|▏         | 64/4100 [27:01<15:24:55, 13.75s/it]  2%|▏         | 65/4100 [27:25<18:46:40, 16.75s/it]  2%|▏         | 66/4100 [28:15<30:08:24, 26.90s/it]  2%|▏         | 67/4100 [28:56<34:54:47, 31.16s/it]  2%|▏         | 68/4100 [29:29<35:27:04, 31.65s/it]  2%|▏         | 69/4100 [30:00<35:06:46, 31.36s/it]  2%|▏         | 70/4100 [30:30<34:35:08, 30.90s/it]  2%|▏         | 71/4100 [30:58<33:47:49, 30.20s/it]  2%|▏         | 72/4100 [31:29<34:03:58, 30.45s/it]  2%|▏         | 73/4100 [31:52<31:31:15, 28.18s/it]  2%|▏         | 74/4100 [32:25<33:06:00, 29.60s/it]  2%|▏         | 75/4100 [32:52<32:19:09, 28.91s/it]  2%|▏         | 76/4100 [33:11<28:56:38, 25.89s/it]  2%|▏         | 77/4100 [33:38<29:14:40, 26.17s/it]  2%|▏         | 78/4100 [33:59<27:26:32, 24.56s/it]  2%|▏         | 79/4100 [34:23<27:08:39, 24.30s/it]  2%|▏         | 80/4100 [34:59<31:10:03, 27.91s/it]  2%|▏         | 81/4100 [35:34<33:40:08, 30.16s/it]  2%|▏         | 82/4100 [35:58<31:30:21, 28.23s/it]  2%|▏         | 83/4100 [36:22<29:59:16, 26.88s/it]  2%|▏         | 84/4100 [36:38<26:23:25, 23.66s/it]  2%|▏         | 85/4100 [37:03<26:50:34, 24.07s/it]  2%|▏         | 86/4100 [37:27<26:53:55, 24.12s/it]  2%|▏         | 87/4100 [38:05<31:25:57, 28.20s/it]  2%|▏         | 88/4100 [38:37<32:51:38, 29.49s/it]  2%|▏         | 89/4100 [39:01<31:01:49, 27.85s/it]  2%|▏         | 90/4100 [39:38<33:47:27, 30.34s/it]  2%|▏         | 91/4100 [40:13<35:21:43, 31.75s/it]  2%|▏         | 92/4100 [40:32<31:21:59, 28.17s/it]  2%|▏         | 93/4100 [40:51<28:12:19, 25.34s/it]  2%|▏         | 94/4100 [41:16<27:54:58, 25.09s/it]  2%|▏         | 95/4100 [41:34<25:31:48, 22.95s/it]  2%|▏         | 96/4100 [41:48<22:31:12, 20.25s/it]  2%|▏         | 97/4100 [42:13<24:16:16, 21.83s/it]  2%|▏         | 98/4100 [42:35<24:24:10, 21.95s/it]  2%|▏         | 99/4100 [43:03<26:22:18, 23.73s/it]  2%|▏         | 100/4100 [43:18<23:27:52, 21.12s/it]  2%|▏         | 101/4100 [43:29<20:08:30, 18.13s/it]  2%|▏         | 102/4100 [43:35<15:51:59, 14.29s/it]  3%|▎         | 103/4100 [43:43<13:54:24, 12.53s/it]  3%|▎         | 104/4100 [44:06<17:17:33, 15.58s/it]  3%|▎         | 105/4100 [44:37<22:22:31, 20.16s/it]  3%|▎         | 106/4100 [44:55<21:41:54, 19.56s/it]  3%|▎         | 107/4100 [45:13<21:10:38, 19.09s/it]  3%|▎         | 108/4100 [45:42<24:23:55, 22.00s/it]  3%|▎         | 109/4100 [46:14<27:51:06, 25.12s/it]  3%|▎         | 110/4100 [46:39<27:51:43, 25.14s/it]  3%|▎         | 111/4100 [46:50<23:07:33, 20.87s/it]  3%|▎         | 112/4100 [46:56<18:10:23, 16.41s/it]  3%|▎         | 113/4100 [47:10<17:26:53, 15.75s/it]  3%|▎         | 114/4100 [47:19<15:11:04, 13.71s/it]  3%|▎         | 115/4100 [47:26<12:52:32, 11.63s/it]  3%|▎         | 116/4100 [47:40<13:33:28, 12.25s/it]  3%|▎         | 117/4100 [47:47<11:57:08, 10.80s/it]  3%|▎         | 118/4100 [47:57<11:45:59, 10.64s/it]  3%|▎         | 119/4100 [48:04<10:22:22,  9.38s/it]  3%|▎         | 120/4100 [48:11<9:35:03,  8.67s/it]   3%|▎         | 121/4100 [48:25<11:19:55, 10.25s/it]  3%|▎         | 122/4100 [48:36<11:35:04, 10.48s/it]  3%|▎         | 123/4100 [48:43<10:27:18,  9.46s/it]  3%|▎         | 124/4100 [49:14<17:40:15, 16.00s/it]  3%|▎         | 125/4100 [49:49<23:43:12, 21.48s/it]  3%|▎         | 126/4100 [50:14<25:03:52, 22.71s/it]  3%|▎         | 127/4100 [50:49<29:11:50, 26.46s/it]  3%|▎         | 128/4100 [51:25<32:22:56, 29.35s/it]  3%|▎         | 129/4100 [51:50<30:50:41, 27.96s/it]  3%|▎         | 130/4100 [52:15<29:41:23, 26.92s/it]  3%|▎         | 131/4100 [52:37<28:14:52, 25.62s/it]  3%|▎         | 132/4100 [53:00<27:13:55, 24.71s/it]  3%|▎         | 133/4100 [53:36<31:01:44, 28.16s/it]  3%|▎         | 134/4100 [54:01<29:57:49, 27.20s/it]  3%|▎         | 135/4100 [54:32<31:09:08, 28.28s/it]  3%|▎         | 136/4100 [54:58<30:35:08, 27.78s/it]  3%|▎         | 137/4100 [55:19<28:09:18, 25.58s/it]  3%|▎         | 138/4100 [55:42<27:29:58, 24.99s/it]  3%|▎         | 139/4100 [55:59<24:36:48, 22.37s/it]  3%|▎         | 140/4100 [56:20<24:07:38, 21.93s/it]  3%|▎         | 141/4100 [56:59<29:57:22, 27.24s/it]  3%|▎         | 142/4100 [57:31<31:35:07, 28.73s/it]  3%|▎         | 143/4100 [57:52<28:54:14, 26.30s/it]  4%|▎         | 144/4100 [58:26<31:24:19, 28.58s/it]  4%|▎         | 145/4100 [59:02<33:53:40, 30.85s/it]  4%|▎         | 146/4100 [59:34<34:04:34, 31.03s/it]  4%|▎         | 147/4100 [1:00:10<35:52:45, 32.68s/it]  4%|▎         | 148/4100 [1:00:45<36:43:00, 33.45s/it]  4%|▎         | 149/4100 [1:01:25<38:37:11, 35.19s/it]  4%|▎         | 150/4100 [1:01:52<36:09:20, 32.95s/it]  4%|▎         | 151/4100 [1:02:22<35:09:32, 32.05s/it]  4%|▎         | 152/4100 [1:02:45<32:08:09, 29.30s/it]  4%|▎         | 153/4100 [1:03:04<28:50:44, 26.31s/it]  4%|▍         | 154/4100 [1:03:21<25:34:42, 23.34s/it]  4%|▍         | 155/4100 [1:03:57<29:40:05, 27.07s/it]  4%|▍         | 156/4100 [1:04:19<28:04:05, 25.62s/it]  4%|▍         | 157/4100 [1:04:40<26:35:50, 24.28s/it]  4%|▍         | 158/4100 [1:04:57<24:19:36, 22.22s/it]  4%|▍         | 159/4100 [1:05:27<26:51:19, 24.53s/it]  4%|▍         | 160/4100 [1:05:53<27:13:22, 24.87s/it]  4%|▍         | 161/4100 [1:06:25<29:35:49, 27.05s/it]  4%|▍         | 162/4100 [1:06:47<28:02:02, 25.63s/it]  4%|▍         | 163/4100 [1:07:08<26:29:54, 24.23s/it]  4%|▍         | 164/4100 [1:07:41<29:09:41, 26.67s/it]  4%|▍         | 165/4100 [1:07:57<25:50:18, 23.64s/it]  4%|▍         | 166/4100 [1:08:06<20:55:03, 19.14s/it]  4%|▍         | 167/4100 [1:08:12<16:30:20, 15.11s/it]  4%|▍         | 168/4100 [1:08:19<14:04:12, 12.88s/it]  4%|▍         | 169/4100 [1:08:25<11:48:01, 10.81s/it]  4%|▍         | 170/4100 [1:08:45<14:39:40, 13.43s/it]  4%|▍         | 171/4100 [1:09:00<15:07:25, 13.86s/it]  4%|▍         | 172/4100 [1:09:20<17:12:48, 15.78s/it]  4%|▍         | 173/4100 [1:09:39<18:21:10, 16.82s/it]  4%|▍         | 174/4100 [1:10:01<19:51:56, 18.22s/it]  4%|▍         | 175/4100 [1:10:21<20:37:13, 18.91s/it]  4%|▍         | 176/4100 [1:10:56<25:51:30, 23.72s/it]  4%|▍         | 177/4100 [1:11:21<26:08:05, 23.98s/it]  4%|▍         | 178/4100 [1:11:42<25:12:46, 23.14s/it]  4%|▍         | 179/4100 [1:11:58<22:50:53, 20.98s/it]  4%|▍         | 180/4100 [1:12:25<24:55:31, 22.89s/it]  4%|▍         | 181/4100 [1:12:55<27:17:43, 25.07s/it]  4%|▍         | 182/4100 [1:13:31<30:35:56, 28.12s/it]  4%|▍         | 183/4100 [1:14:06<33:04:37, 30.40s/it]  4%|▍         | 184/4100 [1:14:39<33:49:16, 31.09s/it]  5%|▍         | 185/4100 [1:15:01<30:52:07, 28.39s/it]  5%|▍         | 186/4100 [1:15:28<30:23:50, 27.96s/it]  5%|▍         | 187/4100 [1:15:50<28:16:51, 26.02s/it]  5%|▍         | 188/4100 [1:16:22<30:19:18, 27.90s/it]  5%|▍         | 189/4100 [1:16:43<28:03:34, 25.83s/it]  5%|▍         | 190/4100 [1:17:15<30:14:11, 27.84s/it]  5%|▍         | 191/4100 [1:17:49<31:57:12, 29.43s/it]  5%|▍         | 192/4100 [1:18:13<30:20:06, 27.94s/it]  5%|▍         | 193/4100 [1:18:28<26:00:18, 23.96s/it]  5%|▍         | 194/4100 [1:18:40<22:14:43, 20.50s/it]  5%|▍         | 195/4100 [1:18:53<19:50:05, 18.29s/it]  5%|▍         | 196/4100 [1:19:15<21:02:31, 19.40s/it]  5%|▍         | 197/4100 [1:19:33<20:23:19, 18.81s/it]  5%|▍         | 198/4100 [1:19:54<21:13:54, 19.59s/it]  5%|▍         | 199/4100 [1:20:11<20:25:15, 18.85s/it]  5%|▍         | 200/4100 [1:20:32<21:08:35, 19.52s/it]  5%|▍         | 201/4100 [1:21:05<25:32:22, 23.58s/it]  5%|▍         | 202/4100 [1:21:23<23:40:14, 21.86s/it]  5%|▍         | 203/4100 [1:21:46<23:57:05, 22.13s/it]  5%|▍         | 204/4100 [1:22:07<23:33:02, 21.76s/it]  5%|▌         | 205/4100 [1:22:42<27:57:09, 25.84s/it]  5%|▌         | 206/4100 [1:23:09<28:16:20, 26.14s/it]  5%|▌         | 207/4100 [1:23:43<30:37:52, 28.33s/it]  5%|▌         | 208/4100 [1:24:05<28:46:27, 26.62s/it]  5%|▌         | 209/4100 [1:24:25<26:30:24, 24.52s/it]  5%|▌         | 210/4100 [1:24:46<25:16:55, 23.40s/it]  5%|▌         | 211/4100 [1:25:06<24:20:03, 22.53s/it]  5%|▌         | 212/4100 [1:25:47<30:24:34, 28.16s/it]  5%|▌         | 213/4100 [1:26:11<28:49:50, 26.70s/it]  5%|▌         | 214/4100 [1:26:31<26:41:45, 24.73s/it]  5%|▌         | 215/4100 [1:26:46<23:27:16, 21.73s/it]  5%|▌         | 216/4100 [1:27:00<20:56:43, 19.41s/it]  5%|▌         | 217/4100 [1:27:15<19:37:40, 18.20s/it]  5%|▌         | 218/4100 [1:27:49<24:41:33, 22.90s/it]  5%|▌         | 219/4100 [1:28:20<27:28:08, 25.48s/it]  5%|▌         | 220/4100 [1:28:40<25:34:31, 23.73s/it]  5%|▌         | 221/4100 [1:28:59<24:13:52, 22.49s/it]  5%|▌         | 222/4100 [1:29:20<23:26:44, 21.76s/it]  5%|▌         | 223/4100 [1:29:43<24:07:25, 22.40s/it]  5%|▌         | 224/4100 [1:30:02<22:56:18, 21.31s/it]  5%|▌         | 225/4100 [1:30:31<25:24:07, 23.60s/it]  6%|▌         | 226/4100 [1:30:49<23:29:34, 21.83s/it]  6%|▌         | 227/4100 [1:31:07<22:23:44, 20.82s/it]  6%|▌         | 228/4100 [1:31:49<28:59:40, 26.96s/it]  6%|▌         | 229/4100 [1:32:29<33:29:17, 31.14s/it]  6%|▌         | 230/4100 [1:33:08<35:48:10, 33.31s/it]  6%|▌         | 231/4100 [1:33:29<31:46:12, 29.56s/it]  6%|▌         | 232/4100 [1:33:46<27:54:05, 25.97s/it]  6%|▌         | 233/4100 [1:33:58<23:08:05, 21.54s/it]  6%|▌         | 234/4100 [1:34:23<24:21:45, 22.69s/it]  6%|▌         | 235/4100 [1:35:04<30:16:47, 28.20s/it]  6%|▌         | 236/4100 [1:35:28<28:59:16, 27.01s/it]  6%|▌         | 237/4100 [1:36:06<32:24:22, 30.20s/it]  6%|▌         | 238/4100 [1:36:46<35:39:26, 33.24s/it]  6%|▌         | 239/4100 [1:37:44<43:31:15, 40.58s/it]  6%|▌         | 240/4100 [1:38:11<39:07:30, 36.49s/it]  6%|▌         | 241/4100 [1:38:54<41:19:42, 38.55s/it]  6%|▌         | 242/4100 [1:39:44<45:06:56, 42.10s/it]  6%|▌         | 243/4100 [1:40:27<45:13:29, 42.21s/it]  6%|▌         | 244/4100 [1:41:10<45:19:42, 42.32s/it]  6%|▌         | 245/4100 [1:41:42<42:07:39, 39.34s/it]  6%|▌         | 246/4100 [1:42:06<37:09:54, 34.72s/it]  6%|▌         | 247/4100 [1:42:37<36:05:27, 33.72s/it]  6%|▌         | 248/4100 [1:43:00<32:32:59, 30.42s/it]  6%|▌         | 249/4100 [1:43:22<29:50:29, 27.90s/it]  6%|▌         | 250/4100 [1:43:43<27:38:11, 25.84s/it]  6%|▌         | 251/4100 [1:43:59<24:33:57, 22.98s/it]  6%|▌         | 252/4100 [1:44:28<26:19:16, 24.62s/it]  6%|▌         | 253/4100 [1:44:58<28:05:19, 26.29s/it]  6%|▌         | 254/4100 [1:45:26<28:30:58, 26.69s/it]  6%|▌         | 255/4100 [1:45:56<29:40:21, 27.78s/it]  6%|▌         | 256/4100 [1:46:26<30:27:21, 28.52s/it]  6%|▋         | 257/4100 [1:46:45<27:17:54, 25.57s/it]  6%|▋         | 258/4100 [1:47:15<28:48:04, 26.99s/it]  6%|▋         | 259/4100 [1:47:37<27:04:21, 25.37s/it]  6%|▋         | 260/4100 [1:48:19<32:26:19, 30.41s/it]  6%|▋         | 261/4100 [1:48:52<33:24:24, 31.33s/it]  6%|▋         | 262/4100 [1:49:14<30:08:33, 28.27s/it]  6%|▋         | 263/4100 [1:49:36<28:20:06, 26.58s/it]  6%|▋         | 264/4100 [1:50:06<29:24:35, 27.60s/it]  6%|▋         | 265/4100 [1:50:40<31:30:31, 29.58s/it]  6%|▋         | 266/4100 [1:51:07<30:34:16, 28.71s/it]  7%|▋         | 267/4100 [1:51:41<32:08:01, 30.18s/it]  7%|▋         | 268/4100 [1:52:10<31:58:26, 30.04s/it]  7%|▋         | 269/4100 [1:52:29<28:28:08, 26.75s/it]  7%|▋         | 270/4100 [1:52:52<27:11:29, 25.56s/it]  7%|▋         | 271/4100 [1:53:17<27:04:12, 25.45s/it]  7%|▋         | 272/4100 [1:53:56<31:22:36, 29.51s/it]  7%|▋         | 273/4100 [1:54:36<34:40:19, 32.62s/it]  7%|▋         | 274/4100 [1:55:04<33:01:18, 31.07s/it]  7%|▋         | 275/4100 [1:55:48<37:07:11, 34.94s/it]  7%|▋         | 276/4100 [1:56:06<31:42:17, 29.85s/it]  7%|▋         | 277/4100 [1:56:13<24:27:08, 23.03s/it]  7%|▋         | 278/4100 [1:56:18<18:48:37, 17.72s/it]  7%|▋         | 279/4100 [1:56:20<13:54:42, 13.11s/it]  7%|▋         | 280/4100 [1:56:23<10:26:56,  9.85s/it]error: *** job 3604786 CANCELLED DUE TO TIME LIMIT ***

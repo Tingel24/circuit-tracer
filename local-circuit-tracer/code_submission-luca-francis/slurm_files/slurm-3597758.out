@@ -1,0 +1,100 @@
+starting python script
+[09/22/25 15:32:13 - 0:00:00][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Namespace(model_name='microsoft/deberta-v3-base', models_folder='./models/', reload_id='3597758', new_id='3597758', reload_best=False, dataset='halfhalf.train,halfhalf.dev', preprocessed=False, spm_model='tokenizer.model', data_lim=0, cache_dir=None, max_seq_len=64, num_workers=10, debug=False, batch_size=256, grad_acc=1, lr=0.0002, warmup_steps=4000, mask_prob=0.15, epochs=50, eval_steps=1000, save_steps=1000, logging_steps=100, log_to_file=False, eval_only=False, bf16=False, resume=False, push_to_hub='', push_only=False, register='', save_for_eval='', lora=False, load_encdec=False, tiny=False, small=False, reload_path='./models/3597758', checkpoint_path=None)
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+[09/22/25 15:32:16 - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----- Model Parameters -----
+[09/22/25 15:32:16 - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Total: 116802880
+[09/22/25 15:32:16 - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----------------------------
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:00<00:06, 274.04 examples/s]Map (num_proc=10):  40%|████      | 800/2000 [00:00<00:01, 1156.46 examples/s]Map (num_proc=10):  60%|██████    | 1200/2000 [00:01<00:00, 1147.28 examples/s]Map (num_proc=10):  80%|████████  | 1600/2000 [00:01<00:00, 1133.45 examples/s]Map (num_proc=10):  90%|█████████ | 1800/2000 [00:01<00:00, 1117.45 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:01<00:00, 1140.70 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:01<00:00, 1002.73 examples/s]
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:00<00:00, 13247.19 examples/s]
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+***** Running training *****
+  Num examples = 114,661
+  Num Epochs = 50
+  Instantaneous batch size per device = 256
+  Training with DataParallel so batch size has been adjusted to: 1,024
+  Total train batch size (w. parallel, distributed & accumulation) = 1,024
+  Gradient Accumulation steps = 1
+  Total optimization steps = 5,600
+  Number of trainable parameters = 116,802,880
+Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Currently logged in as: lucafrancis (lucafrancis-georg-august-univerit-t-g-ttingen). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.8
+wandb: Run data is saved locally in /mnt/tier2/users/u103092/circuit-tracer/test/wandb/run-20250922_153246-rxyjpnbm
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ./models/3597758
+wandb: ⭐️ View project at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: 🚀 View run at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/rxyjpnbm
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 114661
+    })
+    validation: Dataset({
+        features: ['input_ids'],
+        num_rows: 640
+    })
+})
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/train.py", line 337, in <module>
+    trainer.train(resume_from_checkpoint=args.checkpoint_path if args.resume else None)
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/trainer.py", line 1938, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/trainer.py", line 2279, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/trainer.py", line 3318, in training_step
+    loss = self.compute_loss(model, inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/trainer.py", line 3363, in compute_loss
+    outputs = model(**inputs)
+              ^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/data_parallel.py", line 187, in forward
+    return self.gather(outputs, self.output_device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/data_parallel.py", line 204, in gather
+    return gather(outputs, output_device, dim=self.dim)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/scatter_gather.py", line 109, in gather
+    res = gather_map(outputs)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/scatter_gather.py", line 100, in gather_map
+    return type(out)((k, gather_map([d[k] for d in outputs]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 7, in __init__
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/utils/generic.py", line 390, in __post_init__
+    for idx, element in enumerate(iterator):
+                        ^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/scatter_gather.py", line 100, in <genexpr>
+    return type(out)((k, gather_map([d[k] for d in outputs]))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/scatter_gather.py", line 94, in gather_map
+    return Gather.apply(target_device, dim, *outputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/autograd/function.py", line 574, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py", line 75, in forward
+    return comm.gather(inputs, ctx.dim, ctx.target_device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/comm.py", line 235, in gather
+    return torch._C._gather(tensors, dim, destination)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 9.77 GiB. GPU 0 has a total capacity of 39.49 GiB of which 3.17 GiB is free. Including non-PyTorch memory, this process has 36.31 GiB memory in use. Of the allocated memory 34.72 GiB is allocated by PyTorch, and 28.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+wandb: - 0.015 MB of 0.015 MB uploadedwandb: \ 0.015 MB of 0.015 MB uploadedwandb: | 0.015 MB of 0.015 MB uploadedwandb: / 0.040 MB of 0.053 MB uploaded (0.002 MB deduped)wandb: - 0.053 MB of 0.053 MB uploaded (0.002 MB deduped)wandb: 🚀 View run ./models/3597758 at: https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/rxyjpnbm
+wandb: ⭐️ View project at: https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: Synced 5 W&B file(s), 0 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250922_153246-rxyjpnbm/logs
+wandb: WARNING The new W&B backend becomes opt-out in version 0.18.0; try it out with `wandb.require("core")`! See https://wandb.me/wandb-core for more information.

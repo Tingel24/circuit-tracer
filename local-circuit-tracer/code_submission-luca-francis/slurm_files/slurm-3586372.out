@@ -1,0 +1,13 @@
+
+EnvironmentLocationNotFound: Not a conda environment: /project/home/p200918/circuit-tracer-env
+
+starting python script
+Traceback (most recent call last):
+  File "<frozen runpy>", line 189, in _run_module_as_main
+  File "<frozen runpy>", line 148, in _get_module_details
+  File "<frozen runpy>", line 112, in _get_module_details
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/__init__.py", line 1, in <module>
+    from .evaluator import evaluate, simple_evaluate
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/evaluator.py", line 8, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'

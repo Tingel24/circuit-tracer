@@ -1,0 +1,131 @@
+starting python script
+[07/29/2025 09:34:52 PM - 0:00:00][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Namespace(model_name='microsoft/deberta-v3-base', models_folder='./models/', reload_id='3428310', new_id='3428310', reload_best=False, dataset='halfhalf.train,halfhalf.dev', preprocessed=False, spm_model='tokenizer.model', data_lim=0, cache_dir=None, max_seq_len=64, num_workers=10, debug=False, batch_size=32, grad_acc=1, lr=0.0002, warmup_steps=4000, mask_prob=0.15, epochs=50, eval_steps=1000, save_steps=1000, logging_steps=100, log_to_file=False, eval_only=False, bf16=False, resume=False, push_to_hub='', push_only=False, register='', save_for_eval='', lora=False, load_encdec=False, tiny=False, small=False, reload_path='./models/3428310', checkpoint_path=None)
+[07/29/2025 09:34:55 PM - 0:00:03][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----- Model Parameters -----
+[07/29/2025 09:34:55 PM - 0:00:03][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Total: 116802880
+[07/29/2025 09:34:55 PM - 0:00:03][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----------------------------
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:01<00:10, 179.81 examples/s]Map (num_proc=10):  40%|████      | 800/2000 [00:01<00:01, 813.34 examples/s]Map (num_proc=10):  60%|██████    | 1200/2000 [00:01<00:00, 917.51 examples/s]Map (num_proc=10):  80%|████████  | 1600/2000 [00:01<00:00, 989.62 examples/s]Map (num_proc=10):  90%|█████████ | 1800/2000 [00:02<00:00, 1002.97 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:02<00:00, 1026.12 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:02<00:00, 815.11 examples/s] 
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:00<00:02, 773.63 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:00<00:00, 4917.32 examples/s]
+/mnt/tier2/users/u103092/circuit-tracer/test/train.py:320: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+***** Running training *****
+  Num examples = 114,661
+  Num Epochs = 50
+  Instantaneous batch size per device = 32
+  Training with DataParallel so batch size has been adjusted to: 128
+  Total train batch size (w. parallel, distributed & accumulation) = 128
+  Gradient Accumulation steps = 1
+  Total optimization steps = 44,800
+  Number of trainable parameters = 116,802,880
+Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Currently logged in as: lucafrancis (lucafrancis-georg-august-univerit-t-g-ttingen) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /mnt/tier2/users/u103092/circuit-tracer/test/wandb/run-20250729_213513-sr3kdr5y
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ./models/3428310
+wandb: ⭐️ View project at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: 🚀 View run at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/sr3kdr5y
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+[07/29/2025 09:35:50 PM - 0:00:58][[GPU] (0): 9059/40960 MB, (1): 6851/40960 MB, (2): 6851/40960 MB] {'loss': 10.0948, 'grad_norm': 3.0098559856414795, 'learning_rate': 4.950000000000001e-06, 'epoch': 0.11160714285714286}
+DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 114661
+    })
+    validation: Dataset({
+        features: ['input_ids'],
+        num_rows: 640
+    })
+})
+[07/29/2025 09:36:12 PM - 0:01:20][[GPU] (0): 9059/40960 MB, (1): 6851/40960 MB, (2): 6851/40960 MB] {'loss': 9.0373, 'grad_norm': 2.443678379058838, 'learning_rate': 9.950000000000001e-06, 'epoch': 0.22321428571428573}
+[07/29/2025 09:36:36 PM - 0:01:44][[GPU] (0): 9059/40960 MB, (1): 6851/40960 MB, (2): 6851/40960 MB] {'loss': 8.1153, 'grad_norm': 1.9122507572174072, 'learning_rate': 1.4950000000000001e-05, 'epoch': 0.33482142857142855}
+[07/29/2025 09:36:58 PM - 0:02:06][[GPU] (0): 9059/40960 MB, (1): 6851/40960 MB, (2): 6851/40960 MB] {'loss': 7.2295, 'grad_norm': 1.8071311712265015, 'learning_rate': 1.995e-05, 'epoch': 0.44642857142857145}
+[07/29/2025 09:37:21 PM - 0:02:29][[GPU] (0): 9059/40960 MB, (1): 6851/40960 MB, (2): 6851/40960 MB] {'loss': 6.6596, 'grad_norm': 2.0046639442443848, 'learning_rate': 2.495e-05, 'epoch': 0.5580357142857143}
+[07/29/2025 09:37:44 PM - 0:02:52][[GPU] (0): 9059/40960 MB, (1): 6851/40960 MB, (2): 6851/40960 MB] {'loss': 6.295, 'grad_norm': 1.6517822742462158, 'learning_rate': 2.995e-05, 'epoch': 0.6696428571428571}
+[07/29/2025 09:38:08 PM - 0:03:16][[GPU] (0): 9059/40960 MB, (1): 6851/40960 MB, (2): 6851/40960 MB] {'loss': 6.0671, 'grad_norm': 1.762770414352417, 'learning_rate': 3.495e-05, 'epoch': 0.78125}
+[07/29/2025 09:38:31 PM - 0:03:39][[GPU] (0): 9059/40960 MB, (1): 6851/40960 MB, (2): 6851/40960 MB] {'loss': 5.8648, 'grad_norm': 1.8043653964996338, 'learning_rate': 3.995e-05, 'epoch': 0.8928571428571429}
+[07/29/2025 09:38:55 PM - 0:04:03][[GPU] (0): 9059/40960 MB, (1): 6851/40960 MB, (2): 6851/40960 MB] {'loss': 5.7096, 'grad_norm': 2.069143295288086, 'learning_rate': 4.495e-05, 'epoch': 1.0044642857142858}
+[07/29/2025 09:39:19 PM - 0:04:27][[GPU] (0): 9059/40960 MB, (1): 6851/40960 MB, (2): 6851/40960 MB] {'loss': 5.5518, 'grad_norm': 1.928995132446289, 'learning_rate': 4.995e-05, 'epoch': 1.1160714285714286}
+
+***** Running Evaluation *****
+  Num examples = 640
+  Batch size = 128
+[07/29/2025 09:39:21 PM - 0:04:28][[GPU] (0): 3519/40960 MB, (1): 1661/40960 MB, (2): 1661/40960 MB] Acc:0.21997836278398847
+[07/29/2025 09:39:21 PM - 0:04:28][[GPU] (0): 3519/40960 MB, (1): 1661/40960 MB, (2): 1661/40960 MB] {'eval_loss': 6.664756774902344, 'eval_acc': 0.21997836278398847, 'eval_runtime': 1.4088, 'eval_samples_per_second': 454.283, 'eval_steps_per_second': 3.549, 'epoch': 1.1160714285714286}
+[07/29/2025 09:39:21 PM - 0:04:29][[GPU] (0): 3563/40960 MB, (1): 1661/40960 MB, (2): 1661/40960 MB] source: [CLS] Gold[MASK] and the Putty Patrol are[MASK] the movie too.[SEP][CLS][SEP][CLS] More than 100[MASK] signed a letter[MASK] for a[MASK] . In 2016, E otesari[MASK] Musavi escaped from Iran.[SEP][CLS][SEP][CLS] Geography[MASK][SEP][CLS] No one is on a boat.[SEP][CLS]In 2016, he
+[07/29/2025 09:39:21 PM - 0:04:29][[GPU] (0): 3563/40960 MB, (1): 1661/40960 MB, (2): 1661/40960 MB] label: [PAD][PAD] ar[PAD][PAD][PAD][PAD][PAD][PAD][PAD] in[PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD] poets[PAD][PAD][PAD] asking[PAD][PAD] pardon[PAD][PAD][PAD][PAD] kh[PAD][PAD] and[PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD] .[PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD]
+[07/29/2025 09:39:21 PM - 0:04:29][[GPU] (0): 3563/40960 MB, (1): 1661/40960 MB, (2): 1661/40960 MB] pred: any The, and the same and of There are in the movie too. are. He any The than 100 to in a letter, for a lot. In the E o's and the are is from the. are. He to The. are any No one is on a boat. are. In what he
+Saving model checkpoint to ./models/3428310/checkpoint-1000
+Configuration saved in ./models/3428310/checkpoint-1000/config.json
+Model weights saved in ./models/3428310/checkpoint-1000/model.safetensors
+tokenizer config file saved in ./models/3428310/checkpoint-1000/tokenizer_config.json
+Special tokens file saved in ./models/3428310/checkpoint-1000/special_tokens_map.json
+tokenizer config file saved in ./models/3428310/checkpoint-1000/tokenizer_config.json
+Special tokens file saved in ./models/3428310/checkpoint-1000/special_tokens_map.json
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+[07/29/2025 09:39:48 PM - 0:04:55][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 5.4507, 'grad_norm': 1.9161725044250488, 'learning_rate': 5.495e-05, 'epoch': 1.2276785714285714}
+[07/29/2025 09:40:10 PM - 0:05:18][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 5.323, 'grad_norm': 1.7087576389312744, 'learning_rate': 5.995000000000001e-05, 'epoch': 1.3392857142857144}
+[07/29/2025 09:40:34 PM - 0:05:41][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 5.2164, 'grad_norm': 1.8803846836090088, 'learning_rate': 6.494999999999999e-05, 'epoch': 1.4508928571428572}
+[07/29/2025 09:40:57 PM - 0:06:05][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 5.126, 'grad_norm': 1.8497583866119385, 'learning_rate': 6.995e-05, 'epoch': 1.5625}
+[07/29/2025 09:41:21 PM - 0:06:29][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 5.0353, 'grad_norm': 1.7910761833190918, 'learning_rate': 7.495e-05, 'epoch': 1.6741071428571428}
+[07/29/2025 09:41:44 PM - 0:06:52][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.9724, 'grad_norm': 1.7908296585083008, 'learning_rate': 7.995e-05, 'epoch': 1.7857142857142856}
+[07/29/2025 09:42:08 PM - 0:07:16][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.8725, 'grad_norm': 1.703527808189392, 'learning_rate': 8.495e-05, 'epoch': 1.8973214285714286}
+[07/29/2025 09:42:31 PM - 0:07:39][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.8113, 'grad_norm': 1.8280291557312012, 'learning_rate': 8.995e-05, 'epoch': 2.0089285714285716}
+[07/29/2025 09:42:54 PM - 0:08:02][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.7287, 'grad_norm': 1.9473203420639038, 'learning_rate': 9.495e-05, 'epoch': 2.1205357142857144}
+[07/29/2025 09:43:17 PM - 0:08:25][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.6757, 'grad_norm': 1.7118942737579346, 'learning_rate': 9.995e-05, 'epoch': 2.232142857142857}
+
+***** Running Evaluation *****
+  Num examples = 640
+  Batch size = 128
+[07/29/2025 09:43:18 PM - 0:08:26][[GPU] (0): 3527/40960 MB, (1): 1661/40960 MB, (2): 1661/40960 MB] Acc:0.27139231327048585
+[07/29/2025 09:43:18 PM - 0:08:26][[GPU] (0): 3527/40960 MB, (1): 1661/40960 MB, (2): 1661/40960 MB] {'eval_loss': 5.858447551727295, 'eval_acc': 0.27139231327048585, 'eval_runtime': 0.9838, 'eval_samples_per_second': 650.509, 'eval_steps_per_second': 5.082, 'epoch': 2.232142857142857}
+[07/29/2025 09:43:18 PM - 0:08:26][[GPU] (0): 3571/40960 MB, (1): 1661/40960 MB, (2): 1661/40960 MB] source: [CLS] Goldar and the Put[MASK] Patrol are in the[MASK] too.[SEP][CLS][SEP][CLS] More[MASK] 100 poets signed a letter[MASK][MASK][MASK] pardon. In 2016, Ekhtesari and Musavi escaped from Iran.[SEP][CLS][SEP][CLS] Geography[MASK][SEP][CLS] No one isstal a boat.[SEP][CLS]Background 2016, he
+[07/29/2025 09:43:18 PM - 0:08:26][[GPU] (0): 3571/40960 MB, (1): 1661/40960 MB, (2): 1661/40960 MB] label: [PAD][PAD][PAD][PAD][PAD][PAD] ty[PAD][PAD][PAD][PAD][PAD] movie[PAD][PAD][PAD][PAD][PAD][PAD][PAD] than[PAD][PAD][PAD][PAD][PAD] asking for a[PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD] .[PAD][PAD][PAD][PAD][PAD] on[PAD][PAD][PAD][PAD][PAD] In[PAD][PAD]
+[07/29/2025 09:43:18 PM - 0:08:26][[GPU] (0): 3571/40960 MB, (1): 1661/40960 MB, (2): 1661/40960 MB] pred: a Goldar and the LSC the Pat percent are in the way too. and. There a More than 100 poets signed a letter to' the pardon. In the E-tesari and Mus was escaped from Iran.[SEP]. There a He. that a No one is not a boat. and a In, he
+Saving model checkpoint to ./models/3428310/checkpoint-2000
+Configuration saved in ./models/3428310/checkpoint-2000/config.json
+Model weights saved in ./models/3428310/checkpoint-2000/model.safetensors
+tokenizer config file saved in ./models/3428310/checkpoint-2000/tokenizer_config.json
+Special tokens file saved in ./models/3428310/checkpoint-2000/special_tokens_map.json
+tokenizer config file saved in ./models/3428310/checkpoint-2000/tokenizer_config.json
+Special tokens file saved in ./models/3428310/checkpoint-2000/special_tokens_map.json
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+[07/29/2025 09:43:44 PM - 0:08:52][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.6095, 'grad_norm': 1.7823405265808105, 'learning_rate': 0.00010495000000000002, 'epoch': 2.34375}
+[07/29/2025 09:44:07 PM - 0:09:15][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.5701, 'grad_norm': 1.7663898468017578, 'learning_rate': 0.00010995, 'epoch': 2.455357142857143}
+[07/29/2025 09:44:31 PM - 0:09:39][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.517, 'grad_norm': 1.7587733268737793, 'learning_rate': 0.00011495, 'epoch': 2.5669642857142856}
+[07/29/2025 09:44:54 PM - 0:10:02][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.4607, 'grad_norm': 1.7971409559249878, 'learning_rate': 0.00011995, 'epoch': 2.678571428571429}
+[07/29/2025 09:45:17 PM - 0:10:25][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.4091, 'grad_norm': 1.8244974613189697, 'learning_rate': 0.00012495, 'epoch': 2.790178571428571}
+[07/29/2025 09:45:39 PM - 0:10:47][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.3706, 'grad_norm': 1.760210633277893, 'learning_rate': 0.00012995000000000001, 'epoch': 2.9017857142857144}
+[07/29/2025 09:46:02 PM - 0:11:10][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.3081, 'grad_norm': 1.7722268104553223, 'learning_rate': 0.00013495, 'epoch': 3.013392857142857}
+[07/29/2025 09:46:25 PM - 0:11:33][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.2472, 'grad_norm': 1.8018712997436523, 'learning_rate': 0.00013995000000000001, 'epoch': 3.125}
+[07/29/2025 09:46:47 PM - 0:11:55][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.1902, 'grad_norm': 1.8504548072814941, 'learning_rate': 0.00014495, 'epoch': 3.236607142857143}
+[07/29/2025 09:47:10 PM - 0:12:18][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.1503, 'grad_norm': 1.868035912513733, 'learning_rate': 0.00014995, 'epoch': 3.3482142857142856}
+
+***** Running Evaluation *****
+  Num examples = 640
+  Batch size = 128
+[07/29/2025 09:47:11 PM - 0:12:19][[GPU] (0): 3527/40960 MB, (1): 1661/40960 MB, (2): 1661/40960 MB] Acc:0.28729381910458585
+[07/29/2025 09:47:11 PM - 0:12:19][[GPU] (0): 3527/40960 MB, (1): 1661/40960 MB, (2): 1661/40960 MB] {'eval_loss': 5.5554280281066895, 'eval_acc': 0.28729381910458585, 'eval_runtime': 1.1708, 'eval_samples_per_second': 546.627, 'eval_steps_per_second': 4.271, 'epoch': 3.3482142857142856}
+[07/29/2025 09:47:11 PM - 0:12:19][[GPU] (0): 3571/40960 MB, (1): 1661/40960 MB, (2): 1661/40960 MB] source: [CLS] Goldar and the Putty Patrol are in inspire movie too.[SEP][CLS][SEP][CLS] More than 100[MASK] signed[MASK] letter asking for[MASK] pardon[MASK] In 2016, Ekhtesari and[MASK] avi escaped from Iran.[SEP][CLS][SEP][CLS][MASK][MASK][SEP][CLS] No one is on[MASK] boat.[SEP][CLS]In 2016, he
+[07/29/2025 09:47:11 PM - 0:12:19][[GPU] (0): 3571/40960 MB, (1): 1661/40960 MB, (2): 1661/40960 MB] label: [PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD] the[PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD] poets[PAD] a[PAD][PAD][PAD] a[PAD] .[PAD][PAD][PAD][PAD][PAD][PAD][PAD] Mus[PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD] Geography.[PAD][PAD][PAD][PAD][PAD][PAD] a[PAD][PAD][PAD][PAD][PAD][PAD][PAD]
+[07/29/2025 09:47:11 PM - 0:12:19][[GPU] (0): 3571/40960 MB, (1): 1661/40960 MB, (2): 1661/40960 MB] pred: the Goldar and the Oty Patrol are in a movie too. and." and the More than 100 years signed a letter asking for the pardon the In the E-tesari and E was escaped from Iran. and." and the The. to the No one is on the boat. and." In fact he
+Saving model checkpoint to ./models/3428310/checkpoint-3000
+Configuration saved in ./models/3428310/checkpoint-3000/config.json
+Model weights saved in ./models/3428310/checkpoint-3000/model.safetensors
+tokenizer config file saved in ./models/3428310/checkpoint-3000/tokenizer_config.json
+Special tokens file saved in ./models/3428310/checkpoint-3000/special_tokens_map.json
+Deleting older checkpoint [models/3428310/checkpoint-1000] due to args.save_total_limit
+tokenizer config file saved in ./models/3428310/checkpoint-3000/tokenizer_config.json
+Special tokens file saved in ./models/3428310/checkpoint-3000/special_tokens_map.json
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+[07/29/2025 09:47:35 PM - 0:12:43][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.0895, 'grad_norm': 1.8390942811965942, 'learning_rate': 0.00015495000000000003, 'epoch': 3.4598214285714284}
+[07/29/2025 09:47:58 PM - 0:13:06][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 4.0472, 'grad_norm': 1.9794447422027588, 'learning_rate': 0.00015995, 'epoch': 3.571428571428571}
+[07/29/2025 09:48:20 PM - 0:13:28][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 3.9903, 'grad_norm': 1.8765664100646973, 'learning_rate': 0.00016495, 'epoch': 3.6830357142857144}
+[07/29/2025 09:48:43 PM - 0:13:50][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 3.968, 'grad_norm': 1.96140456199646, 'learning_rate': 0.00016995, 'epoch': 3.794642857142857}
+[07/29/2025 09:49:05 PM - 0:14:13][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 3.8886, 'grad_norm': 1.9842870235443115, 'learning_rate': 0.00017495000000000002, 'epoch': 3.90625}
+[07/29/2025 09:49:28 PM - 0:14:36][[GPU] (0): 8821/40960 MB, (1): 6859/40960 MB, (2): 6859/40960 MB] {'loss': 3.8557, 'grad_norm': 2.0762898921966553, 'learning_rate': 0.00017995, 'epoch': 4.017857142857143}

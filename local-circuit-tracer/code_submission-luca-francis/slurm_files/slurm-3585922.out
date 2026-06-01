@@ -1,0 +1,464 @@
+starting python script
+09/16/2025 10:47:45 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 4distributed training: True, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 9427 examples [00:00, 11685.29 examples/s]Generating train split: 9427 examples [00:00, 11604.42 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 1635 examples [00:00, 271882.29 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 1635 examples [00:00, 331321.24 examples/s]
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py:564: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+[WARNING|modeling_utils.py:5540] 2025-09-16 10:47:54,361 >> Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at ../models/3428338/checkpoint-11200/ and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Running tokenizer on dataset:   0%|          | 0/9427 [00:00<?, ? examples/s]Running tokenizer on dataset:  11%|█         | 1000/9427 [00:00<00:02, 3032.57 examples/s]Running tokenizer on dataset:  21%|██        | 2000/9427 [00:00<00:01, 4924.13 examples/s]Running tokenizer on dataset:  32%|███▏      | 3000/9427 [00:00<00:01, 6168.86 examples/s]Running tokenizer on dataset:  42%|████▏     | 4000/9427 [00:00<00:00, 7112.13 examples/s]Running tokenizer on dataset:  53%|█████▎    | 5000/9427 [00:00<00:00, 7825.92 examples/s]Running tokenizer on dataset:  64%|██████▎   | 6000/9427 [00:00<00:00, 8230.67 examples/s]Running tokenizer on dataset:  74%|███████▍  | 7000/9427 [00:00<00:00, 8636.80 examples/s]Running tokenizer on dataset:  85%|████████▍ | 8000/9427 [00:01<00:00, 8970.91 examples/s]Running tokenizer on dataset:  95%|█████████▌| 9000/9427 [00:01<00:00, 9119.89 examples/s]Running tokenizer on dataset: 100%|██████████| 9427/9427 [00:01<00:00, 7396.14 examples/s]
+Running tokenizer on dataset:   0%|          | 0/1635 [00:00<?, ? examples/s]Running tokenizer on dataset:  61%|██████    | 1000/1635 [00:00<00:00, 9199.47 examples/s]Running tokenizer on dataset: 100%|██████████| 1635/1635 [00:00<00:00, 8887.24 examples/s]
+Running tokenizer on dataset:   0%|          | 0/1635 [00:00<?, ? examples/s]Running tokenizer on dataset:  61%|██████    | 1000/1635 [00:00<00:00, 9628.55 examples/s]Running tokenizer on dataset: 100%|██████████| 1635/1635 [00:00<00:00, 9153.79 examples/s]
+Downloading builder script: 0.00B [00:00, ?B/s]Downloading builder script: 4.20kB [00:00, 711kB/s]
+/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py:624: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+09/16/2025 10:47:57 - WARNING - accelerate.utils.other - Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Currently logged in as: lucafrancis (lucafrancis-georg-august-univerit-t-g-ttingen) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/wandb/run-20250916_104805-kv60ix5q
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run results/finetune/checkpoint-11200/boolq/
+wandb: ⭐️ View project at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: 🚀 View run at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/kv60ix5q
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 643, in main
+    train_result = trainer.train(resume_from_checkpoint=checkpoint)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer.py", line 2237, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer.py", line 2487, in _inner_training_loop
+    self.control = self.callback_handler.on_train_begin(args, self.state, self.control)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer_callback.py", line 506, in on_train_begin
+    return self.call_event("on_train_begin", args, state, control)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer_callback.py", line 556, in call_event
+    result = getattr(callback, event)(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer_callback.py", line 755, in on_train_begin
+    assert args.eval_strategy != IntervalStrategy.NO, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EarlyStoppingCallback requires IntervalStrategy of steps or epoch
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mresults/finetune/checkpoint-11200/boolq/[0m at: [34mhttps://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/kv60ix5q[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../../mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/wandb/run-20250916_104805-kv60ix5q/logs[0m
+./finetune_model.sh: line 44: --save_strategy: command not found
+09/16/2025 10:49:35 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 4distributed training: True, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 8551 examples [00:00, 12025.29 examples/s]Generating train split: 8551 examples [00:00, 11982.55 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 522 examples [00:00, 185011.55 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 522 examples [00:00, 222141.51 examples/s]
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py:564: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+[WARNING|modeling_utils.py:5540] 2025-09-16 10:49:41,696 >> Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at ../models/3428338/checkpoint-11200/ and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Running tokenizer on dataset:   0%|          | 0/8551 [00:00<?, ? examples/s]Running tokenizer on dataset:  12%|█▏        | 1000/8551 [00:00<00:01, 4362.82 examples/s]Running tokenizer on dataset:  35%|███▌      | 3000/8551 [00:00<00:00, 8725.43 examples/s]Running tokenizer on dataset:  58%|█████▊    | 5000/8551 [00:00<00:00, 10753.01 examples/s]Running tokenizer on dataset:  82%|████████▏ | 7000/8551 [00:00<00:00, 11868.02 examples/s]Running tokenizer on dataset: 100%|██████████| 8551/8551 [00:00<00:00, 12098.95 examples/s]Running tokenizer on dataset: 100%|██████████| 8551/8551 [00:00<00:00, 10747.15 examples/s]
+Running tokenizer on dataset:   0%|          | 0/522 [00:00<?, ? examples/s]Running tokenizer on dataset: 100%|██████████| 522/522 [00:00<00:00, 11566.46 examples/s]
+Running tokenizer on dataset:   0%|          | 0/522 [00:00<?, ? examples/s]Running tokenizer on dataset: 100%|██████████| 522/522 [00:00<00:00, 11411.53 examples/s]
+Downloading builder script: 0.00B [00:00, ?B/s]Downloading builder script: 4.20kB [00:00, 715kB/s]
+/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py:624: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+09/16/2025 10:49:43 - WARNING - accelerate.utils.other - Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Currently logged in as: lucafrancis (lucafrancis-georg-august-univerit-t-g-ttingen) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/wandb/run-20250916_104949-o3olvf1p
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run results/finetune/checkpoint-11200/cola/
+wandb: ⭐️ View project at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: 🚀 View run at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/o3olvf1p
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 643, in main
+    train_result = trainer.train(resume_from_checkpoint=checkpoint)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer.py", line 2237, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer.py", line 2487, in _inner_training_loop
+    self.control = self.callback_handler.on_train_begin(args, self.state, self.control)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer_callback.py", line 506, in on_train_begin
+    return self.call_event("on_train_begin", args, state, control)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer_callback.py", line 556, in call_event
+    result = getattr(callback, event)(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer_callback.py", line 755, in on_train_begin
+    assert args.eval_strategy != IntervalStrategy.NO, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EarlyStoppingCallback requires IntervalStrategy of steps or epoch
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mresults/finetune/checkpoint-11200/cola/[0m at: [34mhttps://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/o3olvf1p[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../../mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/wandb/run-20250916_104949-o3olvf1p/logs[0m
+./finetune_model.sh: line 44: --save_strategy: command not found
+09/16/2025 10:51:05 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 4distributed training: True, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 45830 examples [00:00, 130783.16 examples/s]Generating train split: 227521 examples [00:00, 579042.78 examples/s]Generating train split: 392702 examples [00:00, 712461.64 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 4908 examples [00:00, 690816.61 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 4908 examples [00:00, 708140.49 examples/s]
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py:564: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+[WARNING|modeling_utils.py:5540] 2025-09-16 10:51:10,190 >> Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at ../models/3428338/checkpoint-11200/ and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Running tokenizer on dataset:   0%|          | 0/392702 [00:00<?, ? examples/s]Running tokenizer on dataset:   0%|          | 1000/392702 [00:00<00:59, 6637.68 examples/s]Running tokenizer on dataset:   1%|          | 3000/392702 [00:00<00:40, 9718.33 examples/s]Running tokenizer on dataset:   1%|▏         | 5000/392702 [00:00<00:35, 10844.10 examples/s]Running tokenizer on dataset:   2%|▏         | 7000/392702 [00:00<00:33, 11536.12 examples/s]Running tokenizer on dataset:   2%|▏         | 9000/392702 [00:00<00:32, 11871.64 examples/s]Running tokenizer on dataset:   3%|▎         | 11000/392702 [00:00<00:31, 12122.58 examples/s]Running tokenizer on dataset:   3%|▎         | 13000/392702 [00:01<00:31, 12214.10 examples/s]Running tokenizer on dataset:   4%|▍         | 15000/392702 [00:01<00:30, 12407.17 examples/s]Running tokenizer on dataset:   4%|▍         | 17000/392702 [00:01<00:44, 8388.39 examples/s] Running tokenizer on dataset:   5%|▍         | 19000/392702 [00:01<00:40, 9319.15 examples/s]Running tokenizer on dataset:   5%|▌         | 21000/392702 [00:02<00:37, 9992.82 examples/s]Running tokenizer on dataset:   6%|▌         | 23000/392702 [00:02<00:34, 10602.93 examples/s]Running tokenizer on dataset:   6%|▋         | 25000/392702 [00:02<00:33, 11028.77 examples/s]Running tokenizer on dataset:   7%|▋         | 27000/392702 [00:02<00:32, 11383.09 examples/s]Running tokenizer on dataset:   7%|▋         | 29000/392702 [00:02<00:31, 11617.29 examples/s]Running tokenizer on dataset:   8%|▊         | 31000/392702 [00:02<00:30, 11850.67 examples/s]Running tokenizer on dataset:   8%|▊         | 33000/392702 [00:02<00:30, 11976.89 examples/s]Running tokenizer on dataset:   9%|▉         | 35000/392702 [00:03<00:29, 12058.35 examples/s]Running tokenizer on dataset:   9%|▉         | 37000/392702 [00:03<00:29, 12023.09 examples/s]Running tokenizer on dataset:  10%|▉         | 39000/392702 [00:03<00:29, 12085.72 examples/s]Running tokenizer on dataset:  10%|█         | 41000/392702 [00:03<00:29, 12096.24 examples/s]Running tokenizer on dataset:  11%|█         | 43000/392702 [00:03<00:28, 12203.79 examples/s]Running tokenizer on dataset:  11%|█▏        | 45000/392702 [00:04<00:36, 9437.47 examples/s] Running tokenizer on dataset:  12%|█▏        | 47000/392702 [00:04<00:34, 10089.19 examples/s]Running tokenizer on dataset:  12%|█▏        | 49000/392702 [00:04<00:32, 10569.11 examples/s]Running tokenizer on dataset:  13%|█▎        | 51000/392702 [00:04<00:30, 11032.58 examples/s]Running tokenizer on dataset:  13%|█▎        | 53000/392702 [00:04<00:29, 11357.45 examples/s]Running tokenizer on dataset:  14%|█▍        | 55000/392702 [00:04<00:29, 11527.84 examples/s]Running tokenizer on dataset:  15%|█▍        | 57000/392702 [00:05<00:29, 11487.86 examples/s]Running tokenizer on dataset:  15%|█▌        | 59000/392702 [00:05<00:28, 11648.29 examples/s]Running tokenizer on dataset:  16%|█▌        | 61000/392702 [00:05<00:28, 11505.42 examples/s]Running tokenizer on dataset:  16%|█▌        | 63000/392702 [00:05<00:28, 11537.78 examples/s]Running tokenizer on dataset:  17%|█▋        | 65000/392702 [00:05<00:28, 11637.97 examples/s]Running tokenizer on dataset:  17%|█▋        | 67000/392702 [00:05<00:27, 11773.02 examples/s]Running tokenizer on dataset:  18%|█▊        | 69000/392702 [00:06<00:47, 6828.02 examples/s] Running tokenizer on dataset:  18%|█▊        | 71000/392702 [00:06<00:41, 7787.16 examples/s]Running tokenizer on dataset:  19%|█▊        | 73000/392702 [00:06<00:36, 8739.66 examples/s]Running tokenizer on dataset:  19%|█▉        | 75000/392702 [00:07<00:33, 9584.40 examples/s]Running tokenizer on dataset:  20%|█▉        | 77000/392702 [00:07<00:30, 10219.29 examples/s]Running tokenizer on dataset:  20%|██        | 79000/392702 [00:07<00:29, 10676.00 examples/s]Running tokenizer on dataset:  21%|██        | 81000/392702 [00:07<00:28, 11103.57 examples/s]Running tokenizer on dataset:  21%|██        | 83000/392702 [00:07<00:27, 11437.99 examples/s]Running tokenizer on dataset:  22%|██▏       | 85000/392702 [00:07<00:26, 11655.82 examples/s]Running tokenizer on dataset:  22%|██▏       | 87000/392702 [00:08<00:26, 11690.05 examples/s]Running tokenizer on dataset:  23%|██▎       | 89000/392702 [00:08<00:25, 11737.20 examples/s]Running tokenizer on dataset:  23%|██▎       | 91000/392702 [00:08<00:25, 11934.58 examples/s]Running tokenizer on dataset:  24%|██▎       | 93000/392702 [00:08<00:26, 11122.34 examples/s]Running tokenizer on dataset:  24%|██▍       | 95000/392702 [00:09<00:42, 6968.82 examples/s] Running tokenizer on dataset:  25%|██▍       | 97000/392702 [00:09<00:37, 7893.59 examples/s]Running tokenizer on dataset:  25%|██▌       | 99000/392702 [00:09<00:33, 8760.75 examples/s]Running tokenizer on dataset:  26%|██▌       | 101000/392702 [00:09<00:30, 9430.44 examples/s]Running tokenizer on dataset:  26%|██▌       | 103000/392702 [00:09<00:28, 10116.69 examples/s]Running tokenizer on dataset:  27%|██▋       | 105000/392702 [00:09<00:27, 10592.25 examples/s]Running tokenizer on dataset:  27%|██▋       | 107000/392702 [00:10<00:26, 10946.78 examples/s]Running tokenizer on dataset:  28%|██▊       | 109000/392702 [00:10<00:25, 11212.77 examples/s]Running tokenizer on dataset:  28%|██▊       | 111000/392702 [00:10<00:26, 10464.16 examples/s]Running tokenizer on dataset:  29%|██▉       | 113000/392702 [00:10<00:25, 10764.86 examples/s]Running tokenizer on dataset:  29%|██▉       | 115000/392702 [00:10<00:24, 11149.44 examples/s]Running tokenizer on dataset:  30%|██▉       | 117000/392702 [00:11<00:24, 11278.78 examples/s]Running tokenizer on dataset:  30%|███       | 119000/392702 [00:11<00:46, 5895.80 examples/s] Running tokenizer on dataset:  31%|███       | 120000/392702 [00:11<00:43, 6200.84 examples/s]Running tokenizer on dataset:  31%|███       | 122000/392702 [00:12<00:36, 7429.87 examples/s]Running tokenizer on dataset:  32%|███▏      | 124000/392702 [00:12<00:31, 8411.53 examples/s]Running tokenizer on dataset:  32%|███▏      | 126000/392702 [00:12<00:28, 9232.61 examples/s]Running tokenizer on dataset:  33%|███▎      | 128000/392702 [00:12<00:26, 9825.86 examples/s]Running tokenizer on dataset:  33%|███▎      | 130000/392702 [00:12<00:25, 10447.02 examples/s]Running tokenizer on dataset:  34%|███▎      | 132000/392702 [00:12<00:24, 10847.90 examples/s]Running tokenizer on dataset:  34%|███▍      | 134000/392702 [00:13<00:23, 11065.39 examples/s]Running tokenizer on dataset:  35%|███▍      | 136000/392702 [00:13<00:22, 11479.40 examples/s]Running tokenizer on dataset:  35%|███▌      | 138000/392702 [00:13<00:21, 11649.58 examples/s]Running tokenizer on dataset:  36%|███▌      | 140000/392702 [00:13<00:25, 10085.25 examples/s]Running tokenizer on dataset:  36%|███▌      | 142000/392702 [00:13<00:23, 10595.08 examples/s]Running tokenizer on dataset:  37%|███▋      | 144000/392702 [00:14<00:39, 6310.37 examples/s] Running tokenizer on dataset:  37%|███▋      | 146000/392702 [00:14<00:33, 7311.80 examples/s]Running tokenizer on dataset:  38%|███▊      | 148000/392702 [00:14<00:29, 8302.70 examples/s]Running tokenizer on dataset:  38%|███▊      | 150000/392702 [00:14<00:26, 9113.95 examples/s]Running tokenizer on dataset:  39%|███▊      | 152000/392702 [00:15<00:24, 9797.62 examples/s]Running tokenizer on dataset:  39%|███▉      | 154000/392702 [00:15<00:23, 10103.34 examples/s]Running tokenizer on dataset:  40%|███▉      | 156000/392702 [00:15<00:22, 10590.15 examples/s]Running tokenizer on dataset:  40%|████      | 158000/392702 [00:15<00:21, 10740.67 examples/s]Running tokenizer on dataset:  41%|████      | 160000/392702 [00:15<00:21, 10857.11 examples/s]Running tokenizer on dataset:  41%|████▏     | 162000/392702 [00:16<00:20, 11173.46 examples/s]Running tokenizer on dataset:  42%|████▏     | 164000/392702 [00:16<00:20, 11026.68 examples/s]Running tokenizer on dataset:  42%|████▏     | 166000/392702 [00:16<00:20, 11200.01 examples/s]Running tokenizer on dataset:  43%|████▎     | 168000/392702 [00:16<00:19, 11466.59 examples/s]Running tokenizer on dataset:  43%|████▎     | 170000/392702 [00:17<00:33, 6712.17 examples/s] Running tokenizer on dataset:  44%|████▍     | 172000/392702 [00:17<00:28, 7737.01 examples/s]Running tokenizer on dataset:  44%|████▍     | 174000/392702 [00:17<00:25, 8534.19 examples/s]Running tokenizer on dataset:  45%|████▍     | 176000/392702 [00:17<00:23, 9380.92 examples/s]Running tokenizer on dataset:  45%|████▌     | 178000/392702 [00:17<00:21, 10026.12 examples/s]Running tokenizer on dataset:  46%|████▌     | 180000/392702 [00:17<00:19, 10642.47 examples/s]Running tokenizer on dataset:  46%|████▋     | 182000/392702 [00:18<00:19, 10747.91 examples/s]Running tokenizer on dataset:  47%|████▋     | 184000/392702 [00:18<00:18, 11006.22 examples/s]Running tokenizer on dataset:  47%|████▋     | 186000/392702 [00:18<00:18, 11391.99 examples/s]Running tokenizer on dataset:  48%|████▊     | 188000/392702 [00:18<00:17, 11471.45 examples/s]Running tokenizer on dataset:  48%|████▊     | 190000/392702 [00:18<00:18, 11012.28 examples/s]Running tokenizer on dataset:  49%|████▉     | 192000/392702 [00:19<00:18, 11009.50 examples/s]Running tokenizer on dataset:  49%|████▉     | 194000/392702 [00:19<00:17, 11262.42 examples/s]Running tokenizer on dataset:  50%|████▉     | 196000/392702 [00:19<00:17, 11352.95 examples/s]Running tokenizer on dataset:  50%|█████     | 198000/392702 [00:19<00:30, 6356.68 examples/s] Running tokenizer on dataset:  51%|█████     | 200000/392702 [00:20<00:26, 7342.92 examples/s]Running tokenizer on dataset:  51%|█████▏    | 202000/392702 [00:20<00:22, 8300.19 examples/s]Running tokenizer on dataset:  52%|█████▏    | 204000/392702 [00:20<00:20, 9147.78 examples/s]Running tokenizer on dataset:  52%|█████▏    | 206000/392702 [00:20<00:18, 9831.52 examples/s]Running tokenizer on dataset:  53%|█████▎    | 208000/392702 [00:20<00:17, 10434.65 examples/s]Running tokenizer on dataset:  53%|█████▎    | 210000/392702 [00:21<00:16, 10811.72 examples/s]Running tokenizer on dataset:  54%|█████▍    | 212000/392702 [00:21<00:16, 11186.14 examples/s]Running tokenizer on dataset:  54%|█████▍    | 214000/392702 [00:21<00:15, 11360.52 examples/s]Running tokenizer on dataset:  55%|█████▌    | 216000/392702 [00:21<00:15, 11572.38 examples/s]Running tokenizer on dataset:  56%|█████▌    | 218000/392702 [00:21<00:15, 11645.43 examples/s]Running tokenizer on dataset:  56%|█████▌    | 220000/392702 [00:21<00:16, 10584.43 examples/s]Running tokenizer on dataset:  57%|█████▋    | 222000/392702 [00:22<00:26, 6416.69 examples/s] Running tokenizer on dataset:  57%|█████▋    | 224000/392702 [00:22<00:22, 7480.58 examples/s]Running tokenizer on dataset:  58%|█████▊    | 226000/392702 [00:22<00:20, 8317.44 examples/s]Running tokenizer on dataset:  58%|█████▊    | 228000/392702 [00:23<00:18, 9074.73 examples/s]Running tokenizer on dataset:  59%|█████▊    | 230000/392702 [00:23<00:16, 9666.34 examples/s]Running tokenizer on dataset:  59%|█████▉    | 232000/392702 [00:23<00:15, 10317.05 examples/s]Running tokenizer on dataset:  60%|█████▉    | 234000/392702 [00:23<00:14, 10782.84 examples/s]Running tokenizer on dataset:  60%|██████    | 236000/392702 [00:23<00:14, 11071.05 examples/s]Running tokenizer on dataset:  61%|██████    | 238000/392702 [00:23<00:15, 10244.61 examples/s]Running tokenizer on dataset:  61%|██████    | 240000/392702 [00:24<00:14, 10571.13 examples/s]Running tokenizer on dataset:  62%|██████▏   | 242000/392702 [00:24<00:13, 10960.55 examples/s]Running tokenizer on dataset:  62%|██████▏   | 244000/392702 [00:24<00:13, 11353.54 examples/s]Running tokenizer on dataset:  63%|██████▎   | 246000/392702 [00:24<00:12, 11497.28 examples/s]Running tokenizer on dataset:  63%|██████▎   | 248000/392702 [00:25<00:23, 6128.77 examples/s] Running tokenizer on dataset:  63%|██████▎   | 249000/392702 [00:25<00:22, 6395.01 examples/s]Running tokenizer on dataset:  64%|██████▎   | 250000/392702 [00:25<00:20, 6886.67 examples/s]Running tokenizer on dataset:  64%|██████▍   | 252000/392702 [00:25<00:17, 8159.19 examples/s]Running tokenizer on dataset:  65%|██████▍   | 254000/392702 [00:25<00:15, 9045.56 examples/s]Running tokenizer on dataset:  65%|██████▌   | 256000/392702 [00:26<00:13, 9796.12 examples/s]Running tokenizer on dataset:  66%|██████▌   | 258000/392702 [00:26<00:13, 10309.42 examples/s]Running tokenizer on dataset:  66%|██████▌   | 260000/392702 [00:26<00:12, 10801.45 examples/s]Running tokenizer on dataset:  67%|██████▋   | 262000/392702 [00:26<00:11, 11006.30 examples/s]Running tokenizer on dataset:  67%|██████▋   | 264000/392702 [00:26<00:11, 11330.25 examples/s]Running tokenizer on dataset:  68%|██████▊   | 266000/392702 [00:26<00:11, 11414.62 examples/s]Running tokenizer on dataset:  68%|██████▊   | 268000/392702 [00:27<00:10, 11439.61 examples/s]Running tokenizer on dataset:  69%|██████▉   | 270000/392702 [00:27<00:10, 11634.64 examples/s]Running tokenizer on dataset:  69%|██████▉   | 272000/392702 [00:27<00:14, 8059.00 examples/s] Running tokenizer on dataset:  70%|██████▉   | 274000/392702 [00:27<00:13, 8985.40 examples/s]Running tokenizer on dataset:  70%|███████   | 276000/392702 [00:27<00:11, 9774.43 examples/s]Running tokenizer on dataset:  71%|███████   | 278000/392702 [00:28<00:11, 10416.65 examples/s]Running tokenizer on dataset:  71%|███████▏  | 280000/392702 [00:28<00:10, 10986.15 examples/s]Running tokenizer on dataset:  72%|███████▏  | 282000/392702 [00:28<00:09, 11352.39 examples/s]Running tokenizer on dataset:  72%|███████▏  | 284000/392702 [00:28<00:09, 11580.20 examples/s]Running tokenizer on dataset:  73%|███████▎  | 286000/392702 [00:28<00:09, 11731.45 examples/s]Running tokenizer on dataset:  73%|███████▎  | 288000/392702 [00:28<00:08, 11960.02 examples/s]Running tokenizer on dataset:  74%|███████▍  | 290000/392702 [00:29<00:08, 12066.99 examples/s]Running tokenizer on dataset:  74%|███████▍  | 292000/392702 [00:29<00:08, 12200.53 examples/s]Running tokenizer on dataset:  75%|███████▍  | 294000/392702 [00:29<00:08, 12284.93 examples/s]Running tokenizer on dataset:  75%|███████▌  | 296000/392702 [00:29<00:07, 12361.71 examples/s]Running tokenizer on dataset:  76%|███████▌  | 298000/392702 [00:29<00:11, 8270.75 examples/s] Running tokenizer on dataset:  76%|███████▋  | 300000/392702 [00:30<00:11, 7980.90 examples/s]Running tokenizer on dataset:  77%|███████▋  | 302000/392702 [00:30<00:10, 8780.92 examples/s]Running tokenizer on dataset:  77%|███████▋  | 304000/392702 [00:30<00:09, 9521.44 examples/s]Running tokenizer on dataset:  78%|███████▊  | 306000/392702 [00:30<00:08, 10084.40 examples/s]Running tokenizer on dataset:  78%|███████▊  | 308000/392702 [00:30<00:07, 10597.24 examples/s]Running tokenizer on dataset:  79%|███████▉  | 310000/392702 [00:31<00:07, 10787.45 examples/s]Running tokenizer on dataset:  79%|███████▉  | 312000/392702 [00:31<00:07, 11165.39 examples/s]Running tokenizer on dataset:  80%|███████▉  | 314000/392702 [00:31<00:06, 11469.78 examples/s]Running tokenizer on dataset:  80%|████████  | 316000/392702 [00:31<00:06, 11630.87 examples/s]Running tokenizer on dataset:  81%|████████  | 318000/392702 [00:31<00:06, 11661.14 examples/s]Running tokenizer on dataset:  81%|████████▏ | 320000/392702 [00:31<00:06, 11782.05 examples/s]Running tokenizer on dataset:  82%|████████▏ | 322000/392702 [00:32<00:08, 8778.48 examples/s] Running tokenizer on dataset:  83%|████████▎ | 324000/392702 [00:32<00:07, 9544.52 examples/s]Running tokenizer on dataset:  83%|████████▎ | 326000/392702 [00:32<00:06, 10151.02 examples/s]Running tokenizer on dataset:  84%|████████▎ | 328000/392702 [00:32<00:06, 10678.21 examples/s]Running tokenizer on dataset:  84%|████████▍ | 330000/392702 [00:32<00:05, 11041.87 examples/s]Running tokenizer on dataset:  85%|████████▍ | 332000/392702 [00:33<00:05, 10184.43 examples/s]Running tokenizer on dataset:  85%|████████▌ | 334000/392702 [00:33<00:05, 10465.89 examples/s]Running tokenizer on dataset:  86%|████████▌ | 336000/392702 [00:33<00:05, 10963.61 examples/s]Running tokenizer on dataset:  86%|████████▌ | 338000/392702 [00:33<00:04, 11150.25 examples/s]Running tokenizer on dataset:  87%|████████▋ | 340000/392702 [00:33<00:04, 11328.36 examples/s]Running tokenizer on dataset:  87%|████████▋ | 342000/392702 [00:34<00:04, 11513.67 examples/s]Running tokenizer on dataset:  88%|████████▊ | 344000/392702 [00:34<00:04, 11695.65 examples/s]Running tokenizer on dataset:  88%|████████▊ | 346000/392702 [00:34<00:04, 11503.59 examples/s]Running tokenizer on dataset:  89%|████████▊ | 348000/392702 [00:34<00:03, 11530.85 examples/s]Running tokenizer on dataset:  89%|████████▉ | 350000/392702 [00:34<00:04, 8601.03 examples/s] Running tokenizer on dataset:  90%|████████▉ | 352000/392702 [00:35<00:04, 8636.68 examples/s]Running tokenizer on dataset:  90%|█████████ | 354000/392702 [00:35<00:04, 9375.25 examples/s]Running tokenizer on dataset:  91%|█████████ | 356000/392702 [00:35<00:03, 9760.79 examples/s]Running tokenizer on dataset:  91%|█████████ | 358000/392702 [00:35<00:03, 10326.82 examples/s]Running tokenizer on dataset:  92%|█████████▏| 360000/392702 [00:35<00:03, 10551.65 examples/s]Running tokenizer on dataset:  92%|█████████▏| 362000/392702 [00:36<00:02, 10694.14 examples/s]Running tokenizer on dataset:  93%|█████████▎| 364000/392702 [00:36<00:02, 10873.62 examples/s]Running tokenizer on dataset:  93%|█████████▎| 366000/392702 [00:36<00:02, 11142.79 examples/s]Running tokenizer on dataset:  94%|█████████▎| 368000/392702 [00:36<00:02, 11072.87 examples/s]Running tokenizer on dataset:  94%|█████████▍| 370000/392702 [00:36<00:02, 11094.01 examples/s]Running tokenizer on dataset:  95%|█████████▍| 372000/392702 [00:36<00:01, 11283.74 examples/s]Running tokenizer on dataset:  95%|█████████▌| 374000/392702 [00:37<00:01, 11236.73 examples/s]Running tokenizer on dataset:  96%|█████████▌| 376000/392702 [00:37<00:02, 6540.51 examples/s] Running tokenizer on dataset:  96%|█████████▋| 378000/392702 [00:37<00:01, 7491.38 examples/s]Running tokenizer on dataset:  97%|█████████▋| 380000/392702 [00:38<00:01, 8264.88 examples/s]Running tokenizer on dataset:  97%|█████████▋| 382000/392702 [00:38<00:01, 8940.79 examples/s]Running tokenizer on dataset:  98%|█████████▊| 384000/392702 [00:38<00:00, 9634.00 examples/s]Running tokenizer on dataset:  98%|█████████▊| 386000/392702 [00:38<00:00, 10211.87 examples/s]Running tokenizer on dataset:  99%|█████████▉| 388000/392702 [00:38<00:00, 10443.32 examples/s]Running tokenizer on dataset:  99%|█████████▉| 390000/392702 [00:38<00:00, 10786.40 examples/s]Running tokenizer on dataset: 100%|█████████▉| 392000/392702 [00:39<00:00, 11004.27 examples/s]Running tokenizer on dataset: 100%|██████████| 392702/392702 [00:40<00:00, 9693.68 examples/s] 
+Running tokenizer on dataset:   0%|          | 0/4908 [00:00<?, ? examples/s]Running tokenizer on dataset:  20%|██        | 1000/4908 [00:00<00:00, 6343.29 examples/s]Running tokenizer on dataset:  61%|██████    | 3000/4908 [00:00<00:00, 9472.75 examples/s]Running tokenizer on dataset: 100%|██████████| 4908/4908 [00:00<00:00, 10022.46 examples/s]Running tokenizer on dataset: 100%|██████████| 4908/4908 [00:00<00:00, 9480.94 examples/s] 
+Running tokenizer on dataset:   0%|          | 0/4908 [00:00<?, ? examples/s]Running tokenizer on dataset:  20%|██        | 1000/4908 [00:00<00:00, 6703.04 examples/s]Running tokenizer on dataset:  41%|████      | 2000/4908 [00:00<00:00, 3550.74 examples/s]Running tokenizer on dataset:  81%|████████▏ | 4000/4908 [00:00<00:00, 6325.68 examples/s]Running tokenizer on dataset: 100%|██████████| 4908/4908 [00:00<00:00, 6297.21 examples/s]
+/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py:624: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+09/16/2025 10:51:52 - WARNING - accelerate.utils.other - Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Currently logged in as: lucafrancis (lucafrancis-georg-august-univerit-t-g-ttingen) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/wandb/run-20250916_105200-kfe0v250
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run results/finetune/checkpoint-11200/mnli/
+wandb: ⭐️ View project at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: 🚀 View run at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/kfe0v250
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 643, in main
+    train_result = trainer.train(resume_from_checkpoint=checkpoint)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer.py", line 2237, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer.py", line 2487, in _inner_training_loop
+    self.control = self.callback_handler.on_train_begin(args, self.state, self.control)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer_callback.py", line 506, in on_train_begin
+    return self.call_event("on_train_begin", args, state, control)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer_callback.py", line 556, in call_event
+    result = getattr(callback, event)(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer_callback.py", line 755, in on_train_begin
+    assert args.eval_strategy != IntervalStrategy.NO, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EarlyStoppingCallback requires IntervalStrategy of steps or epoch
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mresults/finetune/checkpoint-11200/mnli/[0m at: [34mhttps://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/kfe0v250[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../../mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/wandb/run-20250916_105200-kfe0v250/logs[0m
+./finetune_model.sh: line 44: --save_strategy: command not found
+09/16/2025 10:53:17 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 4distributed training: True, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 45830 examples [00:00, 114305.65 examples/s]Generating train split: 227521 examples [00:00, 532995.34 examples/s]Generating train split: 392702 examples [00:00, 657325.42 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 4916 examples [00:00, 690228.58 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 4916 examples [00:00, 509241.75 examples/s]
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 401, in main
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/configuration_auto.py", line 1285, in from_pretrained
+    raise ValueError(
+ValueError: Unrecognized model in results/finetune/checkpoint-11200/mnli/. Should have a `model_type` key in its config.json, or contain one of the following strings in its name: aimv2, aimv2_vision_model, albert, align, altclip, arcee, aria, aria_text, audio-spectrogram-transformer, autoformer, aya_vision, bamba, bark, bart, beit, bert, bert-generation, big_bird, bigbird_pegasus, biogpt, bit, bitnet, blenderbot, blenderbot-small, blip, blip-2, blip_2_qformer, bloom, bridgetower, bros, camembert, canine, chameleon, chinese_clip, chinese_clip_vision_model, clap, clip, clip_text_model, clip_vision_model, clipseg, clvp, code_llama, codegen, cohere, cohere2, colpali, colqwen2, conditional_detr, convbert, convnext, convnextv2, cpmant, csm, ctrl, cvt, d_fine, dab-detr, dac, data2vec-audio, data2vec-text, data2vec-vision, dbrx, deberta, deberta-v2, decision_transformer, deepseek_v2, deepseek_v3, deepseek_vl, deepseek_vl_hybrid, deformable_detr, deit, depth_anything, depth_pro, deta, detr, dia, diffllama, dinat, dinov2, dinov2_with_registers, distilbert, doge, donut-swin, dots1, dpr, dpt, efficientformer, efficientloftr, efficientnet, electra, emu3, encodec, encoder-decoder, eomt, ernie, ernie4_5, ernie4_5_moe, ernie_m, esm, evolla, exaone4, falcon, falcon_h1, falcon_mamba, fastspeech2_conformer, fastspeech2_conformer_with_hifigan, flaubert, flava, fnet, focalnet, fsmt, funnel, fuyu, gemma, gemma2, gemma3, gemma3_text, gemma3n, gemma3n_audio, gemma3n_text, gemma3n_vision, git, glm, glm4, glm4_moe, glm4v, glm4v_text, glpn, got_ocr2, gpt-sw3, gpt2, gpt_bigcode, gpt_neo, gpt_neox, gpt_neox_japanese, gptj, gptsan-japanese, granite, granite_speech, granitemoe, granitemoehybrid, granitemoeshared, granitevision, graphormer, grounding-dino, groupvit, helium, hgnet_v2, hiera, hubert, ibert, idefics, idefics2, idefics3, idefics3_vision, ijepa, imagegpt, informer, instructblip, instructblipvideo, internvl, internvl_vision, jamba, janus, jetmoe, jukebox, kosmos-2, kyutai_speech_to_text, layoutlm, layoutlmv2, layoutlmv3, led, levit, lfm2, lightglue, lilt, llama, llama4, llama4_text, llava, llava_next, llava_next_video, llava_onevision, longformer, longt5, luke, lxmert, m2m_100, mamba, mamba2, marian, markuplm, mask2former, maskformer, maskformer-swin, mbart, mctct, mega, megatron-bert, mgp-str, mimi, minimax, mistral, mistral3, mixtral, mlcd, mllama, mobilebert, mobilenet_v1, mobilenet_v2, mobilevit, mobilevitv2, modernbert, modernbert-decoder, moonshine, moshi, mpnet, mpt, mra, mt5, musicgen, musicgen_melody, mvp, nat, nemotron, nezha, nllb-moe, nougat, nystromformer, olmo, olmo2, olmoe, omdet-turbo, oneformer, open-llama, openai-gpt, opt, owlv2, owlvit, paligemma, patchtsmixer, patchtst, pegasus, pegasus_x, perceiver, perception_encoder, perception_lm, persimmon, phi, phi3, phi4_multimodal, phimoe, pix2struct, pixtral, plbart, poolformer, pop2piano, prompt_depth_anything, prophetnet, pvt, pvt_v2, qdqbert, qwen2, qwen2_5_omni, qwen2_5_vl, qwen2_5_vl_text, qwen2_audio, qwen2_audio_encoder, qwen2_moe, qwen2_vl, qwen2_vl_text, qwen3, qwen3_moe, rag, realm, recurrent_gemma, reformer, regnet, rembert, resnet, retribert, roberta, roberta-prelayernorm, roc_bert, roformer, rt_detr, rt_detr_resnet, rt_detr_v2, rwkv, sam, sam_hq, sam_hq_vision_model, sam_vision_model, seamless_m4t, seamless_m4t_v2, segformer, seggpt, sew, sew-d, shieldgemma2, siglip, siglip2, siglip_vision_model, smollm3, smolvlm, smolvlm_vision, speech-encoder-decoder, speech_to_text, speech_to_text_2, speecht5, splinter, squeezebert, stablelm, starcoder2, superglue, superpoint, swiftformer, swin, swin2sr, swinv2, switch_transformers, t5, t5gemma, table-transformer, tapas, textnet, time_series_transformer, timesfm, timesformer, timm_backbone, timm_wrapper, trajectory_transformer, transfo-xl, trocr, tvlt, tvp, udop, umt5, unispeech, unispeech-sat, univnet, upernet, van, video_llava, videomae, vilt, vipllava, vision-encoder-decoder, vision-text-dual-encoder, visual_bert, vit, vit_hybrid, vit_mae, vit_msn, vitdet, vitmatte, vitpose, vitpose_backbone, vits, vivit, vjepa2, voxtral, voxtral_encoder, wav2vec2, wav2vec2-bert, wav2vec2-conformer, wavlm, whisper, xclip, xglm, xlm, xlm-prophetnet, xlm-roberta, xlm-roberta-xl, xlnet, xlstm, xmod, yolos, yoso, zamba, zamba2, zoedepth
+./finetune_model.sh: line 44: --save_strategy: command not found
+09/16/2025 10:54:05 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 4distributed training: True, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 3668 examples [00:00, 20023.15 examples/s]Generating train split: 3668 examples [00:00, 19761.10 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 204 examples [00:00, 73527.37 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 204 examples [00:00, 85795.45 examples/s]
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py:564: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+[WARNING|modeling_utils.py:5540] 2025-09-16 10:54:10,310 >> Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at ../models/3428338/checkpoint-11200/ and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Running tokenizer on dataset:   0%|          | 0/3668 [00:00<?, ? examples/s]Running tokenizer on dataset:  27%|██▋       | 1000/3668 [00:00<00:00, 5738.22 examples/s]Running tokenizer on dataset:  82%|████████▏ | 3000/3668 [00:00<00:00, 9296.53 examples/s]Running tokenizer on dataset: 100%|██████████| 3668/3668 [00:00<00:00, 8739.83 examples/s]
+Running tokenizer on dataset:   0%|          | 0/204 [00:00<?, ? examples/s]Running tokenizer on dataset: 100%|██████████| 204/204 [00:00<00:00, 8067.49 examples/s]
+Running tokenizer on dataset:   0%|          | 0/204 [00:00<?, ? examples/s]Running tokenizer on dataset: 100%|██████████| 204/204 [00:00<00:00, 8053.75 examples/s]
+/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py:624: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+09/16/2025 10:54:11 - WARNING - accelerate.utils.other - Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Currently logged in as: lucafrancis (lucafrancis-georg-august-univerit-t-g-ttingen) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/wandb/run-20250916_105417-mesu66at
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run results/finetune/checkpoint-11200/mrpc/
+wandb: ⭐️ View project at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: 🚀 View run at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/mesu66at
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 643, in main
+    train_result = trainer.train(resume_from_checkpoint=checkpoint)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer.py", line 2237, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer.py", line 2487, in _inner_training_loop
+    self.control = self.callback_handler.on_train_begin(args, self.state, self.control)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer_callback.py", line 506, in on_train_begin
+    return self.call_event("on_train_begin", args, state, control)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer_callback.py", line 556, in call_event
+    result = getattr(callback, event)(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer_callback.py", line 755, in on_train_begin
+    assert args.eval_strategy != IntervalStrategy.NO, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EarlyStoppingCallback requires IntervalStrategy of steps or epoch
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mresults/finetune/checkpoint-11200/mrpc/[0m at: [34mhttps://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/mesu66at[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../../mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/wandb/run-20250916_105417-mesu66at/logs[0m
+./finetune_model.sh: line 44: --save_strategy: command not found
+09/16/2025 10:55:02 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 4distributed training: True, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 5848 examples [00:00, 23251.42 examples/s]Generating train split: 27243 examples [00:00, 82084.87 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 2424 examples [00:00, 221943.13 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 2424 examples [00:00, 205972.18 examples/s]
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py:564: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+[WARNING|modeling_utils.py:5540] 2025-09-16 10:55:05,928 >> Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at ../models/3428338/checkpoint-11200/ and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Running tokenizer on dataset:   0%|          | 0/27243 [00:00<?, ? examples/s]Running tokenizer on dataset:   4%|▎         | 1000/27243 [00:00<00:07, 3425.94 examples/s]Running tokenizer on dataset:   7%|▋         | 2000/27243 [00:00<00:06, 4140.68 examples/s]Running tokenizer on dataset:  11%|█         | 3000/27243 [00:00<00:05, 4608.19 examples/s]Running tokenizer on dataset:  15%|█▍        | 4000/27243 [00:00<00:04, 4965.89 examples/s]Running tokenizer on dataset:  18%|█▊        | 5000/27243 [00:01<00:04, 5410.22 examples/s]Running tokenizer on dataset:  22%|██▏       | 6000/27243 [00:01<00:03, 5722.75 examples/s]Running tokenizer on dataset:  26%|██▌       | 7000/27243 [00:01<00:03, 5786.74 examples/s]Running tokenizer on dataset:  29%|██▉       | 8000/27243 [00:01<00:03, 5945.69 examples/s]Running tokenizer on dataset:  33%|███▎      | 9000/27243 [00:01<00:03, 6018.46 examples/s]Running tokenizer on dataset:  37%|███▋      | 10000/27243 [00:01<00:03, 5688.91 examples/s]Running tokenizer on dataset:  40%|████      | 11000/27243 [00:02<00:02, 5554.97 examples/s]Running tokenizer on dataset:  44%|████▍     | 12000/27243 [00:02<00:02, 5593.68 examples/s]Running tokenizer on dataset:  48%|████▊     | 13000/27243 [00:02<00:02, 5652.84 examples/s]Running tokenizer on dataset:  51%|█████▏    | 14000/27243 [00:02<00:02, 5679.02 examples/s]Running tokenizer on dataset:  55%|█████▌    | 15000/27243 [00:02<00:02, 5762.71 examples/s]Running tokenizer on dataset:  59%|█████▊    | 16000/27243 [00:02<00:01, 5782.04 examples/s]Running tokenizer on dataset:  62%|██████▏   | 17000/27243 [00:03<00:02, 4276.51 examples/s]Running tokenizer on dataset:  66%|██████▌   | 18000/27243 [00:03<00:01, 4639.25 examples/s]Running tokenizer on dataset:  70%|██████▉   | 19000/27243 [00:03<00:01, 4990.09 examples/s]Running tokenizer on dataset:  73%|███████▎  | 20000/27243 [00:03<00:01, 5400.36 examples/s]Running tokenizer on dataset:  77%|███████▋  | 21000/27243 [00:03<00:01, 5412.92 examples/s]Running tokenizer on dataset:  81%|████████  | 22000/27243 [00:04<00:00, 5430.14 examples/s]Running tokenizer on dataset:  84%|████████▍ | 23000/27243 [00:04<00:00, 5427.28 examples/s]Running tokenizer on dataset:  88%|████████▊ | 24000/27243 [00:04<00:00, 5610.71 examples/s]Running tokenizer on dataset:  92%|█████████▏| 25000/27243 [00:04<00:00, 5374.51 examples/s]Running tokenizer on dataset:  95%|█████████▌| 26000/27243 [00:04<00:00, 5393.49 examples/s]Running tokenizer on dataset:  99%|█████████▉| 27000/27243 [00:05<00:00, 5492.99 examples/s]Running tokenizer on dataset: 100%|██████████| 27243/27243 [00:05<00:00, 5326.38 examples/s]
+Running tokenizer on dataset:   0%|          | 0/2424 [00:00<?, ? examples/s]Running tokenizer on dataset:  41%|████▏     | 1000/2424 [00:00<00:00, 5870.09 examples/s]Running tokenizer on dataset:  83%|████████▎ | 2000/2424 [00:00<00:00, 5916.95 examples/s]Running tokenizer on dataset: 100%|██████████| 2424/2424 [00:00<00:00, 5718.68 examples/s]
+Running tokenizer on dataset:   0%|          | 0/2424 [00:00<?, ? examples/s]Running tokenizer on dataset:  41%|████▏     | 1000/2424 [00:00<00:00, 5756.88 examples/s]Running tokenizer on dataset:  83%|████████▎ | 2000/2424 [00:00<00:00, 5943.14 examples/s]Running tokenizer on dataset: 100%|██████████| 2424/2424 [00:00<00:00, 5742.22 examples/s]
+/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py:624: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+09/16/2025 10:55:12 - WARNING - accelerate.utils.other - Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Currently logged in as: lucafrancis (lucafrancis-georg-august-univerit-t-g-ttingen) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/wandb/run-20250916_105518-vzf7nxup
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run results/finetune/checkpoint-11200/multirc/
+wandb: ⭐️ View project at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: 🚀 View run at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/vzf7nxup
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 643, in main
+    train_result = trainer.train(resume_from_checkpoint=checkpoint)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer.py", line 2237, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer.py", line 2487, in _inner_training_loop
+    self.control = self.callback_handler.on_train_begin(args, self.state, self.control)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer_callback.py", line 506, in on_train_begin
+    return self.call_event("on_train_begin", args, state, control)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer_callback.py", line 556, in call_event
+    result = getattr(callback, event)(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer_callback.py", line 755, in on_train_begin
+    assert args.eval_strategy != IntervalStrategy.NO, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EarlyStoppingCallback requires IntervalStrategy of steps or epoch
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mresults/finetune/checkpoint-11200/multirc/[0m at: [34mhttps://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/vzf7nxup[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../../mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/wandb/run-20250916_105518-vzf7nxup/logs[0m
+./finetune_model.sh: line 44: --save_strategy: command not found
+The cache for model files in Transformers v4.22.0 has been updated. Migrating your old cache. This is a one-time only operation. You can interrupt this and resume the migration later on by calling `transformers.utils.move_cache()`.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 33, in <module>
+    import transformers
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/__init__.py", line 26, in <module>
+    from . import dependency_versions_check
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/dependency_versions_check.py", line 17, in <module>
+    from .utils.versions import require_version, require_version_core
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/__init__.py", line 86, in <module>
+    from .import_utils import (
+ImportError: cannot import name 'is_soundfile_availble' from 'transformers.utils.import_utils' (/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/import_utils.py)
+./finetune_model.sh: line 44: --save_strategy: command not found
+09/16/2025 10:56:22 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 57821 examples [00:00, 305996.63 examples/s]Generating train split: 363846 examples [00:00, 1439434.82 examples/s]Generating train split: 363846 examples [00:00, 1209341.02 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 20215 examples [00:00, 1731070.95 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 20215 examples [00:00, 1803344.65 examples/s]
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 410, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 679, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1804, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1958, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/deberta_v2/tokenization_deberta_v2_fast.py", line 133, in __init__
+    super().__init__(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 114, in __init__
+    fast_tokenizer = convert_slow_tokenizer(slow_tokenizer)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1199, in convert_slow_tokenizer
+    return converter_class(transformer_tokenizer).converted()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 438, in __init__
+    from .utils import sentencepiece_model_pb2 as model_pb2
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/sentencepiece_model_pb2.py", line 91, in <module>
+    _descriptor.EnumValueDescriptor(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/google/protobuf/descriptor.py", line 933, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+./finetune_model.sh: line 44: --save_strategy: command not found
+09/16/2025 10:56:46 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 2490 examples [00:00, 14616.10 examples/s]Generating train split: 2490 examples [00:00, 14396.81 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 139 examples [00:00, 51735.58 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 139 examples [00:00, 61356.37 examples/s]
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 410, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 679, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1804, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1958, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/deberta_v2/tokenization_deberta_v2_fast.py", line 133, in __init__
+    super().__init__(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 114, in __init__
+    fast_tokenizer = convert_slow_tokenizer(slow_tokenizer)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1199, in convert_slow_tokenizer
+    return converter_class(transformer_tokenizer).converted()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 438, in __init__
+    from .utils import sentencepiece_model_pb2 as model_pb2
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/sentencepiece_model_pb2.py", line 91, in <module>
+    _descriptor.EnumValueDescriptor(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/google/protobuf/descriptor.py", line 933, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+./finetune_model.sh: line 44: --save_strategy: command not found
+09/16/2025 10:57:08 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 67349 examples [00:00, 445613.83 examples/s]Generating train split: 67349 examples [00:00, 436487.70 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 436 examples [00:00, 148290.35 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 436 examples [00:00, 177098.25 examples/s]
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 410, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 679, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1804, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1958, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/deberta_v2/tokenization_deberta_v2_fast.py", line 133, in __init__
+    super().__init__(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 114, in __init__
+    fast_tokenizer = convert_slow_tokenizer(slow_tokenizer)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1199, in convert_slow_tokenizer
+    return converter_class(transformer_tokenizer).converted()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 438, in __init__
+    from .utils import sentencepiece_model_pb2 as model_pb2
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/sentencepiece_model_pb2.py", line 91, in <module>
+    _descriptor.EnumValueDescriptor(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/google/protobuf/descriptor.py", line 933, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+./finetune_model.sh: line 44: --save_strategy: command not found
+09/16/2025 10:57:28 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 554 examples [00:00, 3628.40 examples/s]Generating train split: 554 examples [00:00, 3586.69 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 52 examples [00:00, 22068.58 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 52 examples [00:00, 24322.94 examples/s]
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 410, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 679, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1804, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1958, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/deberta_v2/tokenization_deberta_v2_fast.py", line 133, in __init__
+    super().__init__(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 114, in __init__
+    fast_tokenizer = convert_slow_tokenizer(slow_tokenizer)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1199, in convert_slow_tokenizer
+    return converter_class(transformer_tokenizer).converted()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 438, in __init__
+    from .utils import sentencepiece_model_pb2 as model_pb2
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/sentencepiece_model_pb2.py", line 91, in <module>
+    _descriptor.EnumValueDescriptor(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/google/protobuf/descriptor.py", line 933, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+./finetune_model.sh: line 44: --save_strategy: command not found

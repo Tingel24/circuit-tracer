@@ -1,0 +1,426 @@
+starting python script
+09/16/2025 10:58:30 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 410, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 679, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1804, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1958, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/deberta_v2/tokenization_deberta_v2_fast.py", line 133, in __init__
+    super().__init__(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 114, in __init__
+    fast_tokenizer = convert_slow_tokenizer(slow_tokenizer)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1199, in convert_slow_tokenizer
+    return converter_class(transformer_tokenizer).converted()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 438, in __init__
+    from .utils import sentencepiece_model_pb2 as model_pb2
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/sentencepiece_model_pb2.py", line 91, in <module>
+    _descriptor.EnumValueDescriptor(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/google/protobuf/descriptor.py", line 933, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+09/16/2025 10:59:01 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 410, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 679, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1804, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1958, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/deberta_v2/tokenization_deberta_v2_fast.py", line 133, in __init__
+    super().__init__(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 114, in __init__
+    fast_tokenizer = convert_slow_tokenizer(slow_tokenizer)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1199, in convert_slow_tokenizer
+    return converter_class(transformer_tokenizer).converted()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 438, in __init__
+    from .utils import sentencepiece_model_pb2 as model_pb2
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/sentencepiece_model_pb2.py", line 91, in <module>
+    _descriptor.EnumValueDescriptor(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/google/protobuf/descriptor.py", line 933, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+09/16/2025 10:59:26 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 410, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 679, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1804, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1958, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/deberta_v2/tokenization_deberta_v2_fast.py", line 133, in __init__
+    super().__init__(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 114, in __init__
+    fast_tokenizer = convert_slow_tokenizer(slow_tokenizer)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1199, in convert_slow_tokenizer
+    return converter_class(transformer_tokenizer).converted()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 438, in __init__
+    from .utils import sentencepiece_model_pb2 as model_pb2
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/sentencepiece_model_pb2.py", line 91, in <module>
+    _descriptor.EnumValueDescriptor(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/google/protobuf/descriptor.py", line 933, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+09/16/2025 10:59:50 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 401, in main
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/configuration_auto.py", line 896, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/configuration_utils.py", line 573, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/configuration_utils.py", line 628, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/hub.py", line 380, in cached_file
+    raise EnvironmentError(
+OSError: results/finetune/checkpoint-11200/mnli/ does not appear to have a file named config.json. Checkout 'https://huggingface.co/results/finetune/checkpoint-11200/mnli//main' for available files.
+09/16/2025 11:00:15 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 410, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 679, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1804, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1958, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/deberta_v2/tokenization_deberta_v2_fast.py", line 133, in __init__
+    super().__init__(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 114, in __init__
+    fast_tokenizer = convert_slow_tokenizer(slow_tokenizer)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1199, in convert_slow_tokenizer
+    return converter_class(transformer_tokenizer).converted()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 438, in __init__
+    from .utils import sentencepiece_model_pb2 as model_pb2
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/sentencepiece_model_pb2.py", line 91, in <module>
+    _descriptor.EnumValueDescriptor(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/google/protobuf/descriptor.py", line 933, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+09/16/2025 11:00:36 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 410, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 679, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1804, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1958, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/deberta_v2/tokenization_deberta_v2_fast.py", line 133, in __init__
+    super().__init__(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 114, in __init__
+    fast_tokenizer = convert_slow_tokenizer(slow_tokenizer)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1199, in convert_slow_tokenizer
+    return converter_class(transformer_tokenizer).converted()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 438, in __init__
+    from .utils import sentencepiece_model_pb2 as model_pb2
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/sentencepiece_model_pb2.py", line 91, in <module>
+    _descriptor.EnumValueDescriptor(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/google/protobuf/descriptor.py", line 933, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+09/16/2025 11:01:03 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 36841 examples [00:00, 173724.66 examples/s]Generating train split: 104743 examples [00:00, 410198.27 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 2732 examples [00:00, 462740.32 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 2732 examples [00:00, 505752.68 examples/s]
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 410, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 679, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1804, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1958, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/deberta_v2/tokenization_deberta_v2_fast.py", line 133, in __init__
+    super().__init__(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 114, in __init__
+    fast_tokenizer = convert_slow_tokenizer(slow_tokenizer)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1199, in convert_slow_tokenizer
+    return converter_class(transformer_tokenizer).converted()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 438, in __init__
+    from .utils import sentencepiece_model_pb2 as model_pb2
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/sentencepiece_model_pb2.py", line 91, in <module>
+    _descriptor.EnumValueDescriptor(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/google/protobuf/descriptor.py", line 933, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+09/16/2025 11:01:37 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 410, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 679, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1804, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1958, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/deberta_v2/tokenization_deberta_v2_fast.py", line 133, in __init__
+    super().__init__(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 114, in __init__
+    fast_tokenizer = convert_slow_tokenizer(slow_tokenizer)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1199, in convert_slow_tokenizer
+    return converter_class(transformer_tokenizer).converted()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 438, in __init__
+    from .utils import sentencepiece_model_pb2 as model_pb2
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/sentencepiece_model_pb2.py", line 91, in <module>
+    _descriptor.EnumValueDescriptor(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/google/protobuf/descriptor.py", line 933, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+09/16/2025 11:02:11 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 410, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 679, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1804, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1958, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/deberta_v2/tokenization_deberta_v2_fast.py", line 133, in __init__
+    super().__init__(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 114, in __init__
+    fast_tokenizer = convert_slow_tokenizer(slow_tokenizer)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1199, in convert_slow_tokenizer
+    return converter_class(transformer_tokenizer).converted()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 438, in __init__
+    from .utils import sentencepiece_model_pb2 as model_pb2
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/sentencepiece_model_pb2.py", line 91, in <module>
+    _descriptor.EnumValueDescriptor(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/google/protobuf/descriptor.py", line 933, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+09/16/2025 11:02:37 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 410, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 679, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1804, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1958, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/deberta_v2/tokenization_deberta_v2_fast.py", line 133, in __init__
+    super().__init__(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 114, in __init__
+    fast_tokenizer = convert_slow_tokenizer(slow_tokenizer)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1199, in convert_slow_tokenizer
+    return converter_class(transformer_tokenizer).converted()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 438, in __init__
+    from .utils import sentencepiece_model_pb2 as model_pb2
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/sentencepiece_model_pb2.py", line 91, in <module>
+    _descriptor.EnumValueDescriptor(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/google/protobuf/descriptor.py", line 933, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+09/16/2025 11:03:02 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: False
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 410, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 679, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1804, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1958, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/deberta_v2/tokenization_deberta_v2_fast.py", line 133, in __init__
+    super().__init__(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 114, in __init__
+    fast_tokenizer = convert_slow_tokenizer(slow_tokenizer)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1199, in convert_slow_tokenizer
+    return converter_class(transformer_tokenizer).converted()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 438, in __init__
+    from .utils import sentencepiece_model_pb2 as model_pb2
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/sentencepiece_model_pb2.py", line 91, in <module>
+    _descriptor.EnumValueDescriptor(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/google/protobuf/descriptor.py", line 933, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates

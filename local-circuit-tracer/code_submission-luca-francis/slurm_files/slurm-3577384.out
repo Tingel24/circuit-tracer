@@ -1,0 +1,100 @@
+starting python script
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 246, in main
+    model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/hf_argparser.py", line 367, in parse_args_into_dataclasses
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+ValueError: Some specified arguments are not used by the HfArgumentParser: ['--evaluation_strategy', 'epoch']
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 246, in main
+    model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/hf_argparser.py", line 367, in parse_args_into_dataclasses
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+ValueError: Some specified arguments are not used by the HfArgumentParser: ['--evaluation_strategy', 'epoch']
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 246, in main
+    model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/hf_argparser.py", line 367, in parse_args_into_dataclasses
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+ValueError: Some specified arguments are not used by the HfArgumentParser: ['--evaluation_strategy', 'epoch']
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 246, in main
+    model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/hf_argparser.py", line 367, in parse_args_into_dataclasses
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+ValueError: Some specified arguments are not used by the HfArgumentParser: ['--evaluation_strategy', 'epoch']
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 246, in main
+    model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/hf_argparser.py", line 367, in parse_args_into_dataclasses
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+ValueError: Some specified arguments are not used by the HfArgumentParser: ['--evaluation_strategy', 'epoch']
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 246, in main
+    model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/hf_argparser.py", line 367, in parse_args_into_dataclasses
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+ValueError: Some specified arguments are not used by the HfArgumentParser: ['--evaluation_strategy', 'epoch']
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 246, in main
+    model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/hf_argparser.py", line 367, in parse_args_into_dataclasses
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+ValueError: Some specified arguments are not used by the HfArgumentParser: ['--evaluation_strategy', 'epoch']
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 246, in main
+    model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/hf_argparser.py", line 367, in parse_args_into_dataclasses
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+ValueError: Some specified arguments are not used by the HfArgumentParser: ['--evaluation_strategy', 'epoch']
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 246, in main
+    model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/hf_argparser.py", line 367, in parse_args_into_dataclasses
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+ValueError: Some specified arguments are not used by the HfArgumentParser: ['--evaluation_strategy', 'epoch']
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 246, in main
+    model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/hf_argparser.py", line 367, in parse_args_into_dataclasses
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+ValueError: Some specified arguments are not used by the HfArgumentParser: ['--evaluation_strategy', 'epoch']
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 246, in main
+    model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/hf_argparser.py", line 367, in parse_args_into_dataclasses
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+ValueError: Some specified arguments are not used by the HfArgumentParser: ['--evaluation_strategy', 'epoch']

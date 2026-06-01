@@ -1,0 +1,127 @@
+starting python script
+/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/filters/extraction.py:94: SyntaxWarning: invalid escape sequence '\s'
+  - step 2 : We parse the choice with regex :[\s]*([A-?]), where ? varies by number of choices.
+/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/filters/extraction.py:164: SyntaxWarning: invalid escape sequence '\s'
+  f":[\s]*({without_paren_fallback_regex})"
+2025-09-17:16:58:17,184 INFO     [__main__.py:263] Verbosity set to INFO
+2025-09-17:16:58:37,617 WARNING  [__main__.py:325] File results/blimp/checkpoint-11200/blimp_results.json already exists. Results will be overwritten.
+2025-09-17:16:58:37,640 INFO     [__main__.py:349] Selected Tasks: ['blimp_filtered', 'blimp_supplement']
+2025-09-17:16:58:37,813 INFO     [evaluator.py:133] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2025-09-17:16:58:37,817 INFO     [evaluator.py:181] Initializing hf-mlm model, with arguments: {'pretrained': '../models/3428338/checkpoint-11200/', 'backend': 'mlm'}
+2025-09-17:16:58:39,707 WARNING  [other.py:512] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+2025-09-17:16:58:39,707 INFO     [huggingface.py:196] Using device 'cuda:0'
+2025-09-17:16:58:39,784 INFO     [huggingface.py:489] Overrode HF model backend type, and using type 'mlm'
+`torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/project/home/p200918/circuit-tracer-env/lib/python3.13/site-packages/transformers/convert_slow_tokenizer.py", line 1594, in extract_vocab_merges_from_model
+    from tiktoken.load import load_tiktoken_bpe
+ModuleNotFoundError: No module named 'tiktoken'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/project/home/p200918/circuit-tracer-env/lib/python3.13/site-packages/transformers/convert_slow_tokenizer.py", line 1737, in convert_slow_tokenizer
+    ).converted()
+      ~~~~~~~~~^^
+  File "/project/home/p200918/circuit-tracer-env/lib/python3.13/site-packages/transformers/convert_slow_tokenizer.py", line 1631, in converted
+    tokenizer = self.tokenizer()
+  File "/project/home/p200918/circuit-tracer-env/lib/python3.13/site-packages/transformers/convert_slow_tokenizer.py", line 1624, in tokenizer
+    vocab_scores, merges = self.extract_vocab_merges_from_model(self.vocab_file)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env/lib/python3.13/site-packages/transformers/convert_slow_tokenizer.py", line 1596, in extract_vocab_merges_from_model
+    raise ValueError(
+        "`tiktoken` is required to read a `tiktoken` file. Install it with `pip install tiktoken`."
+    )
+ValueError: `tiktoken` is required to read a `tiktoken` file. Install it with `pip install tiktoken`.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/project/home/p200918/circuit-tracer-env/lib/python3.13/site-packages/transformers/tokenization_utils_base.py", line 2316, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+  File "/project/home/p200918/circuit-tracer-env/lib/python3.13/site-packages/transformers/models/deberta_v2/tokenization_deberta_v2_fast.py", line 103, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        vocab_file,
+        ^^^^^^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/project/home/p200918/circuit-tracer-env/lib/python3.13/site-packages/transformers/tokenization_utils_fast.py", line 139, in __init__
+    fast_tokenizer = convert_slow_tokenizer(self, from_tiktoken=True)
+  File "/project/home/p200918/circuit-tracer-env/lib/python3.13/site-packages/transformers/convert_slow_tokenizer.py", line 1739, in convert_slow_tokenizer
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: Converting from SentencePiece and Tiktoken failed, if a converter for SentencePiece is available, provide a model path with a SentencePiece tokenizer.model file.Currently available slow->fast converters: ['AlbertTokenizer', 'BartTokenizer', 'BarthezTokenizer', 'BertTokenizer', 'BigBirdTokenizer', 'BlenderbotTokenizer', 'CamembertTokenizer', 'CLIPTokenizer', 'CodeGenTokenizer', 'ConvBertTokenizer', 'DebertaTokenizer', 'DebertaV2Tokenizer', 'DistilBertTokenizer', 'DPRReaderTokenizer', 'DPRQuestionEncoderTokenizer', 'DPRContextEncoderTokenizer', 'ElectraTokenizer', 'FNetTokenizer', 'FunnelTokenizer', 'GPT2Tokenizer', 'HerbertTokenizer', 'LayoutLMTokenizer', 'LayoutLMv2Tokenizer', 'LayoutLMv3Tokenizer', 'LayoutXLMTokenizer', 'LongformerTokenizer', 'LEDTokenizer', 'LxmertTokenizer', 'MarkupLMTokenizer', 'MBartTokenizer', 'MBart50Tokenizer', 'MPNetTokenizer', 'MobileBertTokenizer', 'MvpTokenizer', 'NllbTokenizer', 'OpenAIGPTTokenizer', 'PegasusTokenizer', 'Qwen2Tokenizer', 'RealmTokenizer', 'ReformerTokenizer', 'RemBertTokenizer', 'RetriBertTokenizer', 'RobertaTokenizer', 'RoFormerTokenizer', 'SeamlessM4TTokenizer', 'SqueezeBertTokenizer', 'T5Tokenizer', 'UdopTokenizer', 'WhisperTokenizer', 'XLMRobertaTokenizer', 'XLNetTokenizer', 'SplinterTokenizer', 'XGLMTokenizer', 'LlamaTokenizer', 'CodeLlamaTokenizer', 'GemmaTokenizer', 'Phi3Tokenizer']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/__main__.py", line 431, in <module>
+    cli_evaluate()
+    ~~~~~~~~~~~~^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/__main__.py", line 356, in cli_evaluate
+    results = evaluator.simple_evaluate(
+        model=args.model,
+    ...<20 lines>...
+        **request_caching_args,
+    )
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/evaluator.py", line 184, in simple_evaluate
+    lm = lm_eval.api.registry.get_model(model).create_from_arg_string(
+        model_args,
+    ...<6 lines>...
+        },
+    )
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/api/model.py", line 134, in create_from_arg_string
+    return cls(**args, **args2)
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/models/huggingface.py", line 269, in __init__
+    self._create_tokenizer(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        use_fast_tokenizer=use_fast_tokenizer,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/models/huggingface.py", line 714, in _create_tokenizer
+    self.tokenizer = transformers.AutoTokenizer.from_pretrained(
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model_name,
+        ^^^^^^^^^^^
+    ...<2 lines>...
+        use_fast=use_fast_tokenizer,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/project/home/p200918/circuit-tracer-env/lib/python3.13/site-packages/transformers/models/auto/tokenization_auto.py", line 1125, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env/lib/python3.13/site-packages/transformers/tokenization_utils_base.py", line 2070, in from_pretrained
+    return cls._from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~^
+        resolved_vocab_files,
+        ^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/project/home/p200918/circuit-tracer-env/lib/python3.13/site-packages/transformers/tokenization_utils_base.py", line 2317, in _from_pretrained
+    except import_protobuf_decode_error():
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/project/home/p200918/circuit-tracer-env/lib/python3.13/site-packages/transformers/tokenization_utils_base.py", line 87, in import_protobuf_decode_error
+    raise ImportError(PROTOBUF_IMPORT_ERROR.format(error_message))
+ImportError: 
+ requires the protobuf library but it was not found in your environment. Check out the instructions on the
+installation page of its repo: https://github.com/protocolbuffers/protobuf/tree/master/python#installation and follow the ones
+that match your environment. Please note that you may need to restart your runtime after installation.
+
+pretrained=../models/3428338/checkpoint-11200/,backend=mlm

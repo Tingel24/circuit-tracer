@@ -1,0 +1,95 @@
+starting python script
+[07/29/2025 09:16:38 PM - 0:00:00][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Namespace(model_name='microsoft/deberta-v3-base', models_folder='./models/', reload_id='3428260', new_id='3428260', reload_best=False, dataset='halfhalf.train,halfhalf.dev', preprocessed=False, spm_model='tokenizer.model', data_lim=0, cache_dir=None, max_seq_len=64, num_workers=10, debug=False, batch_size=256, grad_acc=1, lr=0.0002, warmup_steps=4000, mask_prob=0.15, epochs=50, eval_steps=1000, save_steps=1000, logging_steps=100, log_to_file=False, eval_only=False, bf16=False, resume=False, push_to_hub='', push_only=False, register='', save_for_eval='', lora=False, load_encdec=False, tiny=False, small=False, reload_path='./models/3428260', checkpoint_path=None)
+[07/29/2025 09:16:41 PM - 0:00:03][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----- Model Parameters -----
+[07/29/2025 09:16:41 PM - 0:00:03][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Total: 116802880
+[07/29/2025 09:16:41 PM - 0:00:03][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----------------------------
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:01<00:10, 174.94 examples/s]Map (num_proc=10):  40%|████      | 800/2000 [00:01<00:01, 781.55 examples/s]Map (num_proc=10):  60%|██████    | 1200/2000 [00:01<00:00, 927.41 examples/s]Map (num_proc=10):  70%|███████   | 1400/2000 [00:01<00:00, 949.98 examples/s]Map (num_proc=10):  80%|████████  | 1600/2000 [00:01<00:00, 982.34 examples/s]Map (num_proc=10):  90%|█████████ | 1800/2000 [00:02<00:00, 991.34 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:02<00:00, 1025.77 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:02<00:00, 768.74 examples/s] 
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:00<00:01, 944.76 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:00<00:00, 5701.67 examples/s]
+/mnt/tier2/users/u103092/circuit-tracer/test/train.py:320: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+***** Running training *****
+  Num examples = 114,661
+  Num Epochs = 50
+  Instantaneous batch size per device = 256
+  Training with DataParallel so batch size has been adjusted to: 1,024
+  Total train batch size (w. parallel, distributed & accumulation) = 1,024
+  Gradient Accumulation steps = 1
+  Total optimization steps = 5,600
+  Number of trainable parameters = 116,802,880
+Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Currently logged in as: lucafrancis (lucafrancis-georg-august-univerit-t-g-ttingen) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /mnt/tier2/users/u103092/circuit-tracer/test/wandb/run-20250729_211659-ioj9wqj6
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ./models/3428260
+wandb: ⭐️ View project at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: 🚀 View run at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/ioj9wqj6
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 114661
+    })
+    validation: Dataset({
+        features: ['input_ids'],
+        num_rows: 640
+    })
+})
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/train.py", line 337, in <module>
+    trainer.train(resume_from_checkpoint=args.checkpoint_path if args.resume else None)
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer.py", line 2237, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer.py", line 2578, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer.py", line 3792, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/trainer.py", line 3879, in compute_loss
+    outputs = model(**inputs)
+              ^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/parallel/data_parallel.py", line 195, in forward
+    return self.gather(outputs, self.output_device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/parallel/data_parallel.py", line 218, in gather
+    return gather(outputs, output_device, dim=self.dim)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/parallel/scatter_gather.py", line 136, in gather
+    res = gather_map(outputs)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/parallel/scatter_gather.py", line 128, in gather_map
+    return type(out)((k, gather_map([d[k] for d in outputs])) for k in out)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 7, in __init__
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/utils/generic.py", line 415, in __post_init__
+    for idx, element in enumerate(iterator):
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/parallel/scatter_gather.py", line 128, in <genexpr>
+    return type(out)((k, gather_map([d[k] for d in outputs])) for k in out)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/parallel/scatter_gather.py", line 122, in gather_map
+    return Gather.apply(target_device, dim, *outputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/autograd/function.py", line 575, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/parallel/_functions.py", line 80, in forward
+    return comm.gather(inputs, ctx.dim, ctx.target_device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/parallel/comm.py", line 253, in gather
+    return torch._C._gather(tensors, dim, destination)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 9.77 GiB. GPU 0 has a total capacity of 39.49 GiB of which 3.67 GiB is free. Including non-PyTorch memory, this process has 35.81 GiB memory in use. Of the allocated memory 34.73 GiB is allocated by PyTorch, and 28.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33m./models/3428260[0m at: [34mhttps://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/ioj9wqj6[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../mnt/tier2/users/u103092/circuit-tracer/test/wandb/run-20250729_211659-ioj9wqj6/logs[0m

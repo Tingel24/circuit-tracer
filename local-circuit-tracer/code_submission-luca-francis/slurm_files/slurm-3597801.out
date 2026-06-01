@@ -1,0 +1,108 @@
+starting python script
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_processes` was set to a value of `4`
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+[09/22/25 15:49:41 - 0:00:00][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Namespace(model_name='microsoft/deberta-v3-base', models_folder='./models/', reload_id='3597801', new_id='3597801', reload_best=False, dataset='halfhalf.train,halfhalf.dev', preprocessed=False, spm_model='tokenizer.model', data_lim=0, cache_dir=None, max_seq_len=64, num_workers=10, debug=False, batch_size=128, grad_acc=1, lr=0.0002, warmup_steps=4000, mask_prob=0.15, epochs=50, eval_steps=1000, save_steps=1000, logging_steps=100, log_to_file=False, eval_only=False, bf16=False, resume=False, push_to_hub='', push_only=False, register='', save_for_eval='', lora=False, load_encdec=False, tiny=False, small=False, reload_path='./models/3597801', checkpoint_path=None)
+[09/22/25 15:49:41 - 0:00:00][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Namespace(model_name='microsoft/deberta-v3-base', models_folder='./models/', reload_id='3597801', new_id='3597801', reload_best=False, dataset='halfhalf.train,halfhalf.dev', preprocessed=False, spm_model='tokenizer.model', data_lim=0, cache_dir=None, max_seq_len=64, num_workers=10, debug=False, batch_size=128, grad_acc=1, lr=0.0002, warmup_steps=4000, mask_prob=0.15, epochs=50, eval_steps=1000, save_steps=1000, logging_steps=100, log_to_file=False, eval_only=False, bf16=False, resume=False, push_to_hub='', push_only=False, register='', save_for_eval='', lora=False, load_encdec=False, tiny=False, small=False, reload_path='./models/3597801', checkpoint_path=None)
+[09/22/25 15:49:41 - 0:00:00][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Namespace(model_name='microsoft/deberta-v3-base', models_folder='./models/', reload_id='3597801', new_id='3597801', reload_best=False, dataset='halfhalf.train,halfhalf.dev', preprocessed=False, spm_model='tokenizer.model', data_lim=0, cache_dir=None, max_seq_len=64, num_workers=10, debug=False, batch_size=128, grad_acc=1, lr=0.0002, warmup_steps=4000, mask_prob=0.15, epochs=50, eval_steps=1000, save_steps=1000, logging_steps=100, log_to_file=False, eval_only=False, bf16=False, resume=False, push_to_hub='', push_only=False, register='', save_for_eval='', lora=False, load_encdec=False, tiny=False, small=False, reload_path='./models/3597801', checkpoint_path=None)
+[09/22/25 15:49:41 - 0:00:00][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Namespace(model_name='microsoft/deberta-v3-base', models_folder='./models/', reload_id='3597801', new_id='3597801', reload_best=False, dataset='halfhalf.train,halfhalf.dev', preprocessed=False, spm_model='tokenizer.model', data_lim=0, cache_dir=None, max_seq_len=64, num_workers=10, debug=False, batch_size=128, grad_acc=1, lr=0.0002, warmup_steps=4000, mask_prob=0.15, epochs=50, eval_steps=1000, save_steps=1000, logging_steps=100, log_to_file=False, eval_only=False, bf16=False, resume=False, push_to_hub='', push_only=False, register='', save_for_eval='', lora=False, load_encdec=False, tiny=False, small=False, reload_path='./models/3597801', checkpoint_path=None)
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+[09/22/25 15:49:43 - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----- Model Parameters -----
+[09/22/25 15:49:43 - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----- Model Parameters -----
+[09/22/25 15:49:43 - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----- Model Parameters -----
+[09/22/25 15:49:43 - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----- Model Parameters -----
+[09/22/25 15:49:43 - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Total: 116802880
+[09/22/25 15:49:43 - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Total: 116802880
+[09/22/25 15:49:43 - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Total: 116802880
+[09/22/25 15:49:43 - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----------------------------
+[09/22/25 15:49:43 - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----------------------------
+[09/22/25 15:49:43 - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----------------------------
+[09/22/25 15:49:43 - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Total: 116802880
+[09/22/25 15:49:43 - 0:00:02][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----------------------------
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:00<00:05, 338.25 examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:00<00:05, 335.46 examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:00<00:05, 335.40 examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:00<00:05, 334.02 examples/s]Map (num_proc=10):  40%|████      | 800/2000 [00:00<00:01, 1096.21 examples/s]Map (num_proc=10):  40%|████      | 800/2000 [00:00<00:01, 1081.70 examples/s]Map (num_proc=10):  40%|████      | 800/2000 [00:00<00:01, 1081.79 examples/s]Map (num_proc=10):  40%|████      | 800/2000 [00:00<00:01, 1067.45 examples/s]Map (num_proc=10):  50%|█████     | 1000/2000 [00:01<00:00, 1086.18 examples/s]Map (num_proc=10):  50%|█████     | 1000/2000 [00:01<00:00, 1082.14 examples/s]Map (num_proc=10):  50%|█████     | 1000/2000 [00:01<00:00, 1063.35 examples/s]Map (num_proc=10):  50%|█████     | 1000/2000 [00:01<00:00, 1061.04 examples/s]Map (num_proc=10):  60%|██████    | 1200/2000 [00:01<00:00, 1087.36 examples/s]Map (num_proc=10):  60%|██████    | 1200/2000 [00:01<00:00, 1080.68 examples/s]Map (num_proc=10):  60%|██████    | 1200/2000 [00:01<00:00, 1093.15 examples/s]Map (num_proc=10):  60%|██████    | 1200/2000 [00:01<00:00, 1062.51 examples/s]Map (num_proc=10):  70%|███████   | 1400/2000 [00:01<00:00, 1097.73 examples/s]Map (num_proc=10):  70%|███████   | 1400/2000 [00:01<00:00, 1097.39 examples/s]Map (num_proc=10):  70%|███████   | 1400/2000 [00:01<00:00, 1089.28 examples/s]Map (num_proc=10):  70%|███████   | 1400/2000 [00:01<00:00, 1076.02 examples/s]Map (num_proc=10):  80%|████████  | 1600/2000 [00:01<00:00, 1097.01 examples/s]Map (num_proc=10):  80%|████████  | 1600/2000 [00:01<00:00, 1099.79 examples/s]Map (num_proc=10):  80%|████████  | 1600/2000 [00:01<00:00, 1091.48 examples/s]Map (num_proc=10):  80%|████████  | 1600/2000 [00:01<00:00, 1078.23 examples/s]Map (num_proc=10):  90%|█████████ | 1800/2000 [00:01<00:00, 1085.85 examples/s]Map (num_proc=10):  90%|█████████ | 1800/2000 [00:01<00:00, 1073.84 examples/s]Map (num_proc=10):  90%|█████████ | 1800/2000 [00:01<00:00, 1064.16 examples/s]Map (num_proc=10):  90%|█████████ | 1800/2000 [00:01<00:00, 1076.94 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:01<00:00, 1114.18 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:01<00:00, 1106.80 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:01<00:00, 1109.43 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:01<00:00, 1090.76 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:02<00:00, 988.76 examples/s] 
+Map (num_proc=10): 100%|██████████| 2000/2000 [00:02<00:00, 986.36 examples/s] 
+Map (num_proc=10): 100%|██████████| 2000/2000 [00:02<00:00, 977.54 examples/s] 
+Map (num_proc=10): 100%|██████████| 2000/2000 [00:02<00:00, 959.86 examples/s] 
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:00<00:00, 13890.72 examples/s]
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 114661
+    })
+    validation: Dataset({
+        features: ['input_ids'],
+        num_rows: 640
+    })
+})
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:00<00:00, 18927.54 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:00<00:00, 12519.13 examples/s]
+Map (num_proc=10): 100%|██████████| 2000/2000 [00:00<00:00, 10508.29 examples/s]
+DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 114661
+    })
+    validation: Dataset({
+        features: ['input_ids'],
+        num_rows: 640
+    })
+})
+Map (num_proc=10): 100%|██████████| 2000/2000 [00:00<00:00, 11687.07 examples/s]
+DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 114661
+    })
+    validation: Dataset({
+        features: ['input_ids'],
+        num_rows: 640
+    })
+})
+DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 114661
+    })
+    validation: Dataset({
+        features: ['input_ids'],
+        num_rows: 640
+    })
+})
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+***** Running training *****
+  Num examples = 114,661
+  Num Epochs = 50
+  Instantaneous batch size per device = 128
+  Total train batch size (w. parallel, distributed & accumulation) = 512
+  Gradient Accumulation steps = 1
+  Total optimization steps = 11,200
+  Number of trainable parameters = 116,802,880
+Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Currently logged in as: lucafrancis (lucafrancis-georg-august-univerit-t-g-ttingen). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.8
+wandb: Run data is saved locally in /mnt/tier2/users/u103092/circuit-tracer/test/wandb/run-20250922_155013-7u1wsf35
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ./models/3597801
+wandb: ⭐️ View project at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: 🚀 View run at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/7u1wsf35
+[rank0]:[W922 15:50:34.010332139 reducer.cpp:1400] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[rank2]:[W922 15:50:34.010326369 reducer.cpp:1400] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[rank3]:[W922 15:50:34.010337759 reducer.cpp:1400] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[rank1]:[W922 15:50:34.020505011 reducer.cpp:1400] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[09/22/25 15:51:31 - 0:01:50][[GPU] (0): 23175/40960 MB, (1): 23247/40960 MB, (2): 23247/40960 MB] {'loss': 10.0488, 'grad_norm': 2.309178352355957, 'learning_rate': 5e-06, 'epoch': 0.44642857142857145}
+[09/22/25 15:52:27 - 0:02:46][[GPU] (0): 23175/40960 MB, (1): 23247/40960 MB, (2): 23247/40960 MB] {'loss': 8.9012, 'grad_norm': 1.9327247142791748, 'learning_rate': 1e-05, 'epoch': 0.8928571428571429}
+[09/22/25 15:53:22 - 0:03:41][[GPU] (0): 23175/40960 MB, (1): 23247/40960 MB, (2): 23247/40960 MB] {'loss': 7.7516, 'grad_norm': 1.4342375993728638, 'learning_rate': 1.5e-05, 'epoch': 1.3392857142857144}
+[09/22/25 15:54:16 - 0:04:35][[GPU] (0): 23175/40960 MB, (1): 23247/40960 MB, (2): 23247/40960 MB] {'loss': 6.7938, 'grad_norm': 1.149450659751892, 'learning_rate': 2e-05, 'epoch': 1.7857142857142856}
+[09/22/25 15:55:11 - 0:05:30][[GPU] (0): 23175/40960 MB, (1): 23247/40960 MB, (2): 23247/40960 MB] {'loss': 6.2455, 'grad_norm': 0.9917154312133789, 'learning_rate': 2.5e-05, 'epoch': 2.232142857142857}
+[09/22/25 15:56:06 - 0:06:26][[GPU] (0): 23175/40960 MB, (1): 23247/40960 MB, (2): 23247/40960 MB] {'loss': 5.9019, 'grad_norm': 1.130667805671692, 'learning_rate': 3e-05, 'epoch': 2.678571428571429}
+[09/22/25 15:57:01 - 0:07:20][[GPU] (0): 23175/40960 MB, (1): 23247/40960 MB, (2): 23247/40960 MB] {'loss': 5.6548, 'grad_norm': 1.2436529397964478, 'learning_rate': 3.5e-05, 'epoch': 3.125}

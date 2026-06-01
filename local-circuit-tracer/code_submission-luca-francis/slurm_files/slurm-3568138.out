@@ -1,0 +1,35 @@
+starting python script
+2025-09-09:15:59:17,855 INFO     [__main__.py:263] Verbosity set to INFO
+2025-09-09:15:59:35,498 INFO     [__main__.py:349] Selected Tasks: ['blimp_filtered', 'blimp_supplement']
+2025-09-09:15:59:35,692 INFO     [evaluator.py:133] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2025-09-09:15:59:35,694 INFO     [evaluator.py:181] Initializing hf model, with arguments: {'pretrained': './models/3428338/checkpoint-11200/', 'backend': 'causal'}
+2025-09-09:15:59:37,187 WARNING  [other.py:512] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+2025-09-09:15:59:37,187 INFO     [huggingface.py:196] Using device 'cuda:0'
+2025-09-09:15:59:37,258 INFO     [huggingface.py:489] Overrode HF model backend type, and using type 'causal'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/__main__.py", line 431, in <module>
+    cli_evaluate()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/__main__.py", line 356, in cli_evaluate
+    results = evaluator.simple_evaluate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/evaluator.py", line 184, in simple_evaluate
+    lm = lm_eval.api.registry.get_model(model).create_from_arg_string(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/api/model.py", line 134, in create_from_arg_string
+    return cls(**args, **args2)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/models/huggingface.py", line 235, in __init__
+    self._create_model(
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/models/huggingface.py", line 609, in _create_model
+    self._model = self.AUTO_MODEL_CLASS.from_pretrained(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 603, in from_pretrained
+    raise ValueError(
+ValueError: Unrecognized configuration class <class 'transformers.models.deberta_v2.configuration_deberta_v2.DebertaV2Config'> for this kind of AutoModel: AutoModelForCausalLM.
+Model type should be one of ArceeConfig, AriaTextConfig, BambaConfig, BartConfig, BertConfig, BertGenerationConfig, BigBirdConfig, BigBirdPegasusConfig, BioGptConfig, BitNetConfig, BlenderbotConfig, BlenderbotSmallConfig, BloomConfig, CamembertConfig, LlamaConfig, CodeGenConfig, CohereConfig, Cohere2Config, CpmAntConfig, CTRLConfig, Data2VecTextConfig, DbrxConfig, DeepseekV2Config, DeepseekV3Config, DiffLlamaConfig, DogeConfig, Dots1Config, ElectraConfig, Emu3Config, ErnieConfig, Ernie4_5Config, Ernie4_5_MoeConfig, Exaone4Config, FalconConfig, FalconH1Config, FalconMambaConfig, FuyuConfig, GemmaConfig, Gemma2Config, Gemma3Config, Gemma3TextConfig, Gemma3nConfig, Gemma3nTextConfig, GitConfig, GlmConfig, Glm4Config, Glm4MoeConfig, GotOcr2Config, GPT2Config, GPT2Config, GPTBigCodeConfig, GPTNeoConfig, GPTNeoXConfig, GPTNeoXJapaneseConfig, GPTJConfig, GraniteConfig, GraniteMoeConfig, GraniteMoeHybridConfig, GraniteMoeSharedConfig, HeliumConfig, JambaConfig, JetMoeConfig, Lfm2Config, LlamaConfig, Llama4Config, Llama4TextConfig, MambaConfig, Mamba2Config, MarianConfig, MBartConfig, MegaConfig, MegatronBertConfig, MiniMaxConfig, MistralConfig, MixtralConfig, MllamaConfig, ModernBertDecoderConfig, MoshiConfig, MptConfig, MusicgenConfig, MusicgenMelodyConfig, MvpConfig, NemotronConfig, OlmoConfig, Olmo2Config, OlmoeConfig, OpenLlamaConfig, OpenAIGPTConfig, OPTConfig, PegasusConfig, PersimmonConfig, PhiConfig, Phi3Config, Phi4MultimodalConfig, PhimoeConfig, PLBartConfig, ProphetNetConfig, QDQBertConfig, Qwen2Config, Qwen2MoeConfig, Qwen3Config, Qwen3MoeConfig, RecurrentGemmaConfig, ReformerConfig, RemBertConfig, RobertaConfig, RobertaPreLayerNormConfig, RoCBertConfig, RoFormerConfig, RwkvConfig, SmolLM3Config, Speech2Text2Config, StableLmConfig, Starcoder2Config, TransfoXLConfig, TrOCRConfig, WhisperConfig, XGLMConfig, XLMConfig, XLMProphetNetConfig, XLMRobertaConfig, XLMRobertaXLConfig, XLNetConfig, xLSTMConfig, XmodConfig, ZambaConfig, Zamba2Config.
+pretrained=./models/3428338/checkpoint-11200/,backend=causal

@@ -1,0 +1,65 @@
+starting python script
+2025-09-09:16:22:12,845 INFO     [__main__.py:263] Verbosity set to INFO
+2025-09-09:16:22:29,869 INFO     [__main__.py:349] Selected Tasks: ['blimp_filtered', 'blimp_supplement']
+2025-09-09:16:22:30,073 INFO     [evaluator.py:133] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2025-09-09:16:22:30,076 INFO     [evaluator.py:181] Initializing hf-mlm model, with arguments: {'pretrained': './models/3428338/checkpoint-11200/', 'backend': 'mlm'}
+2025-09-09:16:22:31,293 WARNING  [other.py:512] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+2025-09-09:16:22:31,293 INFO     [huggingface.py:196] Using device 'cuda:0'
+2025-09-09:16:22:31,385 INFO     [huggingface.py:489] Overrode HF model backend type, and using type 'mlm'
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py:564: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+2025-09-09:16:22:41,074 WARNING  [task.py:788] [Task: blimp_ellipsis_n_bar_1_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-09:16:22:41,083 WARNING  [task.py:800] [Task: blimp_ellipsis_n_bar_1_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/__main__.py", line 431, in <module>
+    cli_evaluate()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/__main__.py", line 356, in cli_evaluate
+    results = evaluator.simple_evaluate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/evaluator.py", line 215, in simple_evaluate
+    task_dict = get_task_dict(tasks, task_manager)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/tasks/__init__.py", line 420, in get_task_dict
+    task_name_from_string_dict = task_manager.load_task_or_group(
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/tasks/__init__.py", line 270, in load_task_or_group
+    collections.ChainMap(*map(self._load_individual_task_or_group, task_list))
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/tasks/__init__.py", line 253, in _load_individual_task_or_group
+    **dict(collections.ChainMap(*map(fn, subtask_list))),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/tasks/__init__.py", line 161, in _load_individual_task_or_group
+    return load_task(task_config, task=name_or_config, group=parent_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/tasks/__init__.py", line 150, in load_task
+    task_object = ConfigurableTask(config=config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/api/task.py", line 807, in __init__
+    self.download(self.config.dataset_kwargs)
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/api/task.py", line 896, in download
+    self.dataset = datasets.load_dataset(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py", line 2556, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py", line 2228, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py", line 1768, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/load.py", line 1134, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/data_files.py", line 700, in from_patterns
+    DataFilesList.from_patterns(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/data_files.py", line 605, in from_patterns
+    resolve_pattern(
+  File "/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/datasets/data_files.py", line 393, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/mnt/tier2/users/u103092/circuit-tracer/test/evaluation_data/blimp_filtered/ellipsis_n_bar_1.jsonl'
+pretrained=./models/3428338/checkpoint-11200/,backend=mlm

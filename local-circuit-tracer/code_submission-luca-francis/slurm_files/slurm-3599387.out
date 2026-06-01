@@ -1,0 +1,142 @@
+starting python script
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+09/23/2025 13:37:48 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 4distributed training: True, 16-bits training: False
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/utils/hub.py", line 402, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': '../models/3597630/checkpoint-16000/'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 401, in main
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/models/auto/configuration_auto.py", line 976, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/configuration_utils.py", line 632, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/configuration_utils.py", line 689, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/utils/hub.py", line 466, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: '../models/3597630/checkpoint-16000/'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+09/23/2025 13:38:36 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 4distributed training: True, 16-bits training: False
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/utils/hub.py", line 402, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': '../models/3597630/checkpoint-16000/'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 401, in main
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/models/auto/configuration_auto.py", line 976, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/configuration_utils.py", line 632, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/configuration_utils.py", line 689, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/utils/hub.py", line 466, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: '../models/3597630/checkpoint-16000/'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+09/23/2025 13:39:27 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 4distributed training: True, 16-bits training: False
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/utils/hub.py", line 402, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': '../models/3597630/checkpoint-16000/'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 401, in main
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/models/auto/configuration_auto.py", line 976, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/configuration_utils.py", line 632, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/configuration_utils.py", line 689, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/utils/hub.py", line 466, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: '../models/3597630/checkpoint-16000/'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+09/23/2025 13:40:21 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 4distributed training: True, 16-bits training: False
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 739, in <module>
+    main()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 401, in main
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/models/auto/configuration_auto.py", line 976, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/configuration_utils.py", line 632, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/configuration_utils.py", line 689, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/utils/hub.py", line 373, in cached_file
+    raise EnvironmentError(
+OSError: results/finetune/checkpoint-16000/mnli/ does not appear to have a file named config.json. Checkout 'https://huggingface.co/results/finetune/checkpoint-16000/mnli//tree/main' for available files.

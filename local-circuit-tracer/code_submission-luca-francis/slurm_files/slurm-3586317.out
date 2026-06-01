@@ -1,0 +1,173 @@
+starting python script
+2025-09-16:13:14:24,246 INFO     [__main__.py:263] Verbosity set to INFO
+2025-09-16:13:14:42,993 WARNING  [__main__.py:325] File results/blimp/checkpoint-11200/blimp_results.json already exists. Results will be overwritten.
+2025-09-16:13:14:43,004 INFO     [__main__.py:349] Selected Tasks: ['blimp_filtered', 'blimp_supplement']
+2025-09-16:13:14:43,088 INFO     [evaluator.py:133] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2025-09-16:13:14:43,091 INFO     [evaluator.py:181] Initializing hf-mlm model, with arguments: {'pretrained': '../models/3428338/checkpoint-11200/', 'backend': 'mlm'}
+2025-09-16:13:14:43,952 INFO     [huggingface.py:196] Using device 'cuda:0'
+2025-09-16:13:14:44,007 INFO     [huggingface.py:489] Overrode HF model backend type, and using type 'mlm'
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ in _run_module_as_main:198                                                   │
+│ in _run_code:88                                                              │
+│                                                                              │
+│ /mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eva │
+│ l/__main__.py:431 in <module>                                                │
+│                                                                              │
+│   428                                                                        │
+│   429                                                                        │
+│   430 if __name__ == "__main__":                                             │
+│ ❱ 431 │   cli_evaluate()                                                     │
+│   432                                                                        │
+│                                                                              │
+│ /mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eva │
+│ l/__main__.py:356 in cli_evaluate                                            │
+│                                                                              │
+│   353 │   )                                                                  │
+│   354 │                                                                      │
+│   355 │   print(args.model_args)                                             │
+│ ❱ 356 │   results = evaluator.simple_evaluate(                               │
+│   357 │   │   model=args.model,                                              │
+│   358 │   │   model_args=args.model_args,                                    │
+│   359 │   │   tasks=task_names,                                              │
+│                                                                              │
+│ /mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eva │
+│ l/utils.py:288 in _wrapper                                                   │
+│                                                                              │
+│   285 │   │   │   │   "deprecated and will be disallowed in a future version │
+│   286 │   │   │   │   "lm-evaluation-harness!"                               │
+│   287 │   │   │   )                                                          │
+│ ❱ 288 │   │   return fn(*args, **kwargs)                                     │
+│   289 │                                                                      │
+│   290 │   return _wrapper                                                    │
+│   291                                                                        │
+│                                                                              │
+│ /mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eva │
+│ l/evaluator.py:184 in simple_evaluate                                        │
+│                                                                              │
+│   181 │   │   │   eval_logger.info(                                          │
+│   182 │   │   │   │   f"Initializing {model} model, with arguments: {simple_ │
+│   183 │   │   │   )                                                          │
+│ ❱ 184 │   │   │   lm = lm_eval.api.registry.get_model(model).create_from_arg │
+│   185 │   │   │   │   model_args,                                            │
+│   186 │   │   │   │   {                                                      │
+│   187 │   │   │   │   │   "batch_size": batch_size,                          │
+│                                                                              │
+│ /mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eva │
+│ l/api/model.py:134 in create_from_arg_string                                 │
+│                                                                              │
+│   131 │   │   additional_config = {} if additional_config is None else addit │
+│   132 │   │   args = utils.simple_parse_args_string(arg_string)              │
+│   133 │   │   args2 = {k: v for k, v in additional_config.items() if v is no │
+│ ❱ 134 │   │   return cls(**args, **args2)                                    │
+│   135 │                                                                      │
+│   136 │   @classmethod                                                       │
+│   137 │   def create_from_arg_obj(                                           │
+│                                                                              │
+│ /mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eva │
+│ l/models/huggingface.py:235 in __init__                                      │
+│                                                                              │
+│    232 │   │                                                                 │
+│    233 │   │   # if we passed `pretrained` as a string, initialize our model │
+│    234 │   │   if isinstance(pretrained, str):                               │
+│ ❱  235 │   │   │   self._create_model(                                       │
+│    236 │   │   │   │   pretrained=pretrained,                                │
+│    237 │   │   │   │   revision=revision,                                    │
+│    238 │   │   │   │   dtype=dtype,                                          │
+│                                                                              │
+│ /mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eva │
+│ l/models/huggingface.py:609 in _create_model                                 │
+│                                                                              │
+│    606 │   │   │   │   │   │   model_kwargs["bnb_4bit_compute_dtype"] = get_ │
+│    607 │   │   │   │   │   │   │   model_kwargs["bnb_4bit_compute_dtype"]    │
+│    608 │   │   │   │   │   │   )                                             │
+│ ❱  609 │   │   │   self._model = self.AUTO_MODEL_CLASS.from_pretrained(      │
+│    610 │   │   │   │   pretrained,                                           │
+│    611 │   │   │   │   revision=revision,                                    │
+│    612 │   │   │   │   torch_dtype=get_dtype(dtype),                         │
+│                                                                              │
+│ /home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_p │
+│ ath/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transfor │
+│ mers/models/auto/auto_factory.py:471 in from_pretrained                      │
+│                                                                              │
+│   468 │   │   │   )                                                          │
+│   469 │   │   elif type(config) in cls._model_mapping.keys():                │
+│   470 │   │   │   model_class = _get_model_class(config, cls._model_mapping) │
+│ ❱ 471 │   │   │   return model_class.from_pretrained(                        │
+│   472 │   │   │   │   pretrained_model_name_or_path, *model_args, config=con │
+│   473 │   │   │   )                                                          │
+│   474 │   │   raise ValueError(                                              │
+│                                                                              │
+│ /home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_p │
+│ ath/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/transfor │
+│ mers/modeling_utils.py:2697 in from_pretrained                               │
+│                                                                              │
+│   2694 │   │                                                                 │
+│   2695 │   │   # Dispatch model with hooks on all devices if necessary       │
+│   2696 │   │   if device_map is not None:                                    │
+│ ❱ 2697 │   │   │   dispatch_model(model, device_map=device_map, offload_dir= │
+│   2698 │   │                                                                 │
+│   2699 │   │   if output_loading_info:                                       │
+│   2700 │   │   │   if loading_info is None:                                  │
+│                                                                              │
+│ /home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_p │
+│ ath/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/accelera │
+│ te/big_modeling.py:373 in dispatch_model                                     │
+│                                                                              │
+│   370 │   │   weights_map = None                                             │
+│   371 │                                                                      │
+│   372 │   tied_params = find_tied_parameters(model)                          │
+│ ❱ 373 │   attach_align_device_hook_on_blocks(                                │
+│   374 │   │   model,                                                         │
+│   375 │   │   execution_device=execution_device,                             │
+│   376 │   │   offload=offload,                                               │
+│                                                                              │
+│ /home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_p │
+│ ath/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/accelera │
+│ te/hooks.py:497 in attach_align_device_hook_on_blocks                        │
+│                                                                              │
+│   494 │   │   │   place_submodules=True,                                     │
+│   495 │   │   │   skip_keys=skip_keys,                                       │
+│   496 │   │   )                                                              │
+│ ❱ 497 │   │   add_hook_to_module(module, hook)                               │
+│   498 │   │   attach_execution_device_hook(module, execution_device[module_n │
+│   499 │   elif module_name in execution_device and module_name in offload:   │
+│   500 │   │   attach_align_device_hook(                                      │
+│                                                                              │
+│ /home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_p │
+│ ath/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/accelera │
+│ te/hooks.py:155 in add_hook_to_module                                        │
+│                                                                              │
+│   152 │   │   old_forward = module.forward                                   │
+│   153 │   │   module._old_forward = old_forward                              │
+│   154 │                                                                      │
+│ ❱ 155 │   module = hook.init_hook(module)                                    │
+│   156 │   module._hf_hook = hook                                             │
+│   157 │                                                                      │
+│   158 │   @functools.wraps(old_forward)                                      │
+│                                                                              │
+│ /home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_p │
+│ ath/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/accelera │
+│ te/hooks.py:253 in init_hook                                                 │
+│                                                                              │
+│   250 │   def init_hook(self, module):                                       │
+│   251 │   │   if not self.offload and self.execution_device is not None:     │
+│   252 │   │   │   for name, _ in named_module_tensors(module, recurse=self.p │
+│ ❱ 253 │   │   │   │   set_module_tensor_to_device(module, name, self.executi │
+│   254 │   │   elif self.offload:                                             │
+│   255 │   │   │   self.original_devices = {                                  │
+│   256 │   │   │   │   name: param.device for name, param in named_module_ten │
+│                                                                              │
+│ /home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_p │
+│ ath/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/accelera │
+│ te/utils/modeling.py:154 in set_module_tensor_to_device                      │
+│                                                                              │
+│    151 │   old_value = getattr(module, tensor_name)                          │
+│    152 │                                                                     │
+│    153 │   if old_value.device == torch.device("meta") and device not in ["m │
+│ ❱  154 │   │   raise ValueError(f"{tensor_name} is on the meta device, we ne │
+│    155 │                                                                     │
+│    156 │   if value is not None:                                             │
+│    157 │   │   if dtype is None:                                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ValueError: bias is on the meta device, we need a `value` to put in on cuda:0.
+pretrained=../models/3428338/checkpoint-11200/,backend=mlm

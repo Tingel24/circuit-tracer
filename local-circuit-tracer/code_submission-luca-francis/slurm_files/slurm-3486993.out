@@ -1,0 +1,43 @@
+starting python script
+[08/18/2025 12:04:03 PM - 0:00:00][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Namespace(model_name='microsoft/deberta-v3-base', models_folder='./models/', reload_id='3486993', new_id='3486993', reload_best=True, dataset='halfhalf.train,halfhalf.dev', preprocessed=False, spm_model='tokenizer.model', data_lim=0, cache_dir=None, max_seq_len=64, num_workers=10, debug=False, batch_size=128, grad_acc=1, lr=0.0002, warmup_steps=4000, mask_prob=0.15, epochs=50, eval_steps=1000, save_steps=1000, logging_steps=100, log_to_file=False, eval_only=True, bf16=False, resume=False, push_to_hub='', push_only=False, register='', save_for_eval='', lora=False, load_encdec=False, tiny=False, small=False, reload_path='./models/3486993', checkpoint_path=None)
+[08/18/2025 12:04:06 PM - 0:00:03][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----- Model Parameters -----
+[08/18/2025 12:04:06 PM - 0:00:03][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Total: 116802880
+[08/18/2025 12:04:06 PM - 0:00:03][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----------------------------
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:00<00:08, 211.29 examples/s]Map (num_proc=10):  40%|████      | 800/2000 [00:01<00:01, 872.83 examples/s]Map (num_proc=10):  50%|█████     | 1000/2000 [00:01<00:01, 921.89 examples/s]Map (num_proc=10):  60%|██████    | 1200/2000 [00:01<00:00, 965.55 examples/s]Map (num_proc=10):  70%|███████   | 1400/2000 [00:01<00:00, 999.27 examples/s]Map (num_proc=10):  80%|████████  | 1600/2000 [00:01<00:00, 1020.41 examples/s]Map (num_proc=10):  90%|█████████ | 1800/2000 [00:02<00:00, 1045.47 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:02<00:00, 1068.81 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:02<00:00, 820.82 examples/s] 
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:00<00:03, 489.16 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:00<00:00, 3526.51 examples/s]
+/mnt/tier2/users/u103092/circuit-tracer/test/train.py:320: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+
+***** Running Evaluation *****
+  Num examples = 640
+  Batch size = 512
+/home/users/u103092/circuit-tracer/local-circuit-tracer/cluster/conda_base_path/miniconda3/envs/circuit-tracer-env/lib/python3.11/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+[08/18/2025 12:04:30 PM - 0:00:27][[GPU] (0): 2111/40960 MB, (1): 1631/40960 MB, (2): 1631/40960 MB] Acc:0.0
+Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Currently logged in as: lucafrancis (lucafrancis-georg-august-univerit-t-g-ttingen) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /mnt/tier2/users/u103092/circuit-tracer/test/wandb/run-20250818_120430-m971sl2i
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ./models/3486993
+wandb: ⭐️ View project at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: 🚀 View run at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/m971sl2i
+[08/18/2025 12:04:32 PM - 0:00:29][[GPU] (0): 2111/40960 MB, (1): 1631/40960 MB, (2): 1631/40960 MB] {'eval_loss': 10.785528182983398, 'eval_acc': 0.0, 'eval_runtime': 9.2393, 'eval_samples_per_second': 69.269, 'eval_steps_per_second': 0.216}
+DatasetDict({
+    train: Dataset({
+        features: ['inputs'],
+        num_rows: 427150
+    })
+    validation: Dataset({
+        features: ['input_ids'],
+        num_rows: 640
+    })
+})
+[08/18/2025 12:04:33 PM - 0:00:30][[GPU] (0): 2237/40960 MB, (1): 1631/40960 MB, (2): 1631/40960 MB] source: [CLS] Goldar and the Putty Patrol[MASK] in the movie[MASK] .[SEP][CLS][SEP][CLS] More[MASK] 100 poets signed a letter asking for[MASK] pardon. In[MASK] Ekhtesari and Musavi escaped from Iran.[SEP][CLS][SEP][CLS] Geography[MASK][SEP][CLS] No one is on a boat.[SEP][CLS]In 2016, he
+[08/18/2025 12:04:33 PM - 0:00:30][[GPU] (0): 2237/40960 MB, (1): 1631/40960 MB, (2): 1631/40960 MB] label: [PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD] are[PAD][PAD][PAD] too[PAD][PAD][PAD][PAD][PAD] More than[PAD][PAD][PAD][PAD][PAD][PAD][PAD] a[PAD][PAD][PAD] 2016,[PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD] from[PAD][PAD][PAD][PAD][PAD][PAD][PAD] .[PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD]
+[08/18/2025 12:04:33 PM - 0:00:30][[GPU] (0): 2237/40960 MB, (1): 1631/40960 MB, (2): 1631/40960 MB] pred: promotes DoyRoman mutual Isles eastwardclistsEuropean Independ Durbarsim Isles branched Durbarng Kabuki promotes Kabuki promotes Stew Durbar conventionsacious twelfth'0 spectacularuckingitan Durbar Reillyng assurance Durbar hymn railroadsunk bronzes mutual Stri honoring defy Patterson 00 comparing Kabuki promotes Kabuki promotes cloudy Durbar Kabuki promotes Band Brunelleschiandar GIRL'0 Garciang Kabuki promotes assurance Dass Be
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33m./models/3486993[0m at: [34mhttps://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/m971sl2i[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../../mnt/tier2/users/u103092/circuit-tracer/test/wandb/run-20250818_120430-m971sl2i/logs[0m

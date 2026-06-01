@@ -1,0 +1,326 @@
+starting python script
+2025-09-16:16:02:21,022 INFO     [__main__.py:263] Verbosity set to INFO
+2025-09-16:16:02:39,757 WARNING  [__main__.py:325] File results/blimp/checkpoint-11200/blimp_results.json already exists. Results will be overwritten.
+2025-09-16:16:02:39,771 INFO     [__main__.py:349] Selected Tasks: ['blimp_filtered', 'blimp_supplement']
+2025-09-16:16:02:40,171 INFO     [evaluator.py:133] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2025-09-16:16:02:40,174 INFO     [evaluator.py:181] Initializing hf-mlm model, with arguments: {'pretrained': '../models/3428338/checkpoint-11200/', 'backend': 'mlm'}
+2025-09-16:16:02:41,276 WARNING  [logging.py:61] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+2025-09-16:16:02:41,276 INFO     [huggingface.py:196] Using device 'cuda:0'
+2025-09-16:16:02:41,377 INFO     [huggingface.py:489] Overrode HF model backend type, and using type 'mlm'
+Some weights of DebertaV2ForMaskedLM were not initialized from the model checkpoint at ../models/3428338/checkpoint-11200/ and are newly initialized: ['cls.predictions.decoder.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/project/home/p200918/circuit-tracer-env-2/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py:550: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+2025-09-16:16:02:51,642 WARNING  [task.py:788] [Task: blimp_ellipsis_n_bar_1_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:02:51,646 WARNING  [task.py:800] [Task: blimp_ellipsis_n_bar_1_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:02:55,038 WARNING  [task.py:788] [Task: blimp_determiner_noun_agreement_with_adj_irregular_1_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:02:55,039 WARNING  [task.py:800] [Task: blimp_determiner_noun_agreement_with_adj_irregular_1_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:02:55,487 WARNING  [task.py:788] [Task: blimp_superlative_quantifiers_1_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:02:55,487 WARNING  [task.py:800] [Task: blimp_superlative_quantifiers_1_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:02:55,890 WARNING  [task.py:788] [Task: blimp_principle_A_domain_3_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:02:55,890 WARNING  [task.py:800] [Task: blimp_principle_A_domain_3_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:02:56,329 WARNING  [task.py:788] [Task: blimp_left_branch_island_simple_question_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:02:56,329 WARNING  [task.py:800] [Task: blimp_left_branch_island_simple_question_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:02:56,772 WARNING  [task.py:788] [Task: blimp_npi_present_2_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:02:56,772 WARNING  [task.py:800] [Task: blimp_npi_present_2_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:02:57,201 WARNING  [task.py:788] [Task: blimp_determiner_noun_agreement_1_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:02:57,201 WARNING  [task.py:800] [Task: blimp_determiner_noun_agreement_1_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:02:57,665 WARNING  [task.py:788] [Task: blimp_inchoative_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:02:57,665 WARNING  [task.py:800] [Task: blimp_inchoative_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:02:58,085 WARNING  [task.py:788] [Task: blimp_wh_vs_that_no_gap_long_distance_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:02:58,085 WARNING  [task.py:800] [Task: blimp_wh_vs_that_no_gap_long_distance_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:02:58,561 WARNING  [task.py:788] [Task: blimp_irregular_past_participle_adjectives_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:02:58,561 WARNING  [task.py:800] [Task: blimp_irregular_past_participle_adjectives_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:02:59,030 WARNING  [task.py:788] [Task: blimp_tough_vs_raising_2_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:02:59,030 WARNING  [task.py:800] [Task: blimp_tough_vs_raising_2_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:02:59,517 WARNING  [task.py:788] [Task: blimp_existential_there_object_raising_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:02:59,517 WARNING  [task.py:800] [Task: blimp_existential_there_object_raising_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:02:59,924 WARNING  [task.py:788] [Task: blimp_superlative_quantifiers_2_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:02:59,924 WARNING  [task.py:800] [Task: blimp_superlative_quantifiers_2_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:00,475 WARNING  [task.py:788] [Task: blimp_irregular_plural_subject_verb_agreement_2_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:00,475 WARNING  [task.py:800] [Task: blimp_irregular_plural_subject_verb_agreement_2_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:00,903 WARNING  [task.py:788] [Task: blimp_irregular_past_participle_verbs_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:00,903 WARNING  [task.py:800] [Task: blimp_irregular_past_participle_verbs_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:01,318 WARNING  [task.py:788] [Task: blimp_principle_A_domain_2_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:01,318 WARNING  [task.py:800] [Task: blimp_principle_A_domain_2_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:01,758 WARNING  [task.py:788] [Task: blimp_expletive_it_object_raising_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:01,758 WARNING  [task.py:800] [Task: blimp_expletive_it_object_raising_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:02,209 WARNING  [task.py:788] [Task: blimp_anaphor_number_agreement_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:02,209 WARNING  [task.py:800] [Task: blimp_anaphor_number_agreement_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:02,661 WARNING  [task.py:788] [Task: blimp_determiner_noun_agreement_with_adjective_1_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:02,661 WARNING  [task.py:800] [Task: blimp_determiner_noun_agreement_with_adjective_1_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:03,149 WARNING  [task.py:788] [Task: blimp_left_branch_island_echo_question_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:03,149 WARNING  [task.py:800] [Task: blimp_left_branch_island_echo_question_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:03,805 WARNING  [task.py:788] [Task: blimp_npi_present_1_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:03,805 WARNING  [task.py:800] [Task: blimp_npi_present_1_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:04,335 WARNING  [task.py:788] [Task: blimp_principle_A_domain_1_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:04,335 WARNING  [task.py:800] [Task: blimp_principle_A_domain_1_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:04,749 WARNING  [task.py:788] [Task: blimp_distractor_agreement_relative_clause_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:04,749 WARNING  [task.py:800] [Task: blimp_distractor_agreement_relative_clause_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:05,236 WARNING  [task.py:788] [Task: blimp_existential_there_quantifiers_1_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:05,236 WARNING  [task.py:800] [Task: blimp_existential_there_quantifiers_1_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:05,679 WARNING  [task.py:788] [Task: blimp_coordinate_structure_constraint_complex_left_branch_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:05,679 WARNING  [task.py:800] [Task: blimp_coordinate_structure_constraint_complex_left_branch_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:06,267 WARNING  [task.py:788] [Task: blimp_wh_questions_subject_gap_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:06,267 WARNING  [task.py:800] [Task: blimp_wh_questions_subject_gap_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:06,768 WARNING  [task.py:788] [Task: blimp_determiner_noun_agreement_irregular_1_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:06,768 WARNING  [task.py:800] [Task: blimp_determiner_noun_agreement_irregular_1_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:07,248 WARNING  [task.py:788] [Task: blimp_wh_vs_that_no_gap_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:07,248 WARNING  [task.py:800] [Task: blimp_wh_vs_that_no_gap_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:07,962 WARNING  [task.py:788] [Task: blimp_tough_vs_raising_1_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:07,962 WARNING  [task.py:800] [Task: blimp_tough_vs_raising_1_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:08,521 WARNING  [task.py:788] [Task: blimp_coordinate_structure_constraint_object_extraction_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:08,521 WARNING  [task.py:800] [Task: blimp_coordinate_structure_constraint_object_extraction_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:08,958 WARNING  [task.py:788] [Task: blimp_irregular_plural_subject_verb_agreement_1_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:08,958 WARNING  [task.py:800] [Task: blimp_irregular_plural_subject_verb_agreement_1_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:09,642 WARNING  [task.py:788] [Task: blimp_passive_1_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:09,644 WARNING  [task.py:800] [Task: blimp_passive_1_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:10,161 WARNING  [task.py:788] [Task: blimp_ellipsis_n_bar_2_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:10,161 WARNING  [task.py:800] [Task: blimp_ellipsis_n_bar_2_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:10,637 WARNING  [task.py:788] [Task: blimp_anaphor_gender_agreement_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:10,637 WARNING  [task.py:800] [Task: blimp_anaphor_gender_agreement_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:11,095 WARNING  [task.py:788] [Task: blimp_adjunct_island_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:11,095 WARNING  [task.py:800] [Task: blimp_adjunct_island_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:11,532 WARNING  [task.py:788] [Task: blimp_sentential_subject_island_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:11,532 WARNING  [task.py:800] [Task: blimp_sentential_subject_island_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:11,998 WARNING  [task.py:788] [Task: blimp_existential_there_subject_raising_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:11,998 WARNING  [task.py:800] [Task: blimp_existential_there_subject_raising_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:12,459 WARNING  [task.py:788] [Task: blimp_only_npi_scope_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:12,459 WARNING  [task.py:800] [Task: blimp_only_npi_scope_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:13,054 WARNING  [task.py:788] [Task: blimp_principle_A_reconstruction_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:13,056 WARNING  [task.py:800] [Task: blimp_principle_A_reconstruction_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:13,541 WARNING  [task.py:788] [Task: blimp_wh_questions_subject_gap_long_distance_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:13,541 WARNING  [task.py:800] [Task: blimp_wh_questions_subject_gap_long_distance_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:14,017 WARNING  [task.py:788] [Task: blimp_transitive_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:14,017 WARNING  [task.py:800] [Task: blimp_transitive_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:14,493 WARNING  [task.py:788] [Task: blimp_drop_argument_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:14,493 WARNING  [task.py:800] [Task: blimp_drop_argument_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:15,042 WARNING  [task.py:788] [Task: blimp_animate_subject_passive_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:15,042 WARNING  [task.py:800] [Task: blimp_animate_subject_passive_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:15,447 WARNING  [task.py:788] [Task: blimp_determiner_noun_agreement_with_adj_2_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:15,447 WARNING  [task.py:800] [Task: blimp_determiner_noun_agreement_with_adj_2_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:15,870 WARNING  [task.py:788] [Task: blimp_wh_vs_that_with_gap_long_distance_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:15,870 WARNING  [task.py:800] [Task: blimp_wh_vs_that_with_gap_long_distance_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:16,337 WARNING  [task.py:788] [Task: blimp_distractor_agreement_relational_noun_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:16,337 WARNING  [task.py:800] [Task: blimp_distractor_agreement_relational_noun_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:16,851 WARNING  [task.py:788] [Task: blimp_sentential_negation_npi_scope_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:16,851 WARNING  [task.py:800] [Task: blimp_sentential_negation_npi_scope_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:17,326 WARNING  [task.py:788] [Task: blimp_wh_vs_that_with_gap_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:17,326 WARNING  [task.py:800] [Task: blimp_wh_vs_that_with_gap_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:17,824 WARNING  [task.py:788] [Task: blimp_existential_there_quantifiers_2_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:17,824 WARNING  [task.py:800] [Task: blimp_existential_there_quantifiers_2_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:18,310 WARNING  [task.py:788] [Task: blimp_determiner_noun_agreement_irregular_2_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:18,310 WARNING  [task.py:800] [Task: blimp_determiner_noun_agreement_irregular_2_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:18,752 WARNING  [task.py:788] [Task: blimp_matrix_question_npi_licensor_present_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:18,752 WARNING  [task.py:800] [Task: blimp_matrix_question_npi_licensor_present_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:19,207 WARNING  [task.py:788] [Task: blimp_animate_subject_trans_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:19,207 WARNING  [task.py:800] [Task: blimp_animate_subject_trans_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:19,760 WARNING  [task.py:788] [Task: blimp_determiner_noun_agreement_with_adj_irregular_2_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:19,760 WARNING  [task.py:800] [Task: blimp_determiner_noun_agreement_with_adj_irregular_2_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:20,253 WARNING  [task.py:788] [Task: blimp_complex_NP_island_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:20,253 WARNING  [task.py:800] [Task: blimp_complex_NP_island_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:20,711 WARNING  [task.py:788] [Task: blimp_wh_questions_object_gap_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:20,711 WARNING  [task.py:800] [Task: blimp_wh_questions_object_gap_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:21,158 WARNING  [task.py:788] [Task: blimp_passive_2_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:21,158 WARNING  [task.py:800] [Task: blimp_passive_2_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:21,634 WARNING  [task.py:788] [Task: blimp_principle_A_case_1_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:21,634 WARNING  [task.py:800] [Task: blimp_principle_A_case_1_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:22,102 WARNING  [task.py:788] [Task: blimp_regular_plural_subject_verb_agreement_1_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:22,102 WARNING  [task.py:800] [Task: blimp_regular_plural_subject_verb_agreement_1_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:22,592 WARNING  [task.py:788] [Task: blimp_determiner_noun_agreement_2_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:22,592 WARNING  [task.py:800] [Task: blimp_determiner_noun_agreement_2_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:23,030 WARNING  [task.py:788] [Task: blimp_wh_island_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:23,030 WARNING  [task.py:800] [Task: blimp_wh_island_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:23,475 WARNING  [task.py:788] [Task: blimp_intransitive_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:23,475 WARNING  [task.py:800] [Task: blimp_intransitive_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:23,877 WARNING  [task.py:788] [Task: blimp_only_npi_licensor_present_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:23,877 WARNING  [task.py:800] [Task: blimp_only_npi_licensor_present_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:24,340 WARNING  [task.py:788] [Task: blimp_principle_A_case_2_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:24,341 WARNING  [task.py:800] [Task: blimp_principle_A_case_2_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:24,836 WARNING  [task.py:788] [Task: blimp_causative_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:24,836 WARNING  [task.py:800] [Task: blimp_causative_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:25,290 WARNING  [task.py:788] [Task: blimp_regular_plural_subject_verb_agreement_2_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:25,290 WARNING  [task.py:800] [Task: blimp_regular_plural_subject_verb_agreement_2_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:25,727 WARNING  [task.py:788] [Task: blimp_principle_A_c_command_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:25,727 WARNING  [task.py:800] [Task: blimp_principle_A_c_command_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:26,138 WARNING  [task.py:788] [Task: blimp_sentential_negation_npi_licensor_present_filtered] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:26,138 WARNING  [task.py:800] [Task: blimp_sentential_negation_npi_licensor_present_filtered] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:26,591 WARNING  [task.py:788] [Task: blimp_supplement_turn_taking] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:26,591 WARNING  [task.py:800] [Task: blimp_supplement_turn_taking] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:27,129 WARNING  [task.py:788] [Task: blimp_supplement_qa_congruence_easy] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:27,129 WARNING  [task.py:800] [Task: blimp_supplement_qa_congruence_easy] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:27,496 WARNING  [task.py:788] [Task: blimp_supplement_subject_aux_inversion] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:27,496 WARNING  [task.py:800] [Task: blimp_supplement_subject_aux_inversion] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:28,017 WARNING  [task.py:788] [Task: blimp_supplement_qa_congruence_tricky] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:28,017 WARNING  [task.py:800] [Task: blimp_supplement_qa_congruence_tricky] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:28,410 WARNING  [task.py:788] [Task: blimp_supplement_hypernym] metric acc is defined, but aggregation is not. using default aggregation=mean
+2025-09-16:16:03:28,410 WARNING  [task.py:800] [Task: blimp_supplement_hypernym] metric acc is defined, but higher_is_better is not. using default higher_is_better=True
+2025-09-16:16:03:28,849 INFO     [task.py:417] Building contexts for blimp_supplement_hypernym on rank 0...
+pretrained=../models/3428338/checkpoint-11200/,backend=mlm
+  0%|          | 0/842 [00:00<?, ?it/s] 25%|██▍       | 210/842 [00:00<00:00, 2095.47it/s] 50%|████▉     | 420/842 [00:00<00:00, 2090.50it/s] 75%|███████▍  | 630/842 [00:00<00:00, 2094.34it/s]100%|█████████▉| 841/842 [00:00<00:00, 2099.09it/s]100%|██████████| 842/842 [00:00<00:00, 2096.44it/s]
+2025-09-16:16:03:30,055 INFO     [task.py:417] Building contexts for blimp_supplement_qa_congruence_tricky on rank 0...
+  0%|          | 0/165 [00:00<?, ?it/s]100%|██████████| 165/165 [00:00<00:00, 2133.24it/s]
+2025-09-16:16:03:30,138 INFO     [task.py:417] Building contexts for blimp_supplement_subject_aux_inversion on rank 0...
+  0%|          | 0/3867 [00:00<?, ?it/s]  5%|▌         | 211/3867 [00:00<00:01, 2107.66it/s] 11%|█         | 422/3867 [00:00<00:01, 2105.65it/s] 16%|█▋        | 633/3867 [00:00<00:01, 2104.51it/s] 22%|██▏       | 845/3867 [00:00<00:01, 2107.77it/s] 27%|██▋       | 1056/3867 [00:00<00:01, 2106.50it/s] 33%|███▎      | 1267/3867 [00:00<00:01, 2104.39it/s] 38%|███▊      | 1478/3867 [00:00<00:01, 2105.54it/s] 44%|████▎     | 1690/3867 [00:00<00:01, 2109.82it/s] 49%|████▉     | 1904/3867 [00:00<00:00, 2117.01it/s] 55%|█████▍    | 2117/3867 [00:01<00:00, 2119.65it/s] 60%|██████    | 2329/3867 [00:02<00:03, 471.65it/s]  66%|██████▌   | 2540/3867 [00:02<00:02, 616.53it/s] 70%|███████   | 2726/3867 [00:02<00:01, 755.79it/s] 76%|███████▌  | 2938/3867 [00:02<00:00, 944.20it/s] 81%|████████▏ | 3148/3867 [00:02<00:00, 1133.91it/s] 87%|████████▋ | 3358/3867 [00:02<00:00, 1317.12it/s] 92%|█████████▏| 3567/3867 [00:02<00:00, 1481.49it/s] 98%|█████████▊| 3776/3867 [00:02<00:00, 1622.69it/s]100%|██████████| 3867/3867 [00:02<00:00, 1292.62it/s]
+2025-09-16:16:03:33,271 INFO     [task.py:417] Building contexts for blimp_supplement_qa_congruence_easy on rank 0...
+  0%|          | 0/64 [00:00<?, ?it/s]100%|██████████| 64/64 [00:00<00:00, 2101.77it/s]
+2025-09-16:16:03:33,325 INFO     [task.py:417] Building contexts for blimp_supplement_turn_taking on rank 0...
+  0%|          | 0/280 [00:00<?, ?it/s] 75%|███████▍  | 209/280 [00:00<00:00, 2086.23it/s]100%|██████████| 280/280 [00:00<00:00, 2087.65it/s]
+2025-09-16:16:03:33,470 INFO     [task.py:417] Building contexts for blimp_sentential_negation_npi_licensor_present_filtered on rank 0...
+  0%|          | 0/919 [00:00<?, ?it/s] 23%|██▎       | 210/919 [00:00<00:00, 2090.59it/s] 46%|████▌     | 421/919 [00:00<00:00, 2100.55it/s] 69%|██████▉   | 633/919 [00:00<00:00, 2106.79it/s] 92%|█████████▏| 844/919 [00:00<00:00, 2106.90it/s]100%|██████████| 919/919 [00:00<00:00, 2103.79it/s]
+2025-09-16:16:03:33,958 INFO     [task.py:417] Building contexts for blimp_principle_A_c_command_filtered on rank 0...
+  0%|          | 0/946 [00:00<?, ?it/s] 22%|██▏       | 210/946 [00:00<00:00, 2095.37it/s] 45%|████▍     | 422/946 [00:00<00:00, 2105.63it/s] 67%|██████▋   | 634/946 [00:00<00:00, 2111.61it/s] 89%|████████▉ | 846/946 [00:00<00:00, 2113.11it/s]100%|██████████| 946/946 [00:00<00:00, 2111.07it/s]
+2025-09-16:16:03:34,458 INFO     [task.py:417] Building contexts for blimp_regular_plural_subject_verb_agreement_2_filtered on rank 0...
+  0%|          | 0/945 [00:00<?, ?it/s] 23%|██▎       | 214/945 [00:00<00:00, 2130.98it/s] 45%|████▌     | 428/945 [00:00<00:00, 2131.56it/s] 68%|██████▊   | 642/945 [00:00<00:00, 2130.56it/s] 91%|█████████ | 856/945 [00:00<00:00, 2122.67it/s]100%|██████████| 945/945 [00:00<00:00, 2123.15it/s]
+2025-09-16:16:03:34,957 INFO     [task.py:417] Building contexts for blimp_causative_filtered on rank 0...
+  0%|          | 0/818 [00:00<?, ?it/s] 26%|██▌       | 212/818 [00:00<00:00, 2109.02it/s] 52%|█████▏    | 425/818 [00:00<00:00, 2115.65it/s] 78%|███████▊  | 638/818 [00:00<00:00, 2117.59it/s]100%|██████████| 818/818 [00:00<00:00, 2115.08it/s]
+2025-09-16:16:03:35,389 INFO     [task.py:417] Building contexts for blimp_principle_A_case_2_filtered on rank 0...
+  0%|          | 0/915 [00:00<?, ?it/s] 23%|██▎       | 210/915 [00:00<00:00, 2095.88it/s] 46%|████▋     | 424/915 [00:00<00:00, 2118.65it/s] 70%|██████▉   | 638/915 [00:00<00:00, 2128.16it/s] 93%|█████████▎| 852/915 [00:00<00:00, 2131.77it/s]100%|██████████| 915/915 [00:00<00:00, 2125.86it/s]
+2025-09-16:16:03:35,869 INFO     [task.py:417] Building contexts for blimp_only_npi_licensor_present_filtered on rank 0...
+  0%|          | 0/882 [00:00<?, ?it/s] 24%|██▍       | 211/882 [00:00<00:00, 2109.27it/s] 48%|████▊     | 424/882 [00:00<00:00, 2119.83it/s] 72%|███████▏  | 637/882 [00:00<00:00, 2122.48it/s] 96%|█████████▋| 850/882 [00:00<00:00, 2116.01it/s]100%|██████████| 882/882 [00:00<00:00, 2115.80it/s]
+2025-09-16:16:03:36,336 INFO     [task.py:417] Building contexts for blimp_intransitive_filtered on rank 0...
+  0%|          | 0/868 [00:00<?, ?it/s] 24%|██▍       | 211/868 [00:00<00:00, 2103.24it/s] 49%|████▉     | 424/868 [00:00<00:00, 2114.50it/s] 73%|███████▎  | 636/868 [00:00<00:00, 2110.01it/s] 98%|█████████▊| 848/868 [00:00<00:00, 2108.20it/s]100%|██████████| 868/868 [00:00<00:00, 2108.54it/s]
+2025-09-16:16:03:36,795 INFO     [task.py:417] Building contexts for blimp_wh_island_filtered on rank 0...
+  0%|          | 0/960 [00:00<?, ?it/s] 22%|██▏       | 210/960 [00:00<00:00, 2096.50it/s] 44%|████▍     | 421/960 [00:00<00:00, 2098.80it/s] 66%|██████▌   | 633/960 [00:00<00:00, 2104.32it/s] 88%|████████▊ | 845/960 [00:00<00:00, 2109.05it/s]100%|██████████| 960/960 [00:00<00:00, 2109.28it/s]
+2025-09-16:16:03:37,338 INFO     [task.py:417] Building contexts for blimp_determiner_noun_agreement_2_filtered on rank 0...
+  0%|          | 0/931 [00:00<?, ?it/s] 23%|██▎       | 215/931 [00:00<00:00, 2144.63it/s] 46%|████▌     | 430/931 [00:00<00:00, 2132.95it/s] 69%|██████▉   | 644/931 [00:00<00:00, 2118.28it/s] 92%|█████████▏| 856/931 [00:00<00:00, 2115.89it/s]100%|██████████| 931/931 [00:00<00:00, 2118.57it/s]
+2025-09-16:16:03:37,887 INFO     [task.py:417] Building contexts for blimp_regular_plural_subject_verb_agreement_1_filtered on rank 0...
+  0%|          | 0/890 [00:00<?, ?it/s] 24%|██▎       | 210/890 [00:00<00:00, 2097.65it/s] 47%|████▋     | 422/890 [00:00<00:00, 2108.57it/s] 71%|███████   | 633/890 [00:00<00:00, 2108.13it/s] 95%|█████████▌| 848/890 [00:00<00:00, 2122.68it/s]100%|██████████| 890/890 [00:00<00:00, 2116.53it/s]
+2025-09-16:16:03:38,356 INFO     [task.py:417] Building contexts for blimp_principle_A_case_1_filtered on rank 0...
+  0%|          | 0/912 [00:00<?, ?it/s] 23%|██▎       | 212/912 [00:00<00:00, 2114.18it/s] 46%|████▋     | 424/912 [00:00<00:00, 2114.21it/s] 70%|██████▉   | 636/912 [00:00<00:00, 2109.59it/s] 93%|█████████▎| 848/912 [00:00<00:00, 2109.98it/s]100%|██████████| 912/912 [00:00<00:00, 2110.57it/s]
+2025-09-16:16:03:38,837 INFO     [task.py:417] Building contexts for blimp_passive_2_filtered on rank 0...
+  0%|          | 0/903 [00:00<?, ?it/s] 24%|██▎       | 214/903 [00:00<00:00, 2131.94it/s] 47%|████▋     | 428/903 [00:00<00:00, 2120.52it/s] 71%|███████   | 641/903 [00:00<00:00, 2119.42it/s] 94%|█████████▍| 853/903 [00:00<00:00, 2116.65it/s]100%|██████████| 903/903 [00:00<00:00, 2118.28it/s]
+2025-09-16:16:03:39,337 INFO     [task.py:417] Building contexts for blimp_wh_questions_object_gap_filtered on rank 0...
+  0%|          | 0/859 [00:00<?, ?it/s] 25%|██▍       | 211/859 [00:00<00:00, 2106.34it/s] 49%|████▉     | 422/859 [00:00<00:00, 2107.14it/s] 74%|███████▎  | 633/859 [00:00<00:00, 2108.31it/s] 98%|█████████▊| 845/859 [00:00<00:00, 2112.10it/s]100%|██████████| 859/859 [00:00<00:00, 2109.70it/s]
+2025-09-16:16:03:39,806 INFO     [task.py:417] Building contexts for blimp_complex_NP_island_filtered on rank 0...
+  0%|          | 0/846 [00:00<?, ?it/s] 25%|██▍       | 211/846 [00:00<00:00, 2104.55it/s] 50%|████▉     | 422/846 [00:00<00:00, 2053.79it/s] 75%|███████▌  | 635/846 [00:00<00:00, 2086.25it/s]100%|██████████| 846/846 [00:00<00:00, 2090.42it/s]
+2025-09-16:16:03:40,291 INFO     [task.py:417] Building contexts for blimp_determiner_noun_agreement_with_adj_irregular_2_filtered on rank 0...
+  0%|          | 0/840 [00:00<?, ?it/s] 25%|██▌       | 213/840 [00:00<00:00, 2128.46it/s] 51%|█████     | 426/840 [00:00<00:00, 1123.62it/s] 76%|███████▌  | 637/840 [00:00<00:00, 1424.84it/s]100%|██████████| 840/840 [00:00<00:00, 1531.27it/s]
+2025-09-16:16:03:40,901 INFO     [task.py:417] Building contexts for blimp_animate_subject_trans_filtered on rank 0...
+  0%|          | 0/923 [00:00<?, ?it/s] 23%|██▎       | 213/923 [00:00<00:00, 2127.20it/s] 46%|████▋     | 427/923 [00:00<00:00, 2128.97it/s] 69%|██████▉   | 640/923 [00:00<00:00, 2124.47it/s] 92%|█████████▏| 853/923 [00:00<00:00, 2119.56it/s]100%|██████████| 923/923 [00:00<00:00, 2123.59it/s]
+2025-09-16:16:03:41,407 INFO     [task.py:417] Building contexts for blimp_matrix_question_npi_licensor_present_filtered on rank 0...
+  0%|          | 0/929 [00:00<?, ?it/s] 23%|██▎       | 211/929 [00:00<00:00, 2106.85it/s] 46%|████▌     | 424/929 [00:00<00:00, 2116.65it/s] 68%|██████▊   | 636/929 [00:00<00:00, 2117.95it/s] 91%|█████████▏| 849/929 [00:00<00:00, 2120.19it/s]100%|██████████| 929/929 [00:00<00:00, 2117.73it/s]
+2025-09-16:16:03:42,083 INFO     [task.py:417] Building contexts for blimp_determiner_noun_agreement_irregular_2_filtered on rank 0...
+  0%|          | 0/820 [00:00<?, ?it/s] 26%|██▌       | 214/820 [00:00<00:00, 2138.29it/s] 52%|█████▏    | 429/820 [00:00<00:00, 2143.69it/s] 79%|███████▊  | 644/820 [00:00<00:00, 2137.14it/s]100%|██████████| 820/820 [00:00<00:00, 1283.21it/s]
+2025-09-16:16:03:42,786 INFO     [task.py:417] Building contexts for blimp_existential_there_quantifiers_2_filtered on rank 0...
+  0%|          | 0/911 [00:00<?, ?it/s] 23%|██▎       | 211/911 [00:00<00:00, 2107.97it/s] 46%|████▋     | 423/911 [00:00<00:00, 2111.80it/s] 70%|██████▉   | 637/911 [00:00<00:00, 2121.69it/s] 93%|█████████▎| 850/911 [00:00<00:00, 2122.12it/s]100%|██████████| 911/911 [00:00<00:00, 2117.97it/s]
+2025-09-16:16:03:43,309 INFO     [task.py:417] Building contexts for blimp_wh_vs_that_with_gap_filtered on rank 0...
+  0%|          | 0/919 [00:00<?, ?it/s] 23%|██▎       | 215/919 [00:00<00:00, 2147.64it/s] 47%|████▋     | 431/919 [00:00<00:00, 2151.65it/s] 70%|███████   | 647/919 [00:00<00:00, 2135.60it/s] 94%|█████████▎| 861/919 [00:00<00:00, 2132.47it/s]100%|██████████| 919/919 [00:00<00:00, 2134.71it/s]
+2025-09-16:16:03:43,802 INFO     [task.py:417] Building contexts for blimp_sentential_negation_npi_scope_filtered on rank 0...
+  0%|          | 0/871 [00:00<?, ?it/s] 24%|██▍       | 213/871 [00:00<00:00, 2120.76it/s] 49%|████▉     | 426/871 [00:00<00:00, 2118.83it/s] 73%|███████▎  | 639/871 [00:00<00:00, 2119.93it/s] 98%|█████████▊| 852/871 [00:00<00:00, 2122.58it/s]100%|██████████| 871/871 [00:00<00:00, 2120.87it/s]
+2025-09-16:16:03:44,294 INFO     [task.py:417] Building contexts for blimp_distractor_agreement_relational_noun_filtered on rank 0...
+  0%|          | 0/788 [00:00<?, ?it/s] 27%|██▋       | 211/788 [00:00<00:00, 2109.79it/s] 54%|█████▍    | 425/788 [00:00<00:00, 2122.01it/s] 81%|████████  | 639/788 [00:00<00:00, 2125.94it/s]100%|██████████| 788/788 [00:00<00:00, 2128.20it/s]
+2025-09-16:16:03:44,708 INFO     [task.py:417] Building contexts for blimp_wh_vs_that_with_gap_long_distance_filtered on rank 0...
+  0%|          | 0/910 [00:00<?, ?it/s] 23%|██▎       | 212/910 [00:00<00:00, 2111.18it/s] 47%|████▋     | 424/910 [00:00<00:00, 2110.72it/s] 70%|███████   | 637/910 [00:00<00:00, 2117.00it/s] 93%|█████████▎| 850/910 [00:00<00:00, 2119.95it/s]100%|██████████| 910/910 [00:00<00:00, 2116.86it/s]
+2025-09-16:16:03:45,230 INFO     [task.py:417] Building contexts for blimp_determiner_noun_agreement_with_adj_2_filtered on rank 0...
+  0%|          | 0/941 [00:00<?, ?it/s] 23%|██▎       | 212/941 [00:00<00:00, 2114.03it/s] 45%|████▌     | 424/941 [00:00<00:00, 2117.03it/s] 68%|██████▊   | 639/941 [00:00<00:00, 2129.39it/s] 91%|█████████ | 856/941 [00:00<00:00, 2143.31it/s]100%|██████████| 941/941 [00:00<00:00, 2136.38it/s]
+2025-09-16:16:03:45,753 INFO     [task.py:417] Building contexts for blimp_animate_subject_passive_filtered on rank 0...
+  0%|          | 0/895 [00:00<?, ?it/s] 24%|██▎       | 212/895 [00:00<00:00, 2118.49it/s] 47%|████▋     | 425/895 [00:00<00:00, 2123.58it/s] 71%|███████▏  | 638/895 [00:00<00:00, 2123.39it/s] 95%|█████████▌| 851/895 [00:00<00:00, 2117.66it/s]100%|██████████| 895/895 [00:00<00:00, 2120.48it/s]
+2025-09-16:16:03:46,232 INFO     [task.py:417] Building contexts for blimp_drop_argument_filtered on rank 0...
+  0%|          | 0/920 [00:00<?, ?it/s] 23%|██▎       | 214/920 [00:00<00:00, 2133.87it/s] 47%|████▋     | 428/920 [00:00<00:00, 2125.14it/s] 70%|██████▉   | 641/920 [00:00<00:00, 2121.45it/s] 93%|█████████▎| 854/920 [00:00<00:00, 2120.83it/s]100%|██████████| 920/920 [00:00<00:00, 2121.45it/s]
+2025-09-16:16:03:46,741 INFO     [task.py:417] Building contexts for blimp_transitive_filtered on rank 0...
+  0%|          | 0/868 [00:00<?, ?it/s] 25%|██▍       | 213/868 [00:00<00:00, 2123.83it/s] 49%|████▉     | 426/868 [00:00<00:00, 2118.39it/s] 74%|███████▎  | 639/868 [00:00<00:00, 2121.44it/s] 98%|█████████▊| 853/868 [00:00<00:00, 2126.64it/s]100%|██████████| 868/868 [00:00<00:00, 2125.04it/s]
+2025-09-16:16:03:47,201 INFO     [task.py:417] Building contexts for blimp_wh_questions_subject_gap_long_distance_filtered on rank 0...
+  0%|          | 0/857 [00:00<?, ?it/s] 25%|██▍       | 212/857 [00:00<00:00, 2113.97it/s] 49%|████▉     | 424/857 [00:00<00:00, 2114.56it/s] 74%|███████▍  | 636/857 [00:00<00:00, 2110.42it/s] 99%|█████████▉| 848/857 [00:00<00:00, 2113.32it/s]100%|██████████| 857/857 [00:00<00:00, 2112.34it/s]
+2025-09-16:16:03:47,695 INFO     [task.py:417] Building contexts for blimp_principle_A_reconstruction_filtered on rank 0...
+  0%|          | 0/967 [00:00<?, ?it/s] 22%|██▏       | 214/967 [00:00<00:00, 2137.60it/s] 44%|████▍     | 428/967 [00:00<00:00, 2133.03it/s] 66%|██████▋   | 642/967 [00:00<00:00, 2129.68it/s] 88%|████████▊ | 855/967 [00:00<00:00, 2125.46it/s]100%|██████████| 967/967 [00:00<00:00, 2126.49it/s]
+2025-09-16:16:03:48,208 INFO     [task.py:417] Building contexts for blimp_only_npi_scope_filtered on rank 0...
+  0%|          | 0/837 [00:00<?, ?it/s] 25%|██▌       | 213/837 [00:00<00:00, 2121.51it/s] 51%|█████     | 427/837 [00:00<00:00, 2130.59it/s] 77%|███████▋  | 641/837 [00:00<00:00, 2130.38it/s]100%|██████████| 837/837 [00:00<00:00, 2130.15it/s]
+2025-09-16:16:03:48,684 INFO     [task.py:417] Building contexts for blimp_existential_there_subject_raising_filtered on rank 0...
+  0%|          | 0/924 [00:00<?, ?it/s] 23%|██▎       | 212/924 [00:00<00:00, 2113.82it/s] 46%|████▌     | 424/924 [00:00<00:00, 2110.62it/s] 69%|██████▉   | 637/924 [00:00<00:00, 2118.83it/s] 92%|█████████▏| 851/924 [00:00<00:00, 2124.69it/s]100%|██████████| 924/924 [00:00<00:00, 2119.96it/s]
+2025-09-16:16:03:49,241 INFO     [task.py:417] Building contexts for blimp_sentential_subject_island_filtered on rank 0...
+  0%|          | 0/961 [00:00<?, ?it/s] 22%|██▏       | 212/961 [00:00<00:00, 2112.34it/s] 44%|████▍     | 425/961 [00:00<00:00, 2120.68it/s] 66%|██████▋   | 639/961 [00:00<00:00, 2125.39it/s] 89%|████████▉ | 854/961 [00:00<00:00, 2132.67it/s]100%|██████████| 961/961 [00:00<00:00, 2132.14it/s]
+2025-09-16:16:03:49,750 INFO     [task.py:417] Building contexts for blimp_adjunct_island_filtered on rank 0...
+  0%|          | 0/928 [00:00<?, ?it/s] 23%|██▎       | 212/928 [00:00<00:00, 2112.51it/s] 46%|████▌     | 425/928 [00:00<00:00, 2119.11it/s] 69%|██████▉   | 638/928 [00:00<00:00, 2123.03it/s] 92%|█████████▏| 851/928 [00:00<00:00, 2120.53it/s]100%|██████████| 928/928 [00:00<00:00, 2120.26it/s]
+2025-09-16:16:03:50,239 INFO     [task.py:417] Building contexts for blimp_anaphor_gender_agreement_filtered on rank 0...
+  0%|          | 0/971 [00:00<?, ?it/s] 22%|██▏       | 213/971 [00:00<00:00, 2121.56it/s] 44%|████▍     | 426/971 [00:00<00:01, 436.00it/s]  66%|██████▌   | 637/971 [00:00<00:00, 681.58it/s] 87%|████████▋ | 849/971 [00:01<00:00, 930.60it/s]100%|██████████| 971/971 [00:01<00:00, 868.01it/s]
+2025-09-16:16:03:51,410 INFO     [task.py:417] Building contexts for blimp_ellipsis_n_bar_2_filtered on rank 0...
+  0%|          | 0/828 [00:00<?, ?it/s] 26%|██▌       | 212/828 [00:00<00:00, 2115.21it/s] 51%|█████▏    | 425/828 [00:00<00:00, 2120.50it/s] 77%|███████▋  | 638/828 [00:00<00:00, 2122.13it/s]100%|██████████| 828/828 [00:00<00:00, 2116.97it/s]
+2025-09-16:16:03:51,860 INFO     [task.py:417] Building contexts for blimp_passive_1_filtered on rank 0...
+  0%|          | 0/840 [00:00<?, ?it/s] 25%|██▌       | 211/840 [00:00<00:00, 2109.58it/s] 50%|█████     | 424/840 [00:00<00:00, 2119.16it/s] 76%|███████▌  | 638/840 [00:00<00:00, 2126.13it/s]100%|██████████| 840/840 [00:00<00:00, 2123.99it/s]
+2025-09-16:16:03:52,355 INFO     [task.py:417] Building contexts for blimp_irregular_plural_subject_verb_agreement_1_filtered on rank 0...
+  0%|          | 0/804 [00:00<?, ?it/s] 27%|██▋       | 214/804 [00:00<00:00, 2131.62it/s] 53%|█████▎    | 428/804 [00:00<00:00, 2129.91it/s] 80%|███████▉  | 641/804 [00:00<00:00, 2128.32it/s]100%|██████████| 804/804 [00:00<00:00, 2124.01it/s]
+2025-09-16:16:03:52,799 INFO     [task.py:417] Building contexts for blimp_coordinate_structure_constraint_object_extraction_filtered on rank 0...
+  0%|          | 0/949 [00:00<?, ?it/s] 22%|██▏       | 213/949 [00:00<00:00, 2126.94it/s] 45%|████▍     | 426/949 [00:00<00:00, 2127.39it/s] 67%|██████▋   | 639/949 [00:00<00:00, 2124.07it/s] 90%|████████▉ | 852/949 [00:00<00:00, 2124.77it/s]100%|██████████| 949/949 [00:00<00:00, 2126.84it/s]
+2025-09-16:16:03:53,320 INFO     [task.py:417] Building contexts for blimp_tough_vs_raising_1_filtered on rank 0...
+  0%|          | 0/948 [00:00<?, ?it/s] 22%|██▏       | 213/948 [00:00<00:00, 2129.63it/s] 45%|████▍     | 426/948 [00:00<00:00, 2122.32it/s] 67%|██████▋   | 639/948 [00:00<00:00, 2121.29it/s] 90%|████████▉ | 853/948 [00:00<00:00, 2128.32it/s]100%|██████████| 948/948 [00:00<00:00, 2126.20it/s]
+2025-09-16:16:03:53,849 INFO     [task.py:417] Building contexts for blimp_wh_vs_that_no_gap_filtered on rank 0...
+  0%|          | 0/861 [00:00<?, ?it/s] 25%|██▍       | 214/861 [00:00<00:00, 2131.67it/s] 50%|████▉     | 428/861 [00:00<00:00, 2133.11it/s] 75%|███████▍  | 642/861 [00:00<00:00, 2134.17it/s] 99%|█████████▉| 856/861 [00:00<00:00, 2125.60it/s]100%|██████████| 861/861 [00:00<00:00, 2127.69it/s]
+2025-09-16:16:03:54,301 INFO     [task.py:417] Building contexts for blimp_determiner_noun_agreement_irregular_1_filtered on rank 0...
+  0%|          | 0/681 [00:00<?, ?it/s] 31%|███▏      | 214/681 [00:00<00:00, 2139.64it/s] 63%|██████▎   | 428/681 [00:00<00:00, 2128.62it/s] 94%|█████████▍| 641/681 [00:00<00:00, 2123.95it/s]100%|██████████| 681/681 [00:00<00:00, 2127.76it/s]
+2025-09-16:16:03:54,660 INFO     [task.py:417] Building contexts for blimp_wh_questions_subject_gap_filtered on rank 0...
+  0%|          | 0/898 [00:00<?, ?it/s] 24%|██▎       | 212/898 [00:00<00:00, 2117.03it/s] 47%|████▋     | 425/898 [00:00<00:00, 2120.09it/s] 71%|███████   | 638/898 [00:00<00:00, 2122.68it/s] 95%|█████████▍| 851/898 [00:00<00:00, 2118.13it/s]100%|██████████| 898/898 [00:00<00:00, 2118.21it/s]
+2025-09-16:16:03:55,172 INFO     [task.py:417] Building contexts for blimp_coordinate_structure_constraint_complex_left_branch_filtered on rank 0...
+  0%|          | 0/906 [00:00<?, ?it/s] 24%|██▎       | 213/906 [00:00<00:00, 2121.90it/s] 47%|████▋     | 426/906 [00:00<00:00, 2120.56it/s] 71%|███████   | 639/906 [00:00<00:00, 2120.22it/s] 94%|█████████▍| 853/906 [00:00<00:00, 2125.19it/s]100%|██████████| 906/906 [00:00<00:00, 2123.54it/s]
+2025-09-16:16:03:55,667 INFO     [task.py:417] Building contexts for blimp_existential_there_quantifiers_1_filtered on rank 0...
+  0%|          | 0/930 [00:00<?, ?it/s] 23%|██▎       | 213/930 [00:00<00:00, 2123.13it/s] 46%|████▌     | 426/930 [00:00<00:00, 2123.96it/s] 69%|██████▉   | 640/930 [00:00<00:00, 2128.50it/s] 92%|█████████▏| 855/930 [00:00<00:00, 2134.97it/s]100%|██████████| 930/930 [00:00<00:00, 2133.10it/s]
+2025-09-16:16:03:56,179 INFO     [task.py:417] Building contexts for blimp_distractor_agreement_relative_clause_filtered on rank 0...
+  0%|          | 0/871 [00:00<?, ?it/s] 24%|██▍       | 213/871 [00:00<00:00, 2129.78it/s] 49%|████▉     | 428/871 [00:00<00:00, 2139.55it/s] 74%|███████▍  | 646/871 [00:00<00:00, 2152.78it/s] 99%|█████████▉| 862/871 [00:00<00:00, 2153.89it/s]100%|██████████| 871/871 [00:00<00:00, 2149.84it/s]
+2025-09-16:16:03:56,664 INFO     [task.py:417] Building contexts for blimp_principle_A_domain_1_filtered on rank 0...
+  0%|          | 0/914 [00:00<?, ?it/s] 23%|██▎       | 214/914 [00:00<00:00, 2134.10it/s] 47%|████▋     | 428/914 [00:00<00:00, 2137.06it/s] 70%|███████   | 642/914 [00:00<00:00, 2134.40it/s] 94%|█████████▎| 856/914 [00:00<00:00, 2129.92it/s]100%|██████████| 914/914 [00:00<00:00, 2130.77it/s]
+2025-09-16:16:03:57,187 INFO     [task.py:417] Building contexts for blimp_npi_present_1_filtered on rank 0...
+  0%|          | 0/909 [00:00<?, ?it/s] 23%|██▎       | 213/909 [00:00<00:00, 2129.75it/s] 47%|████▋     | 428/909 [00:00<00:00, 2137.79it/s] 71%|███████   | 642/909 [00:00<00:00, 2135.97it/s] 94%|█████████▍| 858/909 [00:00<00:00, 2144.16it/s]100%|██████████| 909/909 [00:00<00:00, 2142.21it/s]
+2025-09-16:16:03:57,680 INFO     [task.py:417] Building contexts for blimp_left_branch_island_echo_question_filtered on rank 0...
+  0%|          | 0/947 [00:00<?, ?it/s] 22%|██▏       | 213/947 [00:00<00:00, 2122.64it/s] 45%|████▍     | 426/947 [00:00<00:00, 2124.25it/s] 68%|██████▊   | 642/947 [00:00<00:00, 2136.42it/s] 91%|█████████ | 859/947 [00:00<00:00, 2146.02it/s]100%|██████████| 947/947 [00:00<00:00, 2139.75it/s]
+2025-09-16:16:03:58,183 INFO     [task.py:417] Building contexts for blimp_determiner_noun_agreement_with_adjective_1_filtered on rank 0...
+  0%|          | 0/933 [00:00<?, ?it/s] 23%|██▎       | 212/933 [00:00<00:00, 2116.16it/s] 46%|████▌     | 425/933 [00:00<00:00, 2121.58it/s] 68%|██████▊   | 638/933 [00:00<00:00, 2116.36it/s] 91%|█████████ | 851/933 [00:00<00:00, 2119.00it/s]100%|██████████| 933/933 [00:00<00:00, 2119.19it/s]
+2025-09-16:16:03:58,772 INFO     [task.py:417] Building contexts for blimp_anaphor_number_agreement_filtered on rank 0...
+  0%|          | 0/931 [00:00<?, ?it/s] 23%|██▎       | 215/931 [00:00<00:00, 2148.64it/s] 46%|████▌     | 430/931 [00:00<00:00, 2129.64it/s] 69%|██████▉   | 643/931 [00:00<00:00, 2124.88it/s] 92%|█████████▏| 856/931 [00:00<00:00, 2125.61it/s]100%|██████████| 931/931 [00:00<00:00, 2125.71it/s]
+2025-09-16:16:03:59,289 INFO     [task.py:417] Building contexts for blimp_expletive_it_object_raising_filtered on rank 0...
+  0%|          | 0/759 [00:00<?, ?it/s] 28%|██▊       | 215/759 [00:00<00:00, 2147.23it/s] 57%|█████▋    | 430/759 [00:00<00:00, 2134.93it/s] 85%|████████▍ | 644/759 [00:00<00:00, 2131.80it/s]100%|██████████| 759/759 [00:00<00:00, 2132.31it/s]
+2025-09-16:16:03:59,705 INFO     [task.py:417] Building contexts for blimp_principle_A_domain_2_filtered on rank 0...
+  0%|          | 0/915 [00:00<?, ?it/s] 24%|██▎       | 216/915 [00:00<00:00, 2153.39it/s] 47%|████▋     | 432/915 [00:00<00:00, 2156.77it/s] 71%|███████   | 648/915 [00:00<00:00, 2144.71it/s] 94%|█████████▍| 863/915 [00:00<00:00, 2141.73it/s]100%|██████████| 915/915 [00:00<00:00, 2143.09it/s]
+2025-09-16:16:04:00,227 INFO     [task.py:417] Building contexts for blimp_irregular_past_participle_verbs_filtered on rank 0...
+  0%|          | 0/942 [00:00<?, ?it/s] 23%|██▎       | 213/942 [00:00<00:00, 2120.94it/s] 45%|████▌     | 427/942 [00:00<00:00, 2129.90it/s] 68%|██████▊   | 642/942 [00:00<00:00, 2134.94it/s] 91%|█████████ | 856/942 [00:00<00:00, 2132.08it/s]100%|██████████| 942/942 [00:00<00:00, 2129.54it/s]
+2025-09-16:16:04:00,729 INFO     [task.py:417] Building contexts for blimp_irregular_plural_subject_verb_agreement_2_filtered on rank 0...
+  0%|          | 0/892 [00:00<?, ?it/s]  8%|▊         | 67/892 [00:00<00:02, 348.55it/s] 20%|█▉        | 176/892 [00:00<00:01, 664.01it/s] 44%|████▎     | 390/892 [00:00<00:00, 1222.23it/s] 67%|██████▋   | 602/892 [00:00<00:00, 1534.82it/s] 91%|█████████▏| 815/892 [00:00<00:00, 1732.35it/s]100%|██████████| 892/892 [00:00<00:00, 1414.22it/s]
+2025-09-16:16:04:01,432 INFO     [task.py:417] Building contexts for blimp_superlative_quantifiers_2_filtered on rank 0...
+  0%|          | 0/986 [00:00<?, ?it/s] 22%|██▏       | 216/986 [00:00<00:00, 2158.04it/s] 44%|████▍     | 432/986 [00:00<00:00, 2147.98it/s] 66%|██████▌   | 647/986 [00:00<00:00, 2139.09it/s] 87%|████████▋ | 862/986 [00:00<00:00, 2139.77it/s]100%|██████████| 986/986 [00:00<00:00, 2141.72it/s]
+2025-09-16:16:04:02,142 INFO     [task.py:417] Building contexts for blimp_existential_there_object_raising_filtered on rank 0...
+  0%|          | 0/812 [00:00<?, ?it/s] 26%|██▌       | 213/812 [00:00<00:00, 2121.27it/s] 53%|█████▎    | 428/812 [00:00<00:00, 2132.58it/s] 79%|███████▉  | 642/812 [00:00<00:00, 2131.41it/s]100%|██████████| 812/812 [00:00<00:00, 1005.05it/s]
+2025-09-16:16:04:03,162 INFO     [task.py:417] Building contexts for blimp_tough_vs_raising_2_filtered on rank 0...
+  0%|          | 0/920 [00:00<?, ?it/s] 23%|██▎       | 213/920 [00:00<00:00, 2121.47it/s] 46%|████▋     | 426/920 [00:00<00:00, 2124.31it/s] 69%|██████▉   | 639/920 [00:00<00:00, 2126.07it/s] 93%|█████████▎| 852/920 [00:00<00:00, 2124.89it/s]100%|██████████| 920/920 [00:00<00:00, 2124.97it/s]
+2025-09-16:16:04:03,662 INFO     [task.py:417] Building contexts for blimp_irregular_past_participle_adjectives_filtered on rank 0...
+  0%|          | 0/961 [00:00<?, ?it/s] 22%|██▏       | 213/961 [00:00<00:00, 2122.32it/s] 44%|████▍     | 426/961 [00:00<00:00, 2125.44it/s] 67%|██████▋   | 642/961 [00:00<00:00, 2139.72it/s] 89%|████████▉ | 860/961 [00:00<00:00, 2152.12it/s]100%|██████████| 961/961 [00:00<00:00, 2144.31it/s]
+2025-09-16:16:04:04,199 INFO     [task.py:417] Building contexts for blimp_wh_vs_that_no_gap_long_distance_filtered on rank 0...
+  0%|          | 0/875 [00:00<?, ?it/s] 24%|██▍       | 211/875 [00:00<00:00, 2108.84it/s] 49%|████▊     | 426/875 [00:00<00:00, 2128.08it/s] 73%|███████▎  | 640/875 [00:00<00:00, 2129.44it/s] 97%|█████████▋| 853/875 [00:00<00:00, 2125.40it/s]100%|██████████| 875/875 [00:00<00:00, 2125.45it/s]
+2025-09-16:16:04:04,713 INFO     [task.py:417] Building contexts for blimp_inchoative_filtered on rank 0...
+  0%|          | 0/855 [00:00<?, ?it/s] 25%|██▍       | 212/855 [00:00<00:00, 2115.68it/s] 50%|████▉     | 427/855 [00:00<00:00, 2131.21it/s] 75%|███████▌  | 645/855 [00:00<00:00, 2149.06it/s]100%|██████████| 855/855 [00:00<00:00, 2145.96it/s]
+2025-09-16:16:04:05,170 INFO     [task.py:417] Building contexts for blimp_determiner_noun_agreement_1_filtered on rank 0...
+  0%|          | 0/929 [00:00<?, ?it/s] 23%|██▎       | 212/929 [00:00<00:00, 2117.59it/s] 46%|████▌     | 425/929 [00:00<00:00, 2121.46it/s] 69%|██████▉   | 639/929 [00:00<00:00, 2125.95it/s] 92%|█████████▏| 852/929 [00:00<00:00, 2124.37it/s]100%|██████████| 929/929 [00:00<00:00, 2123.34it/s]
+2025-09-16:16:04:05,691 INFO     [task.py:417] Building contexts for blimp_npi_present_2_filtered on rank 0...
+  0%|          | 0/914 [00:00<?, ?it/s] 23%|██▎       | 213/914 [00:00<00:00, 2126.30it/s] 47%|████▋     | 428/914 [00:00<00:00, 2135.38it/s] 70%|███████   | 644/914 [00:00<00:00, 2143.16it/s] 94%|█████████▍| 862/914 [00:00<00:00, 2154.37it/s]100%|██████████| 914/914 [00:00<00:00, 2148.89it/s]
+2025-09-16:16:04:06,184 INFO     [task.py:417] Building contexts for blimp_left_branch_island_simple_question_filtered on rank 0...
+  0%|          | 0/951 [00:00<?, ?it/s] 22%|██▏       | 213/951 [00:00<00:00, 2126.69it/s] 45%|████▍     | 426/951 [00:00<00:00, 2121.02it/s] 67%|██████▋   | 640/951 [00:00<00:00, 2123.78it/s] 90%|████████▉ | 854/951 [00:00<00:00, 2127.25it/s]100%|██████████| 951/951 [00:00<00:00, 2125.35it/s]
+2025-09-16:16:04:06,703 INFO     [task.py:417] Building contexts for blimp_principle_A_domain_3_filtered on rank 0...
+  0%|          | 0/941 [00:00<?, ?it/s] 23%|██▎       | 213/941 [00:00<00:00, 2126.18it/s] 45%|████▌     | 426/941 [00:00<00:00, 2121.31it/s] 68%|██████▊   | 639/941 [00:00<00:00, 2120.74it/s] 91%|█████████ | 853/941 [00:00<00:00, 2124.64it/s]100%|██████████| 941/941 [00:00<00:00, 2124.89it/s]
+2025-09-16:16:04:07,223 INFO     [task.py:417] Building contexts for blimp_superlative_quantifiers_1_filtered on rank 0...
+  0%|          | 0/979 [00:00<?, ?it/s] 22%|██▏       | 214/979 [00:00<00:00, 2134.89it/s] 44%|████▎     | 428/979 [00:00<00:00, 2137.15it/s] 66%|██████▌   | 642/979 [00:00<00:00, 2134.71it/s] 87%|████████▋ | 856/979 [00:00<00:00, 2133.98it/s]100%|██████████| 979/979 [00:00<00:00, 2136.78it/s]
+2025-09-16:16:04:07,753 INFO     [task.py:417] Building contexts for blimp_determiner_noun_agreement_with_adj_irregular_1_filtered on rank 0...
+  0%|          | 0/718 [00:00<?, ?it/s] 30%|██▉       | 214/718 [00:00<00:00, 2137.78it/s] 60%|█████▉    | 428/718 [00:00<00:00, 2125.51it/s] 89%|████████▉ | 642/718 [00:00<00:00, 2130.89it/s]100%|██████████| 718/718 [00:00<00:00, 2132.22it/s]
+2025-09-16:16:04:08,160 INFO     [task.py:417] Building contexts for blimp_ellipsis_n_bar_1_filtered on rank 0...
+  0%|          | 0/802 [00:00<?, ?it/s] 27%|██▋       | 213/802 [00:00<00:00, 2127.84it/s] 53%|█████▎    | 427/802 [00:00<00:00, 2131.82it/s] 80%|████████  | 642/802 [00:00<00:00, 2136.50it/s]100%|██████████| 802/802 [00:00<00:00, 2134.54it/s]
+2025-09-16:16:04:08,624 INFO     [evaluator.py:385] Running loglikelihood requests
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/__main__.py", line 431, in <module>
+    cli_evaluate()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/__main__.py", line 356, in cli_evaluate
+    results = evaluator.simple_evaluate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/evaluator.py", line 257, in simple_evaluate
+    results = evaluate(
+              ^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/evaluator.py", line 396, in evaluate
+    resps = getattr(lm, reqtype)(cloned_reqs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/models/huggingface.py", line 1534, in loglikelihood
+    from minicons.scorer import MaskedLMScorer
+ModuleNotFoundError: No module named 'minicons'

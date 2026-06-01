@@ -1,0 +1,58 @@
+starting python script
+2025-09-23:13:35:56,362 WARNING  [loading.py:546] Using the latest cached version of the module from /home/users/u103092/.cache/huggingface/modules/evaluate_modules/metrics/evaluate-metric--exact_match/9d3b67e0c429cd7460b2b05aab53419b48eea369b73e1d9f185a56ca90c373d4 (last modified on Tue Sep  9 15:51:47 2025) since it couldn't be found locally at evaluate-metric--exact_match, or remotely on the Hugging Face Hub.
+2025-09-23:13:35:57,855 INFO     [__main__.py:263] Verbosity set to INFO
+2025-09-23:13:36:15,627 INFO     [__main__.py:349] Selected Tasks: ['blimp_filtered', 'blimp_supplement']
+2025-09-23:13:36:15,846 INFO     [evaluator.py:133] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2025-09-23:13:36:15,849 INFO     [evaluator.py:181] Initializing hf model, with arguments: {'pretrained': '../models/3597630/checkpoint-16000/', 'backend': 'causal'}
+2025-09-23:13:36:17,040 WARNING  [other.py:349] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+2025-09-23:13:36:17,040 INFO     [huggingface.py:196] Using device 'cuda:0'
+Traceback (most recent call last):
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/utils/hub.py", line 402, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': '../models/3597630/checkpoint-16000/'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/__main__.py", line 431, in <module>
+    cli_evaluate()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/__main__.py", line 356, in cli_evaluate
+    results = evaluator.simple_evaluate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/evaluator.py", line 184, in simple_evaluate
+    lm = lm_eval.api.registry.get_model(model).create_from_arg_string(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/api/model.py", line 134, in create_from_arg_string
+    return cls(**args, **args2)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/models/huggingface.py", line 222, in __init__
+    self._get_config(
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/models/huggingface.py", line 537, in _get_config
+    self._config = transformers.AutoConfig.from_pretrained(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/models/auto/configuration_auto.py", line 976, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/configuration_utils.py", line 632, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/configuration_utils.py", line 689, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/utils/hub.py", line 466, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: '../models/3597630/checkpoint-16000/'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+pretrained=../models/3597630/checkpoint-16000/,backend=causal

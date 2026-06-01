@@ -1,5 +1,4 @@
 import json
-from pathlib import Path
 from typing import Dict, Any, List, Set
 
 
@@ -20,49 +19,55 @@ def get_node_ids(data: Dict[str, Any]) -> Set[str]:
     return {node["node_id"] for node in data.get("nodes", [])}
 
 
-def mark_overlaps(data1: Dict[str, Any], data2: Dict[str, Any], flag: str = "overlap") -> None:
+def mark_overlaps(graphs: List[Dict[str, Any]], flag: str = "has_overlap") -> None:
     """
-    Add a boolean flag to nodes in both graphs that overlap by node_id.
+    Add a boolean flag to nodes in all graphs that overlap by node_id.
     Modifies the dicts in place.
     """
-    overlap_ids = get_node_ids(data1) & get_node_ids(data2)
+    # Collect counts of node_ids across all graphs
+    from collections import Counter
 
-    for node in data1.get("nodes", []):
-        if node["node_id"] in overlap_ids:
-            node[flag] = True
+    all_ids = Counter()
+    for g in graphs:
+        all_ids.update(get_node_ids(g))
 
-    for node in data2.get("nodes", []):
-        if node["node_id"] in overlap_ids:
-            node[flag] = True
+    overlap_ids = {nid for nid, count in all_ids.items() if count > 1}
+
+    # Mark nodes in each graph
+    for g in graphs:
+        for node in g.get("nodes", []):
+            if node["node_id"] in overlap_ids:
+                node[flag] = True
 
 
-def main(file1: str, file2: str, out1: str = None, out2: str = None) -> None:
+def main(files: List[str], outs: List[str] = None) -> None:
     """
-    Load two graphs, mark overlaps, and save them back out.
-    If out1/out2 are not provided, overwrite the input files.
+    Load N graphs, mark overlaps, and save them back out.
+    If outs is not provided, overwrite the input files.
     """
-    data1 = load_graph(file1)
-    data2 = load_graph(file2)
+    graphs = [load_graph(f) for f in files]
 
-    mark_overlaps(data1, data2, flag="has_overlap")
+    mark_overlaps(graphs, flag="has_overlap")
 
-    out1 = out1 or file1
-    out2 = out2 or file2
+    if outs is None:
+        outs = files
+    elif len(outs) != len(files):
+        raise ValueError("Number of output files must match number of input files")
 
-    save_graph(data1, out1)
-    save_graph(data2, out2)
+    for g, out in zip(graphs, outs):
+        save_graph(g, out)
 
-    print(f"✅ Overlaps marked. Updated files:\n - {out1}\n - {out2}")
+    print("✅ Overlaps marked. Updated files:")
+    for out in outs:
+        print(f" - {out}")
 
 
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description="Mark overlapping nodes in two graph JSON files.")
-    parser.add_argument("file1", help="Path to first graph JSON file")
-    parser.add_argument("file2", help="Path to second graph JSON file")
-    parser.add_argument("--out1", help="Optional output path for first graph (defaults to overwrite)")
-    parser.add_argument("--out2", help="Optional output path for second graph (defaults to overwrite)")
+    parser = argparse.ArgumentParser(description="Mark overlapping nodes in multiple graph JSON files.")
+    parser.add_argument("files", nargs="+", help="Paths to graph JSON files")
+    parser.add_argument("--outs", nargs="*", help="Optional output paths (defaults to overwrite input files)")
 
     args = parser.parse_args()
-    main(args.file1, args.file2, args.out1, args.out2)
+    main(args.files, args.outs)

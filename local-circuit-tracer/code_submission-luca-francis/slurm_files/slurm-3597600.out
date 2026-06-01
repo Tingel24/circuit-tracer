@@ -1,0 +1,52 @@
+starting python script
+[09/22/25 14:14:09 - 0:00:00][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Namespace(model_name='microsoft/deberta-v3-base', models_folder='./models/', reload_id='3597600', new_id='3597600', reload_best=True, dataset='halfhalf.train,halfhalf.dev', preprocessed=False, spm_model='tokenizer.model', data_lim=0, cache_dir=None, max_seq_len=64, num_workers=10, debug=False, batch_size=64, grad_acc=1, lr=0.0002, warmup_steps=4000, mask_prob=0.15, epochs=50, eval_steps=1000, save_steps=1000, logging_steps=100, log_to_file=False, eval_only=True, bf16=False, resume=False, push_to_hub='', push_only=False, register='', save_for_eval='', lora=False, load_encdec=False, tiny=False, small=False, reload_path='./models/3597600', checkpoint_path=None)
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+[09/22/25 14:14:12 - 0:00:03][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----- Model Parameters -----
+[09/22/25 14:14:12 - 0:00:03][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Total: 116802880
+[09/22/25 14:14:12 - 0:00:03][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----------------------------
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 140350 examples [00:00, 173699.66 examples/s]Generating train split: 280142 examples [00:00, 357397.90 examples/s]Generating train split: 427150 examples [00:01, 551123.03 examples/s]Generating train split: 427150 examples [00:01, 418985.08 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 2000 examples [00:00, 504062.49 examples/s]
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:00<00:04, 428.63 examples/s]Map (num_proc=10):  30%|███       | 600/2000 [00:00<00:01, 1011.48 examples/s]Map (num_proc=10):  40%|████      | 800/2000 [00:00<00:01, 1045.09 examples/s]Map (num_proc=10):  50%|█████     | 1000/2000 [00:01<00:00, 1047.54 examples/s]Map (num_proc=10):  60%|██████    | 1200/2000 [00:01<00:00, 1066.49 examples/s]Map (num_proc=10):  70%|███████   | 1400/2000 [00:01<00:00, 1091.00 examples/s]Map (num_proc=10):  80%|████████  | 1600/2000 [00:01<00:00, 1096.24 examples/s]Map (num_proc=10):  90%|█████████ | 1800/2000 [00:01<00:00, 1097.50 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:01<00:00, 1118.21 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:02<00:00, 959.16 examples/s] 
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:00<00:01, 1229.62 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:00<00:00, 7315.93 examples/s]
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+
+***** Running Evaluation *****
+  Num examples = 640
+  Batch size = 256
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+[09/22/25 14:14:36 - 0:00:27][[GPU] (0): 2635/40960 MB, (1): 2219/40960 MB, (2): 2219/40960 MB] Acc:0.0
+Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+DatasetDict({
+    train: Dataset({
+        features: ['inputs'],
+        num_rows: 427150
+    })
+    validation: Dataset({
+        features: ['input_ids'],
+        num_rows: 640
+    })
+})
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/train.py", line 348, in <module>
+    trainer.evaluate(dataset['validation'])
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/trainer.py", line 3690, in evaluate
+    self.log(output.metrics)
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/trainer.py", line 3239, in log
+    self.control = self.callback_handler.on_log(self.args, self.state, self.control, logs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/trainer_callback.py", line 500, in on_log
+    return self.call_event("on_log", args, state, control, logs=logs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/trainer_callback.py", line 507, in call_event
+    result = getattr(callback, event)(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/integrations/integration_utils.py", line 953, in on_log
+    self.setup(args, state, model)
+  File "/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/integrations/integration_utils.py", line 826, in setup
+    self._wandb.termwarn(
+    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'wandb' has no attribute 'termwarn'

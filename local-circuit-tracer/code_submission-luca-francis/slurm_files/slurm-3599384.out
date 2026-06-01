@@ -1,0 +1,50 @@
+
+EnvironmentNameNotFound: Could not find conda environment: circuit-tracer-env
+You can list all discoverable environments with `conda info --envs`.
+
+
+starting python script
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 25, in <module>
+    import evaluate
+ModuleNotFoundError: No module named 'evaluate'
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 25, in <module>
+    import evaluate
+ModuleNotFoundError: No module named 'evaluate'
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 25, in <module>
+    import evaluate
+ModuleNotFoundError: No module named 'evaluate'
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 25, in <module>
+    import evaluate
+ModuleNotFoundError: No module named 'evaluate'
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 25, in <module>
+    import evaluate
+ModuleNotFoundError: No module named 'evaluate'
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 25, in <module>
+    import evaluate
+ModuleNotFoundError: No module named 'evaluate'
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 25, in <module>
+    import evaluate
+ModuleNotFoundError: No module named 'evaluate'
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 25, in <module>
+    import evaluate
+ModuleNotFoundError: No module named 'evaluate'
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 25, in <module>
+    import evaluate
+ModuleNotFoundError: No module named 'evaluate'
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 25, in <module>
+    import evaluate
+ModuleNotFoundError: No module named 'evaluate'
+Traceback (most recent call last):
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/finetune_classification.py", line 25, in <module>
+    import evaluate
+ModuleNotFoundError: No module named 'evaluate'

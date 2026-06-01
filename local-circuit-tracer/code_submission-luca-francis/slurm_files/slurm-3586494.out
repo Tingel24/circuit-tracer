@@ -1,0 +1,56 @@
+starting python script
+2025-09-16:14:36:38,673 INFO     [__main__.py:263] Verbosity set to INFO
+2025-09-16:14:36:56,976 WARNING  [__main__.py:325] File results/blimp/checkpoint-11200/blimp_results.json already exists. Results will be overwritten.
+2025-09-16:14:36:56,995 INFO     [__main__.py:349] Selected Tasks: ['blimp_filtered', 'blimp_supplement']
+2025-09-16:14:36:57,131 INFO     [evaluator.py:133] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2025-09-16:14:36:57,134 INFO     [evaluator.py:181] Initializing hf-mlm model, with arguments: {'pretrained': '../models/3428338/checkpoint-11200/', 'backend': 'mlm'}
+2025-09-16:14:36:57,207 INFO     [huggingface.py:196] Using device 'cuda:0'
+2025-09-16:14:36:57,277 INFO     [huggingface.py:489] Overrode HF model backend type, and using type 'mlm'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/__main__.py", line 431, in <module>
+    cli_evaluate()
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/__main__.py", line 356, in cli_evaluate
+    results = evaluator.simple_evaluate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/evaluator.py", line 184, in simple_evaluate
+    lm = lm_eval.api.registry.get_model(model).create_from_arg_string(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/api/model.py", line 134, in create_from_arg_string
+    return cls(**args, **args2)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/models/huggingface.py", line 235, in __init__
+    self._create_model(
+  File "/mnt/tier2/users/u103092/circuit-tracer/test/evaluation-pipeline-2024/lm_eval/models/huggingface.py", line 609, in _create_model
+    self._model = self.AUTO_MODEL_CLASS.from_pretrained(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 471, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2/lib/python3.11/site-packages/transformers/modeling_utils.py", line 2697, in from_pretrained
+    dispatch_model(model, device_map=device_map, offload_dir=offload_folder, offload_index=offload_index)
+  File "/project/home/p200918/circuit-tracer-env-2/lib/python3.11/site-packages/accelerate/big_modeling.py", line 385, in dispatch_model
+    model.to(device)
+  File "/project/home/p200918/circuit-tracer-env-2/lib/python3.11/site-packages/transformers/modeling_utils.py", line 1811, in to
+    return super().to(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1173, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2/lib/python3.11/site-packages/torch/nn/modules/module.py", line 779, in _apply
+    module._apply(fn)
+  File "/project/home/p200918/circuit-tracer-env-2/lib/python3.11/site-packages/torch/nn/modules/module.py", line 779, in _apply
+    module._apply(fn)
+  File "/project/home/p200918/circuit-tracer-env-2/lib/python3.11/site-packages/torch/nn/modules/module.py", line 779, in _apply
+    module._apply(fn)
+  File "/project/home/p200918/circuit-tracer-env-2/lib/python3.11/site-packages/torch/nn/modules/module.py", line 804, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/project/home/p200918/circuit-tracer-env-2/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1166, in convert
+    raise NotImplementedError(
+NotImplementedError: Cannot copy out of meta tensor; no data! Please use torch.nn.Module.to_empty() instead of torch.nn.Module.to() when moving module from meta to a different device.
+pretrained=../models/3428338/checkpoint-11200/,backend=mlm

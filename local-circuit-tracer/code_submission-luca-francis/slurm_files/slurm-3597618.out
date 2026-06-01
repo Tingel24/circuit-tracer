@@ -1,0 +1,64 @@
+starting python script
+[09/22/25 14:21:27 - 0:00:00][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Namespace(model_name='microsoft/deberta-v3-base', models_folder='./models/', reload_id='3597618', new_id='3597618', reload_best=True, dataset='halfhalf.train,halfhalf.dev', preprocessed=False, spm_model='tokenizer.model', data_lim=0, cache_dir=None, max_seq_len=64, num_workers=10, debug=False, batch_size=64, grad_acc=1, lr=0.0002, warmup_steps=4000, mask_prob=0.15, epochs=50, eval_steps=1000, save_steps=1000, logging_steps=100, log_to_file=False, eval_only=True, bf16=False, resume=False, push_to_hub='', push_only=False, register='', save_for_eval='', lora=False, load_encdec=False, tiny=False, small=False, reload_path='./models/3597618', checkpoint_path=None)
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+[09/22/25 14:21:30 - 0:00:03][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----- Model Parameters -----
+[09/22/25 14:21:30 - 0:00:03][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] Total: 116802880
+[09/22/25 14:21:30 - 0:00:03][[GPU] (0): 517/40960 MB, (1): 517/40960 MB, (2): 517/40960 MB] ----------------------------
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):  10%|█         | 200/2000 [00:00<00:05, 302.62 examples/s]Map (num_proc=10):  40%|████      | 800/2000 [00:00<00:01, 1092.24 examples/s]Map (num_proc=10):  50%|█████     | 1000/2000 [00:01<00:00, 1090.70 examples/s]Map (num_proc=10):  60%|██████    | 1200/2000 [00:01<00:00, 1084.80 examples/s]Map (num_proc=10):  70%|███████   | 1400/2000 [00:01<00:00, 1081.46 examples/s]Map (num_proc=10):  80%|████████  | 1600/2000 [00:01<00:00, 1078.61 examples/s]Map (num_proc=10):  90%|█████████ | 1800/2000 [00:01<00:00, 950.94 examples/s] Map (num_proc=10): 100%|██████████| 2000/2000 [00:01<00:00, 1110.81 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:02<00:00, 965.52 examples/s] 
+Map (num_proc=10):   0%|          | 0/2000 [00:00<?, ? examples/s]Map (num_proc=10):  70%|███████   | 1400/2000 [00:00<00:00, 13889.74 examples/s]Map (num_proc=10): 100%|██████████| 2000/2000 [00:00<00:00, 11015.55 examples/s]
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+
+***** Running Evaluation *****
+  Num examples = 640
+  Batch size = 256
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/project/home/p200918/circuit-tracer-env-2024/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+[09/22/25 14:22:01 - 0:00:34][[GPU] (0): 2635/40960 MB, (1): 2219/40960 MB, (2): 2219/40960 MB] Acc:0.0
+Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Currently logged in as: lucafrancis (lucafrancis-georg-august-univerit-t-g-ttingen). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.8
+wandb: Run data is saved locally in /mnt/tier2/users/u103092/circuit-tracer/test/wandb/run-20250922_142210-v5k3k8u5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ./models/3597618
+wandb: ⭐️ View project at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: 🚀 View run at https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/v5k3k8u5
+[09/22/25 14:22:26 - 0:00:59][[GPU] (0): 2635/40960 MB, (1): 2219/40960 MB, (2): 2219/40960 MB] {'eval_loss': 10.790224075317383, 'eval_acc': 0.0, 'eval_runtime': 17.7799, 'eval_samples_per_second': 35.996, 'eval_steps_per_second': 0.169}
+DatasetDict({
+    train: Dataset({
+        features: ['inputs'],
+        num_rows: 427150
+    })
+    validation: Dataset({
+        features: ['input_ids'],
+        num_rows: 640
+    })
+})
+[09/22/25 14:22:30 - 0:01:03][[GPU] (0): 2741/40960 MB, (1): 2219/40960 MB, (2): 2219/40960 MB] source: [CLS] Goldar and the Putty Patrol[MASK] in the movie[MASK].[SEP][CLS][SEP][CLS][MASK][MASK] 100 poets signed a letter asking for[MASK] pardon. In inval Ekhtesari and Musavi escaped[MASK] Iran.[SEP][CLS][SEP][CLS] Geography[MASK][SEP][CLS] No one is on a boat.[SEP][CLS]In 2016, he
+[09/22/25 14:22:30 - 0:01:03][[GPU] (0): 2741/40960 MB, (1): 2219/40960 MB, (2): 2219/40960 MB] label: [PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD] are[PAD][PAD][PAD] too[PAD][PAD][PAD][PAD][PAD] More than[PAD][PAD][PAD][PAD][PAD][PAD][PAD] a[PAD][PAD][PAD] 2016,[PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD] from[PAD][PAD][PAD][PAD][PAD][PAD][PAD].[PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD][PAD]
+[09/22/25 14:22:30 - 0:01:03][[GPU] (0): 2741/40960 MB, (1): 2219/40960 MB, (2): 2219/40960 MB] pred: promotes DoyRoman mutual Isles eastwardclistsEuropean Independ Durbarsim Isles branched Durbarng Kabuki promotes Kabuki promotes Durbar Durbar conventionsacious twelfth'0 spectacularuckingitan Durbar Statewideng assurance zebra hymn railroadsonge bronzes mutual Stri hectares refinement Durbar 00 comparing Kabuki promotes Kabuki promotes cloudy Durbar Kabuki promotes Band Brunelleschiandar GIRL'0 Garciang Kabuki promotes assurance Dass Despite
+wandb: - 0.015 MB of 0.015 MB uploadedwandb: \ 0.015 MB of 0.015 MB uploadedwandb: | 0.015 MB of 0.015 MB uploadedwandb: / 0.040 MB of 0.059 MB uploadedwandb: - 0.059 MB of 0.059 MB uploadedwandb: 
+wandb: Run history:
+wandb:                eval/acc ▁
+wandb:               eval/loss ▁
+wandb:            eval/runtime ▁
+wandb: eval/samples_per_second ▁
+wandb:   eval/steps_per_second ▁
+wandb:       train/global_step ▁
+wandb: 
+wandb: Run summary:
+wandb:                eval/acc 0.0
+wandb:               eval/loss 10.79022
+wandb:            eval/runtime 17.7799
+wandb: eval/samples_per_second 35.996
+wandb:   eval/steps_per_second 0.169
+wandb:       train/global_step 0
+wandb: 
+wandb: 🚀 View run ./models/3597618 at: https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface/runs/v5k3k8u5
+wandb: ⭐️ View project at: https://wandb.ai/lucafrancis-georg-august-univerit-t-g-ttingen/huggingface
+wandb: Synced 6 W&B file(s), 0 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250922_142210-v5k3k8u5/logs
+wandb: WARNING The new W&B backend becomes opt-out in version 0.18.0; try it out with `wandb.require("core")`! See https://wandb.me/wandb-core for more information.
